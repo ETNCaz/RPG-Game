@@ -1,0 +1,4144 @@
+package unit1;
+
+import java.util.Random;
+import java.util.Scanner;
+
+//Fix if statements (if needed - otherwise, its fine lol)
+//Change Exposition
+//Karma (?)
+//Gems/Enhancements (?)
+//Specialized/Upgraded Equipment (better with some skills, differing stats, etc.)
+//Accessories
+//Side Quests
+//Unlockable Classes
+//Unlockable/Classless Skills (?)
+//New enemies (ghost, zombie, etc.)
+//Finish puzzle escape room thingy
+
+public class RPG_New {
+	public static String Pname;
+	public static Random rand = new Random();
+	public static int textSpeed=15;
+	public static boolean phoenixDiscovered=false;
+	public static boolean returnHome=false;
+	public static int attack=0;
+	public static int tempAttack=0;
+	public static int weaponAttack=0;
+	public static int attackTotal=0;
+	public static int magicAttack=0;
+	public static int tempMagicAttack=0;
+	public static int weaponMagicAttack=0;
+	public static int magicAttackTotal=0;
+	public static int defense=0;
+	public static int tempDefense=0;
+	public static int armorDefense=0;
+	public static int defenseTotal=0;
+	public static int currentHP=0;
+	public static int maxHP=0;
+	public static int maxMana=0;
+	public static int currentMana=0;
+	public static int level=1;
+	public static int exp=0;
+	public static int expValue=0;
+	public static int expToLevel=100;
+	public static int levelToRankUp=5;
+	public static int rank=0;
+	public static int gold=20;
+	public static int goldValue=0;
+	public static boolean ultimateUnlocked=false;
+	public static int ultimate=0;
+	public static boolean newSkill=false;
+	public static boolean hpUp=false;
+	public static boolean manaUp=false;
+	public static boolean quickLeveling=false;
+	public static boolean midasTouch=false;
+	public static int rage=0;
+	public static int ironDefense=0;
+	public static int fire=0;
+	public static int manaRegen=0;
+	public static int healAmount=0;
+	public static int healthPotion=0;
+	public static int sandwich=0;
+	public static int manaPotion=0;
+	public static int greaterHealthPotion=0;
+	public static int damage=0;
+	public static boolean knight=false;
+	public static boolean archer=false;
+	public static boolean heavyKnight=false;
+	public static boolean mage=false;
+	public static int swordAndShield=0;
+	public static int bow=0;
+	public static int greatsword=0;
+	public static int wand=0;
+	public static int reinforcedSwordAndShield=0;
+	public static int reinforcedBow=0;
+	public static int reinforcedGreatsword=0;
+	public static int reinforcedWand=0;
+	public static int lightArmor=0;
+	public static int ironArmor=0;
+	public static int enemyAttack=15;
+	public static int enemyTempAttack=0;
+	public static int enemyMagicAttack=5;
+	public static int enemyDefense=5;
+	public static int enemyMaxHP=100;
+	public static int enemyHP=100;
+	public static int enemyDamage=0;
+	public static boolean kingGuard=false;
+	public static int heavySoldier=0;
+	public static boolean arkhein=false;
+	public static boolean arkheinPhase2=false;
+	public static boolean goblin=false;
+	public static boolean bandit=false;
+	public static boolean wolf=false;
+	public static boolean goblinBrute=false;
+	public static boolean zackery=false;
+	public static boolean zackeryText=false;
+	public static boolean zackeryDefeated=false;
+	public static boolean phoenixPrison=false;
+	public static boolean secretEntrance=false;
+	public static int scalePiece=0;
+	public static int room=0;
+	public static boolean prisonCellsDiscovered=false;
+	public static boolean cell7Discovered=false;
+	public static boolean readDiary=false;
+	public static boolean skeleton=false;
+	public static boolean skeletonDefeated=false;
+	public static boolean cell12Discovered=false;
+	public static boolean wallBroken=false;
+	public static boolean secretWallDiscovered=false;
+	public static boolean cell35Discovered=false;
+	public static boolean farSidePrisonDiscovered=false;
+	public static boolean lookCenterDiscovered=false;
+	public static int hammer=0;
+	public static boolean boss=false;
+	public static int enemyAttackRarity=0;
+	public static boolean aequalisSoul=false;
+	public static boolean aequalisSoulPhase2=false;
+	public static int a_attack=0;
+	public static int a_defend=0;
+	public static int a_item=0;
+	public static int a_skill=0;
+	public static int a_buff=0;
+	public static int a_debuff=0;
+	public static int a_total=0;
+	public static int a_adaptation=0;
+	public static Scanner scan = new Scanner(System.in);
+	
+public static void main(String[] args) {
+		String answer= scan.nextLine();
+		if(answer.equalsIgnoreCase("1")) {
+			textSpeed=1;
+			healthPotion=1;
+			manaPotion=1;
+			sandwich=1;
+			greaterHealthPotion=1;
+			gold=40;
+			currentHP=175;
+			maxHP=175;
+			currentMana=15;
+			maxMana=15;
+			defense=9;
+			attack=31;
+			magicAttack=13;
+			reinforcedSwordAndShield=2;
+			weaponAttack=2;
+			ironArmor=2;
+			armorDefense=2;
+			level=5;
+			expToLevel=350;
+			rank=1;
+			levelToRankUp=10;
+			knight=true;
+			newSkill=true;
+			manaUp=true;
+			ultimateUnlocked=true;
+			phoenixDiscovered=true;
+			zackeryDefeated=true;
+			phoenixPrison=true;
+			overworld();
+		}
+		if(answer.equalsIgnoreCase("2")) {
+			textSpeed=1;
+			healthPotion=1;
+			manaPotion=1;
+			sandwich=1;
+			greaterHealthPotion=1;
+			gold=50;
+			currentHP=155;
+			maxHP=155;
+			currentMana=17;
+			maxMana=17;
+			defense=7;
+			attack=38;
+			magicAttack=13;
+			reinforcedBow=2;
+			weaponAttack=3;
+			ironArmor=2;
+			armorDefense=2;
+			level=5;
+			expToLevel=350;
+			rank=1;
+			levelToRankUp=10;
+			archer=true;
+			newSkill=true;
+			manaUp=true;
+			ultimateUnlocked=true;
+			phoenixDiscovered=true;
+			zackeryDefeated=true;
+			phoenixPrison=true;
+			overworld();
+		}
+		if(answer.equalsIgnoreCase("3")) {
+			textSpeed=1;
+			healthPotion=1;
+			manaPotion=1;
+			sandwich=1;
+			greaterHealthPotion=1;
+			gold=50;
+			currentHP=165;
+			maxHP=165;
+			currentMana=15;
+			maxMana=15;
+			defense=5;
+			attack=43;
+			magicAttack=13;
+			reinforcedGreatsword=2;
+			weaponAttack=4;
+			ironArmor=2;
+			armorDefense=2;
+			level=5;
+			expToLevel=350;
+			rank=1;
+			levelToRankUp=10;
+			heavyKnight=true;
+			newSkill=true;
+			manaUp=true;
+			ultimateUnlocked=true;
+			phoenixDiscovered=true;
+			zackeryDefeated=true;
+			phoenixPrison=true;
+			phoenixPrison();
+		}
+		if(answer.equalsIgnoreCase("4")) {
+			textSpeed=1;
+			healthPotion=1;
+			manaPotion=1;
+			sandwich=1;
+			greaterHealthPotion=1;
+			gold=40;
+			currentHP=115;
+			maxHP=115;
+			currentMana=20;
+			maxMana=20;
+			defense=7;
+			attack=25;
+			magicAttack=41;
+			reinforcedWand=2;
+			weaponAttack=2;
+			weaponMagicAttack=4;
+			ironArmor=2;
+			armorDefense=2;
+			level=5;
+			expToLevel=350;
+			rank=1;
+			levelToRankUp=10;
+			mage=true;
+			newSkill=true;
+			manaUp=true;
+			ultimateUnlocked=true;
+			phoenixDiscovered=true;
+			zackeryDefeated=true;
+			phoenixPrison=true;
+			overworld();
+		}
+		if(answer.equalsIgnoreCase("e")) {
+			Pname = "Erika";
+			textSpeed=9;
+			greaterHealthPotion=1;
+			gold=13;
+			currentHP=42;
+			maxHP=155;
+			currentMana=10;
+			maxMana=14;
+			defense=8;
+			attack=23;
+			magicAttack=8;
+			swordAndShield=2;
+			reinforcedSwordAndShield=1;
+			weaponAttack=1;
+			lightArmor=2;
+			armorDefense=1;
+			level=3;
+			exp=95;
+			expToLevel=100;
+			rank=0;
+			levelToRankUp=5;
+			knight=true;
+			phoenixDiscovered=true;
+			overworld();
+		}
+		typewriter("Welcome! In this game, you control the protagonist of the story and type words to choose certain choices you want to make.");
+		typewriter("Let's start simple; what is your name? (This will be the name of the protagonist)");
+		Pname = scan.nextLine();
+		typewriter("Hello there, "+Pname+"!");
+		typewriter("How fast would you like the text speed? (Type 'VF' for Very Fast, 'F' for Fast, 'N' for Normal, or 'S' for Slow)");
+	      String answer1 = scan.nextLine();
+	      if(answer1.equalsIgnoreCase("vf")) {
+	    	  textSpeed=3;
+	      }
+	      if(answer1.equalsIgnoreCase("f")) {
+	    	  textSpeed=9;
+	      }
+	      if(answer1.equalsIgnoreCase("n")) {
+	    	  textSpeed=15;
+	      }
+	      if(answer1.equalsIgnoreCase("s")) {
+	    	  textSpeed=20;
+	      }
+	    typewriter("Okay then!");
+		typewriter("Would you like to skip the intro and go straight to class selection? (Type 'Y' for Yes or 'N' for No)");
+		String answer2= scan.nextLine();
+		if(answer2.equalsIgnoreCase("y")) {
+			skip();
+		}else {
+		typewriter("Alright then. With all of that out of the way, let's get started.");
+		typewriter("");
+		typewriter("");
+		typewriter("This adventure takes place in the land of Contra, which was ruled by Queen Aequalis. Aequalis was a fair and just ruler; no one disagreed nor hated her. Everything was peaceful for a long time... until people began to strive for power over others.");
+		typewriter("However, this was nearly impossible; Aequalis had made an impeccable military force.");
+		typewriter("Though it would be soon found that this could not be further from the truth.");
+		typewriter("Two men strived for power; Monos and Malitia. Both of them agreed to work together in order to overthrow Aequalis. To achieve this, they needed something powerful.");
+		typewriter("Old tales from even before Contra told stories about the battle between light and darkness. The powers of light were led by Licht, with the powers of darkness being led by Deorc.");
+		typewriter("Of course, the forces of light eventually won the battle. However, Deorc was too powerful to be contained in one piece; Licht was forced to obliterate Deorc into pure dark energy and store the energy into several crystals.");
+		typewriter("Licht put these crystals deep underground to where no mortal hands could find them. Everything else in the tellings of these stories were lost in obscurity.");
+		typewriter("Monos and Malitia were determined to find the Crystals of Deorc, the name given to those crystals. No one knows how they found the location of the Crystals of Deorc, but they did.");
+		typewriter("Harvesting and breaking them gave both Monos and Malitia the once-lost-in-time powers of darkness. They stormed Aequalis's castle, tearing and covering everything into darkness.");
+		typewriter("This caused what was eventually known as the War of Dividere. Aequalis was powerless to stop them. Even being the Queen of Contra, she was no match for the power of darkness. Monos and Malitia defeated her in cold blood.");
+		typewriter("Even though they worked together to defeat Aequalis, they both planned to betray each other in the end. Instantly, they attacked each other, filled with anger and hatred.");
+		typewriter("However, none of them could beat out the other. They fought viciously, but no damage was done. In the end, they agreed to rule two seperate parts of Contra.");
+		typewriter("Those two regions became known as Feudum and Feodalitas. Feudum was ruled by Monos, but now by Arkhein, and Feodalitas was ruled by Malitia, but now by Corruptus.");
+		typewriter("Ever since then, poverty and resentment plagued Contra. What was once a peaceful and just kindgom became a corrupt and greedy kingdom.");
+		typewriter("This is where you come in. You were born in Feodalitas without much money. Both your parents worked as farmers, and ever since you turned six, you've had to join them.");
+		typewriter("Years of your life passed in poverty. Farming everyday was getting boring for you.");
+		typewriter("That was, of course, until today...");
+		typewriter("");
+		typewriter("It's a bleak, rainy day. You just finished the harvest for the week and your mom called you for dinner.");
+		typewriter("As you sit down on the chair and begin eating, your mom starts to look solemnly at you.");
+		typewriter("'Malitia... is drafting people for war and you're in the age range...'");
+		typewriter("You look up in shock. A war? King Monos and Malitia signed a treaty not to attack eachother all those years ago, right?!");
+		typewriter("'I'm sorry "+Pname+", but we can't do anything to get you out of it. The training starts tommorow.'");
+		typewriter("You sigh. King Corruptus always seemed like a warmonger.");
+		typewriter("After finishing dinner, you fall asleep, hoping by some miracle that you'll be okay.");
+		typewriter("						The Next Day...");
+		typewriter("You wake up to a knock on your door and hear your mom talking worryingly.");
+		typewriter("'... p-please! My child is only 15! You can't do this!'");
+		typewriter("'It is by the order of King Corruptus. I'm very sorry.'");
+		typewriter("Fear trickles down you like a raindrop.");
+		typewriter("The King's Guard is here.");
+		typewriter("You scramble to put on your ragged clothes and hurry to the door.");
+		typewriter("'Ah! Your child has arrived! We shall take it from here.'");
+		typewriter("You squeeze your mom as tight as you can as she does the same. 'Be as good as you can, and don't forget about me, alright?'");
+		typewriter("You nod, tears forming in your eyes.");
+		typewriter("Your mother slips you some gold as you turn around to face the soldiers.");
+		typewriter("'Follow us. We shall take you to the training grounds,' one of the knights said.");
+		typewriter("As you exit the house, you hear your mom mutter, 'Be safe... please...'");
+		typewriter("							...");
+		typewriter("You make it to the entrance of the castle and enter.");
+		typewriter("The marble walls are gilded with gold. Red carpets with extravagent patterns were laid on the ground.");
+		typewriter("To the left and right are halls further into the castle while the center is a staircase that leads to the kings throne and room.");
+		typewriter("The guards lead you to the right. You turn a corner and head to the back of the castle.");
+		typewriter("The back expands into the outside. As you hold you hand over your eyes to block the sun, you see an incredibly large training field.");
+		typewriter("Training dummies and targets littered the nearby vicinity. Weapon racks lined the fences.");
+		typewriter("'Here is where you will train for the next month. You get to decide what weapon you will specialize in,' one of the guards said as the other one carried a weapon rack over. 'Everything available is right in front of you.'");
+		typewriter("You observe the rack. On it is a sword and shield, bow, greatsword, and wand.");
+		typewriter("'Which shall you choose?'");
+		typewriter("The stats are as follows:");
+		typewriter("Sword and Shield (Knight):");
+		typewriter("Attack: 17");
+		typewriter("Magic Attack: 5");
+		typewriter("Defense: 7");
+		typewriter("Max HP: 135");
+		typewriter("Mana: 10");
+		typewriter("");
+		typewriter("Bow (Archer):");
+		typewriter("Attack: 20");
+		typewriter("Magic Attack: 5");
+		typewriter("Defense: 5");
+		typewriter("Max HP: 115");
+		typewriter("Mana: 12");
+		typewriter("");
+		typewriter("Greatsword (Heavy Knight):");
+		typewriter("Attack: 25");
+		typewriter("Magic Attack: 5");
+		typewriter("Defense: 3");
+		typewriter("Max HP: 125");
+		typewriter("Mana: 10");
+		typewriter("");
+		typewriter("Wand (Mage):");
+		typewriter("Attack: 15");
+		typewriter("Magic Attack: 25");
+		typewriter("Defense: 5");
+		typewriter("Max HP: 75");
+		typewriter("Mana: 15");
+		typewriter("(Type 'K' for Knight, 'A' for Archer, 'HK' for Heavy Knight, or 'M' for Mage)");
+		String answer3 = scan.nextLine();
+        if(answer3.equalsIgnoreCase("k")) {
+        	knight();
+        }else {
+        if(answer3.equalsIgnoreCase("a")) {
+        	archer();
+        }else {
+        if(answer3.equalsIgnoreCase("hk")) {
+        	heavyKnight();
+        }else {
+        if(answer3.equalsIgnoreCase("m")) {
+        	mage();
+        }else {
+        skip();
+          }
+        }
+      }
+    }
+  }
+}
+public static void skip() {
+	typewriter("Which class shall you choose? (Type 'K' for Knight, 'A' for Archer, 'HK' for Heavy Knight, or 'M' for Mage)");
+	String answer = scan.nextLine();
+	if(answer.equalsIgnoreCase("k")) {
+    	knight();
+    }else {
+    if(answer.equalsIgnoreCase("a")) {
+    	archer();
+    }else {
+    if(answer.equalsIgnoreCase("hk")) {
+    	heavyKnight();
+    }else {
+    if(answer.equalsIgnoreCase("m")) {
+    	mage();
+    }else {
+    skip();
+      }
+    }
+  }
+}
+}
+public static void knight() {
+	attack=17;
+	magicAttack=5;
+	defense=7;
+	currentHP=135;
+	maxHP=135;
+	maxMana=10;
+	currentMana=10;
+	swordAndShield=2;
+	weaponAttack=1;
+	lightArmor=2;
+	armorDefense=1;
+	knight=true;
+	typewriter("'Good choice.'");
+	continue0();
+}
+public static void archer() {
+	attack=20;
+	magicAttack=5;
+	defense=5;
+	currentHP=115;
+	maxHP=115;
+	maxMana=12;
+	currentMana=12;
+	bow=2;
+	weaponAttack=1;
+	lightArmor=2;
+	armorDefense=1;
+	archer=true;
+	typewriter("'Good choice.'");
+	continue0();
+}
+public static void heavyKnight() {
+	attack=25;
+	magicAttack=5;
+	defense=3;
+	currentHP=125;
+	maxHP=125;
+	maxMana=10;
+	currentMana=10;
+	greatsword=2;
+	weaponAttack=2;
+	lightArmor=2;
+	armorDefense=1;
+	heavyKnight=true;
+	typewriter("'Good choice.'");
+	continue0();
+}
+public static void mage() {
+	attack=15;
+	magicAttack=25;
+	defense=5;
+	currentHP=75;
+	maxHP=75;
+	maxMana=15;
+	currentMana=15;
+	wand=2;
+	weaponAttack=1;
+	weaponMagicAttack=2;
+	lightArmor=2;
+	armorDefense=1;
+	mage=true;
+	typewriter("'Good choice.'");
+	continue0();
+}
+public static void continue0() {
+	typewriter("'Now, we shall begin your training.'");
+	typewriter("				Several Weeks Later...");
+	typewriter("Over the past few weeks, you've trained as hard as you could. You've learned new battle formations, skills, and instructions.");
+	typewriter("Today was your final test.");
+	typewriter("As you step onto the training field and line up, the instructor starts speaking.");
+	typewriter("'Welcome to your final test. Today will be the most difficult assignment yet.'");
+	typewriter("The instructor made a hand motion, and members of the King's Guard marched through the entrance.");
+	typewriter("'You shall have to win in a duel against a knight of the King's Guard. I wish you luck.'");
+	typewriter("You shudder. The King's Guard contains the most esteemed knights of the entire kingdom.");
+	typewriter("One of the knights come up to you.");
+	typewriter("'Hello. I shall be the one you are sparring with,' he explained.");
+	typewriter("You nod as you draw your weapon.");
+	typewriter("'Alright then. En Garde!'");
+	typewriter("Would you like to see the tutorial? (Type 'Y' for Yes or 'N' for No)");
+	enemyAttack=15;
+	enemyDefense=5;
+	enemyHP=100;
+	prepare();
+	kingGuard=true;
+	String answer= scan.nextLine();
+	if(answer.equalsIgnoreCase("y")) {
+		tutorial();
+	}
+	if(answer.equalsIgnoreCase("n")) {
+		kingGuard();
+	}else {
+		continueSkip();
+	}
+}
+public static void continueSkip() {
+	typewriter("Would you like to see the tutorial? (Type 'Y' for Yes or 'N' for No)");
+	String answer= scan.nextLine();
+	if(answer.equalsIgnoreCase("y")) {
+		tutorial();
+	}
+	if(answer.equalsIgnoreCase("n")) {
+		kingGuard();
+	}else {
+		continueSkip();
+	}
+}
+public static void tutorial() {
+	typewriter("Welcome to the tutorial! You'll learn everything you need in battle!");
+	typewriter("To start, battle formats will look like this:     ");
+	System.out.println("");
+	System.out.println("The King's Guard Knight Approaches You!");
+	System.out.println("Enemy HP: "+enemyHP+"/"+enemyMaxHP+"");
+	System.out.println("HP: "+currentHP+"/"+maxHP+"");
+	System.out.println("Mana: "+currentMana+"/"+maxMana+"");
+	System.out.println("What will you do? (Type 'Attack', 'Defend', 'Item', or 'Skill')");
+	System.out.println("");
+	typewriter("You can see the enemy's HP, your HP, and your current mana. If you have any status effects, they'll appear there, too.");
+	typewriter("The options you can choose include: attack, defend, item, and skill.");
+	typewriter("Attack uses your base attack damage minus the enemy's defense when dealing damage. It also restores 2 mana.");
+	typewriter("Defend multiplies your defense by 1.5 times for one turn. It also restores 4 mana.");
+	typewriter("Item uses a consumable object to grant various effects, such as healing.");
+	typewriter("Skills are different for every class. For example, the only class to have the skill 'Arc Slash' is the Knight.");
+	typewriter("Skill descriptions are very important in telling you what the skill does. Always read them before using them!");
+	typewriter("When your HP equals zero, you lose. When the enemy's HP equals zero, you win.");
+	typewriter("And that's it for the tutorial. Now, go defeat the King's Guard Knight!");
+	kingGuard();
+}
+public static void attack() {
+	if(aequalisSoul==true) {
+		a_attack+=1;
+	}
+	if(knight==true) {
+		typewriter("You swing your blade!");
+	}
+	if(archer==true) {
+		typewriter("You draw your bow and shoot!");
+	}
+	if(heavyKnight==true) {
+		typewriter("You cleave with your greatsword!");
+	}
+	if(mage==true) {
+		typewriter("You swing your wand!");
+	}
+	damage=attack-enemyDefense;
+	damage=damage+weaponAttack;
+	playerRandom();
+	if(rage>1) {
+		damage*=1.25;
+	}
+	if(a_adaptation==1) {
+		damage*=0.65;
+		typewriter("??? blocked your attack, reducing the damage!");
+	}
+	enemyHP-=damage;
+	ultimate+=damage/15;
+	typewriter("You dealt "+damage+" damage!");
+	if(maxMana<currentMana+2) {
+		currentMana=maxMana;
+		typewriter("Your mana was maxed out!");
+	}else {
+		currentMana+=2;
+		typewriter("Your mana increased by 2!");
+	}
+	beforeEnemyAttack();
+}
+public static void defend() {
+	if(aequalisSoul==true) {
+		a_defend+=1;
+	}
+	typewriter("You brace yourself!");
+	if(maxMana<currentMana+4) {
+		currentMana=maxMana;
+		typewriter("Your mana was maxed out!");
+	}else {
+		currentMana+=4;
+		typewriter("Your mana increased by 4!");
+	}
+	tempDefense=defense;
+	tempDefense*=1.5;
+	if(ironDefense>=1) {
+		tempDefense*=1.25;
+	}
+	if(a_adaptation==2) {
+		tempDefense*=0.7;
+		typewriter("??? pierces through your defense!");
+	}
+	beforeEnemyAttack();
+}
+public static void item() {
+	if(aequalisSoul==true) {
+		a_item+=2;
+	}
+	if(a_adaptation==3) {
+		typewriter("??? has put a spell on your bag; you can't access it anymore!");
+		typewriter("");
+		enemyFormat();
+	}
+	System.out.println("You currently have:");
+	if(greaterHealthPotion>=1) {
+		System.out.println("Greater Health Potion: "+greaterHealthPotion+"");
+	}
+	if(healthPotion>=1) {
+		System.out.println("Health Potion: "+healthPotion+"");
+	}
+	if(sandwich>=1) {
+		System.out.println("Sandwich: "+sandwich+"");
+	}
+	if(manaPotion>=1) {
+		System.out.println("Mana Potion: "+manaPotion+"");
+	}
+	System.out.println("What would you like to use? (Type the first letter of each word for the item you want to use - Example: Health Potion, Type 'HP'. If you want to go back, type 'B' for Back)");
+	String answer = scan.nextLine();
+	if(answer.equalsIgnoreCase("hp")) {
+		if(healthPotion==0) {
+			typewriter("You don't have any health potions!");
+			item();
+		}
+		typewriter("You use a health potion!");
+		healthPotion-=1;
+		currentHP+=30;
+		if(currentHP>=maxHP) {
+			currentHP=maxHP;
+			typewriter("You chug down your health potion till the last drop.");
+			typewriter("Your HP was maxed out!");
+			beforeEnemyAttack();
+		}else {
+			typewriter("You chug down your health potion till the last drop.");
+			typewriter("You recover 30 HP!");
+			beforeEnemyAttack();
+		}
+	}
+	if(answer.equalsIgnoreCase("s")) {
+		if(sandwich==0) {
+			typewriter("You don't have any sandwiches!");
+			item();
+		}
+		typewriter("You use a sandwich!");
+		sandwich-=1;
+		currentHP+=15;
+		if(currentHP>=maxHP) {
+			currentHP=maxHP;
+			typewriter("You munch down on your sandwich. Delicious!");
+			typewriter("Your HP was maxed out!");
+			beforeEnemyAttack();
+		}else {
+			typewriter("You munch down on your sandwich. Delicious!");
+			typewriter("You recover 15 HP!");
+			beforeEnemyAttack();
+		}
+	}
+	if(answer.equalsIgnoreCase("mp")) {
+		if(manaPotion==0) {
+			typewriter("You don't have any mana potions!");
+			item();
+		}
+		typewriter("You use a mana potion!");
+		manaPotion-=1;
+		currentMana+=6;
+		if(currentMana>=maxMana) {
+			currentMana=maxMana;
+			typewriter("You chug down your mana potion till the last drop.");
+			typewriter("Your Mana was maxed out!");
+			beforeEnemyAttack();
+		}else {
+			typewriter("You chug down your mana potion till the last drop.");
+			typewriter("You recover 6 Mana!");
+			beforeEnemyAttack();
+		}
+	}
+	if(answer.equalsIgnoreCase("ghp")) {
+		if(greaterHealthPotion==0) {
+			typewriter("You don't have any greater health potions!");
+			item();
+		}
+		typewriter("You use a greater health potion!");
+		greaterHealthPotion-=1;
+		currentHP+=50;
+		if(currentHP>=maxHP) {
+			currentHP=maxHP;
+			typewriter("You guzzle down your greater health potion and feel somewhat revitalized.");
+			typewriter("Your HP was maxed out!");
+			beforeEnemyAttack();
+		}else {
+			typewriter("You guzzle down your greater health potion and feel somewhat revitalized.");
+			typewriter("You recover 50 HP!");
+			beforeEnemyAttack();
+		}
+	}
+	if(answer.equalsIgnoreCase("b")) {
+		enemyFormat();
+	}else {
+		item();
+	}
+}
+public static void enemyBasicAttack() {
+	if(enemyHP<=0) {
+		if(kingGuard==true) {
+			kingGuard();
+		}
+		if(heavySoldier>=1) {
+			heavySoldier();
+		}
+		if(arkhein==true) {
+			arkhein();
+		}
+		if(goblin==true) {
+			goblin();
+		}
+		if(bandit==true) {
+			bandit();
+		}
+		if(wolf==true) {
+			wolf();
+		}
+		if(goblinBrute==true) {
+			goblinBrute();
+		}
+		if(zackery==true) {
+			zackery();
+		}
+		if(skeleton==true) {
+			skeleton();
+		}
+		if(aequalisSoul==true) {
+			aequalisSoul();
+		}
+	}else {
+	if(kingGuard==true) {
+		typewriter("The King's Guard Knight slashes at you!");
+	}
+	if(heavySoldier>=1) {
+		typewriter("The Heavy Knight cleaves his greatsword at you!");
+	}
+	if(arkhein==true) {
+		typewriter("Arkhein slices his double-edged blade at you!");
+	}
+	if(goblin==true) {
+		typewriter("The Goblin swings its knife at you!");
+	}
+	if(bandit==true) {
+		typewriter("The Bandit stabs their dagger at you!");
+	}
+	if(wolf==true) {
+		typewriter("The Wolf swipes its claws at you!");
+	}
+	if(goblinBrute==true) {
+		typewriter("The Goblin Brute slams its mace at you!");
+	}
+	if(zackery==true) {
+		typewriter("Zackery's daggers shred your armor!");
+	}
+	if(skeleton==true) {
+		typewriter("The Skeleton whacks its bones at you!");
+	}
+	if(aequalisSoul==true) {
+		typewriter("??? thrusts its ghostly spear at you!");
+	}
+	if(tempDefense+armorDefense>=enemyAttack) {
+		if(kingGuard==true) {
+			typewriter("The King's Guard Knight dealt 1 damage to you!");
+			currentHP-=1;
+			tempDefense=0;
+			checkBuffs();
+			kingGuard();
+		}
+		if(heavySoldier>=1) {
+			typewriter("The Heavy Knight dealt 1 damage to you!");
+			currentHP-=1;
+			tempDefense=0;
+			checkBuffs();
+			heavySoldier();
+		}
+		if(arkhein==true) {
+			typewriter("Arhein dealt 1 damage to you!");
+			currentHP-=1;
+			tempDefense=0;
+			checkBuffs();
+			arkhein();
+		}
+		if(goblin==true) {
+			typewriter("The Goblin dealt 1 damage to you!");
+			currentHP-=1;
+			tempDefense=0;
+			checkBuffs();
+			goblin();
+		}
+		if(bandit==true) {
+			typewriter("The Bandit dealt 1 damage to you!");
+			currentHP-=1;
+			tempDefense=0;
+			checkBuffs();
+			bandit();
+		}
+		if(wolf==true) {
+			typewriter("The Wolf dealt 1 damage to you!");
+			currentHP-=1;
+			tempDefense=0;
+			checkBuffs();
+			wolf();
+		}
+		if(goblinBrute==true) {
+			typewriter("The Goblin Brute dealt 1 damage to you!");
+			currentHP-=1;
+			tempDefense=0;
+			checkBuffs();
+			goblinBrute();
+		}
+		if(zackery==true) {
+			typewriter("Zackery dealt 1 damage to you!");
+			currentHP-=1;
+			tempDefense=0;
+			checkBuffs();
+			zackery();
+		}
+		if(skeleton==true) {
+			typewriter("The Skeleton dealt 1 damage to you!");
+			currentHP-=1;
+			tempDefense=0;
+			checkBuffs();
+			skeleton();
+		}
+		if(aequalisSoul==true) {
+			typewriter("??? dealt 1 damage to you!");
+			currentHP-=1;
+			tempDefense=0;
+			aequalisSoul();
+		}
+	}else {
+	if(tempDefense>0) {
+		enemyDamage=enemyAttack-tempDefense;
+		//typewriter("enemyDamage (enemyAttack-tempDefense) = "+enemyDamage+"");
+		enemyDamage=enemyDamage-armorDefense;
+		//typewriter("enemyDamage (enemyDamage-armorDefense) = "+enemyDamage+"");
+		enemyRandom();
+		//typewriter("enemyDamage (random) = "+enemyDamage+"");
+		currentHP-=enemyDamage;
+		tempDefense=0;
+	}else {
+		if(ironDefense>=1) {
+			tempDefense=defense;
+			//typewriter("tempDefense = "+tempDefense+"");
+			tempDefense*=1.25;
+			//typewriter("tempDefense (*1.25) = "+tempDefense+"");
+			enemyDamage=enemyAttack-tempDefense;
+			//typewriter("enemyDamage (enemyAttack-tempDefense) = "+enemyDamage+"");
+			enemyDamage=enemyDamage-armorDefense;
+			//typewriter("enemyDamage (enemyDamage-armorDefense) = "+enemyDamage+"");
+			enemyRandom();
+			//typewriter("enemyDamage (random) = "+enemyDamage+"");
+			currentHP-=enemyDamage;
+			tempDefense=0;
+		}else {
+			enemyDamage=enemyAttack-defense;
+			//typewriter("enemyDamage (enemyAttack-defense) = "+enemyDamage+"");
+			enemyDamage=enemyDamage-armorDefense;
+			//typewriter("enemyDamage (enemyDamage-armorDefense) = "+enemyDamage+"");
+			enemyRandom();
+			//typewriter("enemyDamage (random) = "+enemyDamage+"");
+			currentHP-=enemyDamage;
+		}
+	}
+		if(kingGuard==true) {
+			typewriter("The King's Guard Knight dealt "+enemyDamage+" damage to you!");
+			checkBuffs();
+			kingGuard();
+		}
+		if(heavySoldier>=1) {
+			typewriter("The Heavy Knight dealt "+enemyDamage+" damage to you!");
+			checkBuffs();
+			heavySoldier();
+	    }
+		if(arkhein==true) {
+		    typewriter("Arkhein dealt "+enemyDamage+" damage to you!");
+		    checkBuffs();
+		    arkhein();
+		}
+		if(goblin==true) {
+			typewriter("The Goblin dealt "+enemyDamage+" damage to you!");
+			checkBuffs();
+			goblin();
+		}
+		if(bandit==true) {
+			typewriter("The Bandit dealt "+enemyDamage+" damage to you!");
+			checkBuffs();
+			bandit();
+		}
+		if(wolf==true) {
+			typewriter("The Wolf dealt "+enemyDamage+" damage to you!");
+			checkBuffs();
+			wolf();
+		}
+		if(goblinBrute==true) {
+			typewriter("The Goblin Brute dealt "+enemyDamage+" damage to you!");
+			checkBuffs();
+			goblinBrute();
+		}
+		if(zackery==true) {
+			typewriter("Zackery dealt "+enemyDamage+" damage to you!");
+			checkBuffs();
+			zackery();
+		}
+		if(skeleton==true) {
+			typewriter("The Skeleton dealt "+enemyDamage+" damage to you!");
+			checkBuffs();
+			skeleton();
+		}
+		if(aequalisSoul==true) {
+			typewriter("??? dealt "+enemyDamage+" damage to you!");
+			checkBuffs();
+			aequalisSoul();
+		}
+	}
+}
+}
+//enemy add ^
+public static void beforeEnemyAttack() {
+	if(fire>=1) {
+		damage=enemyMaxHP/20;
+		enemyHP-=damage;
+		typewriter("The enemy took "+damage+" Fire damage!");
+	}
+	if(manaRegen>=1) {
+		currentMana+=2;
+		if(currentMana>=maxMana) {
+			currentMana=maxMana;
+			typewriter("Your Mana was maxed out!");
+		}
+		typewriter("You regened 2 Mana!");
+	}
+	ultimate+=3;
+	if(ultimate>100) {
+		ultimate=100;
+	}
+	if(arkheinPhase2==true) {
+    	typewriter("The instructor gallops on his horse and swings his blade at Arkhein!");
+		enemyHP-=10;
+		typewriter("The instructor dealt 10 damage!");
+	}
+	if(enemyAttackRarity==0) {
+		enemyBasicAttack();
+	}
+	if(enemyAttackRarity==1) {
+		int randomNumber = rand.nextInt(5);
+		if(randomNumber<4) {
+			enemyBasicAttack();
+		}
+		if(randomNumber==4) {
+			enemySpecialAttack();
+		}
+	}
+	
+}
+public static void enemySpecialAttack() {
+	if(enemyHP<=0) {
+		if(aequalisSoul==true) {
+		aequalisSoul();
+		}
+	}else {
+	if(aequalisSoul==true) {
+		typewriter("??? summons multiple ghostly spears and aims them toward you!");
+	}
+	if(tempDefense+armorDefense>=enemyAttack) {
+		if(aequalisSoul==true) {
+			typewriter("??? dealt 1 damage to you!");
+			currentHP-=1;
+			tempDefense=0;
+			aequalisSoul();
+		}
+	}else {
+	if(tempDefense>0) {
+		enemyTempAttack=enemyAttack;
+		enemyTempAttack*=1.35;
+		enemyDamage=enemyTempAttack-tempDefense;
+		//typewriter("enemyDamage (enemyAttack-tempDefense) = "+enemyDamage+"");
+		enemyDamage=enemyDamage-armorDefense;
+		//typewriter("enemyDamage (enemyDamage-armorDefense) = "+enemyDamage+"");
+		enemyRandom();
+		//typewriter("enemyDamage (random) = "+enemyDamage+"");
+		currentHP-=enemyDamage;
+		tempDefense=0;
+	}else {
+		if(ironDefense>=1) {
+			tempDefense=defense;
+			//typewriter("tempDefense = "+tempDefense+"");
+			tempDefense*=1.25;
+			//typewriter("tempDefense (*1.25) = "+tempDefense+"");
+			enemyTempAttack=enemyAttack;
+			enemyTempAttack*=1.35;
+			enemyDamage=enemyTempAttack-tempDefense;
+			//typewriter("enemyDamage (enemyAttack-tempDefense) = "+enemyDamage+"");
+			enemyDamage=enemyDamage-armorDefense;
+			//typewriter("enemyDamage (enemyDamage-armorDefense) = "+enemyDamage+"");
+			enemyRandom();
+			//typewriter("enemyDamage (random) = "+enemyDamage+"");
+			currentHP-=enemyDamage;
+			tempDefense=0;
+		}else {
+			enemyTempAttack=enemyAttack;
+			enemyTempAttack*=1.35;
+			enemyDamage=enemyTempAttack-defense;
+			//typewriter("enemyDamage (enemyAttack-defense) = "+enemyDamage+"");
+			enemyDamage=enemyDamage-armorDefense;
+			//typewriter("enemyDamage (enemyDamage-armorDefense) = "+enemyDamage+"");
+			enemyRandom();
+			//typewriter("enemyDamage (random) = "+enemyDamage+"");
+			currentHP-=enemyDamage;
+		}
+	}
+		if(aequalisSoul==true) {
+			typewriter("??? dealt "+enemyDamage+" damage to you!");
+			checkBuffs();
+			aequalisSoul();
+		}
+	}
+}
+}
+//enemy add ^
+public static void noMana() {
+	typewriter("You don't have enough mana for that!");
+	if(kingGuard==true) {
+		kingGuard();
+	}
+	if(heavySoldier>=1) {
+		heavySoldier();
+	}
+	if(arkhein==true) {
+		arkhein();
+	}
+	if(goblin==true) {
+		goblin();
+	}
+	if(bandit==true) {
+		bandit();
+	}
+	if(wolf==true) {
+		wolf();
+	}
+	if(goblinBrute==true) {
+		goblinBrute();
+	}
+	if(zackery==true) {
+		zackery();
+	}
+	if(skeleton==true) {
+		skeleton();
+	}
+	if(aequalisSoul==true) {
+		aequalisSoul();
+	}
+}
+//enemy add ^
+public static void enemyFormat() {
+	if(boss==true) {
+		System.out.println("Enemy HP: ???/??? (but actually its "+enemyHP+"/"+enemyMaxHP+")");
+	}else {
+		System.out.println("Enemy HP: "+enemyHP+"/"+enemyMaxHP+"");
+	}
+	if(fire>=1) {
+		System.out.println("Fire: "+fire+"");
+	}
+	System.out.println("");
+	System.out.println("HP: "+currentHP+"/"+maxHP+"");
+	System.out.println("Mana: "+currentMana+"/"+maxMana+"");
+	if(rage>=1) {
+		System.out.println("Rage: "+rage+"");
+	}
+	if(ironDefense>=1) {
+		System.out.println("Iron Defense: "+ironDefense+"");
+	}
+	if(manaRegen>=1) {
+		System.out.println("Mana Regen: "+manaRegen+"");
+	}
+	if(ultimateUnlocked==true) {
+		System.out.println("Ultimate: "+ultimate+"%");
+	}
+	if(ultimateUnlocked==false) {
+		System.out.println("What will you do? (Type 'A' for Attack, 'S' for Skill, 'D' for Defend, or 'I' for Item)");
+	}else {
+		System.out.println("What will you do? (Type 'A' for Attack, 'S' for Skill, 'D' for Defend, 'I' for Item, or 'U' for Ultimate)");
+	}
+	String answer = scan.nextLine();
+    if(answer.equalsIgnoreCase("a")) {
+    	attack();
+    }
+    if(answer.equalsIgnoreCase("d")) {
+    	defend();
+    }
+    if(answer.equalsIgnoreCase("i")) {
+    	item();
+    }
+    if(answer.equalsIgnoreCase("s")) {
+    	if(knight==true) {
+    		skillKnight();
+    	}else {
+    	if(archer==true) {
+    		skillArcher();
+    	}else {
+    	if(heavyKnight==true) {
+    		skillHeavyKnight();
+    	}else {
+    	if(mage==true) {
+    		skillMage();
+    	}
+       }
+      }
+     }
+    }
+    if(answer.equalsIgnoreCase("u")) {
+    	if(ultimateUnlocked==false) {
+    		enemyFormat();
+    	}else {
+    		if(ultimate<100) {
+    			typewriter("Your ultimate gauge isn't full!");
+    			typewriter("");
+    			enemyFormat();
+    		}else {
+    			ultimate();
+    		}
+    	}
+    }else {
+	enemyFormat();
+}
+}
+public static void ultimate() {
+	if(knight==true) {
+		typewriter("Ultimate: Crescent Moon Cleave");
+		typewriter("Charge up a powerful attack, then slash in a crescent moon shape. Deals high damage and gain Iron Defense for 2 turns.");
+	}
+	if(archer==true) {
+		typewriter("Ultimate: Befuddling Barrage");
+		typewriter("Cover the area with a giant smokescreen, then fire a barrage of arrows at the enemy. Deals massive damage and avoids damage this turn.");
+	}
+	if(heavyKnight==true) {
+		typewriter("Ultimate: Swirling Sky Slash");
+		typewriter("Spin up to the sky and cleave the air, creating a giant sword beam. Deals massive damage.");
+	}
+	if(mage==true) {
+		typewriter("Ultimate: Meteor");
+		typewriter("Summon a giant meteor to eviscerate the enemy. Deals massive damage.");
+	}
+	typewriter("(Type 'U' for Ultimate or 'B' for Back)");
+	String answer = scan.nextLine();
+	if(answer.equalsIgnoreCase("u")) {
+		if(knight==true) {
+			ultimate=0;
+			tempAttack=attack;
+	    	tempAttack*=2.5;
+	    	typewriter("You charge up a powerful attack and then release, slashing in a crescent moon shape!");
+	    	damage=tempAttack-enemyDefense;
+	    	damage=damage+weaponAttack;
+	    	playerRandom();
+	    	enemyHP-=damage;
+	    	typewriter("You dealt "+damage+" damage!");
+	    	typewriter("You gain Iron Defense!");
+	    	ironDefense+=3;
+	    	if(ironDefense>5) {
+	    		ironDefense=5;
+	    	}
+	    	beforeEnemyAttack();
+		}
+		if(archer==true) {
+			ultimate=0;
+			tempAttack=attack;
+	    	tempAttack*=2.75;
+	    	typewriter("You throw a smokebomb to cover the area in a giant smokescreen, then fire a barrage of arrows!");
+	    	damage=tempAttack-enemyDefense;
+	    	damage=damage+weaponAttack;
+	    	playerRandom();
+	    	enemyHP-=damage;
+	    	typewriter("You dealt "+damage+" damage!");
+	    	typewriter("Because of the smoke bomb, the enemy missed!");
+	    	checkBuffs();
+	    	if(kingGuard==true) {
+	    		kingGuard();
+	    	}
+	    	if(heavySoldier>=1) {
+	    		heavySoldier();
+	    	}
+	    	if(arkhein==true) {
+	    		arkhein();
+	    	}
+	    	if(goblin==true) {
+	    		goblin();
+	    	}
+	    	if(bandit==true) {
+	    		bandit();
+	    	}
+	    	if(wolf==true) {
+	    		wolf();
+	    	}
+	    	if(goblinBrute==true) {
+	    		goblinBrute();
+	    	}
+	    	if(zackery==true) {
+	    		zackery();
+	    	}
+	    	if(skeleton==true) {
+	    		skeleton();
+	    	}
+	    	if(aequalisSoul==true) {
+				aequalisSoul();
+			}
+		}
+		if(heavyKnight==true) {
+			ultimate=0;
+			tempAttack=attack;
+	    	tempAttack*=3;
+	    	if(rage>=1) {
+        		tempAttack*=1.25;
+        	}
+	    	typewriter("You spin up to the sky and cleave the air, creating a giant sword beam!");
+	    	damage=tempAttack-enemyDefense;
+	    	damage=damage+weaponAttack;
+	    	playerRandom();
+	    	enemyHP-=damage;
+	    	typewriter("You dealt "+damage+" damage!");
+	    	beforeEnemyAttack();
+		}
+		if(mage==true) {
+			ultimate=0;
+			tempMagicAttack=magicAttack;
+	    	tempMagicAttack*=3.75;
+	    	typewriter("You summon a giant meteor!");
+	    	damage=tempMagicAttack-enemyDefense;
+	    	damage=damage+weaponMagicAttack;
+	    	playerRandom();
+	    	enemyHP-=damage;
+	    	typewriter("You dealt "+damage+" damage!");
+	    	beforeEnemyAttack();
+		}
+	}
+	if(answer.equalsIgnoreCase("b")) {
+		enemyFormat();
+	}else {
+		ultimate();
+	}
+}
+//enemy add ^
+public static void prepare() {
+	currentMana=maxMana;
+	currentHP=maxHP;
+}
+public static void playerRandom() {
+	int randomNumber = rand.nextInt(10);
+	if(randomNumber==0) {
+		damage-=2;
+	}
+	if(randomNumber==1) {
+		damage-=1;
+	}
+	if(randomNumber==2) {
+		damage-=1;
+	}
+	if(randomNumber==6) {
+		damage+=1;
+	}
+	if(randomNumber==7) {
+		damage+=1;
+	}
+	if(randomNumber==8) {
+		damage+=2;
+	}
+	if(randomNumber==9) {
+		typewriter("Critical Hit!");
+		damage*=1.25;
+	}
+}
+public static void enemyRandom() {
+	int randomNumber = rand.nextInt(9);
+	if(randomNumber==0) {
+		enemyDamage-=2;
+		if(enemyDamage<=0) {
+			enemyDamage=1;
+		}
+	}
+	if(randomNumber==1) {
+		enemyDamage-=1;
+		if(enemyDamage<=0) {
+			enemyDamage=1;
+		}
+	}
+	if(randomNumber==2) {
+		enemyDamage-=1;
+		if(enemyDamage<=0) {
+			enemyDamage=1;
+		}
+	}
+	if(randomNumber==6) {
+		enemyDamage+=1;
+	}
+	if(randomNumber==7) {
+		enemyDamage+=1;
+	}
+	if(randomNumber==8) {
+		enemyDamage+=2;
+	}
+}
+public static void checkBuffs() {
+	if(ironDefense>=1) {
+		ironDefense-=1;
+	}
+	if(rage>=1) {
+		rage-=1;
+	}
+	if(fire>=1) {
+		fire-=1;
+	}
+	if(manaRegen>=1) {
+		manaRegen-=1;
+	}
+}
+public static void setBuffs() {
+	ironDefense=0;
+	rage=0;
+	fire=0;
+	manaRegen=0;
+}
+public static void checkLevel() {
+	if(level==3) {
+		if(exp>=100) {
+			typewriter("You leveled up! (Level 4)");
+			typewriter("Your stats have increased!");
+			attack+=2;
+			magicAttack+=2;
+			maxHP+=10;
+			maxMana+=1;
+			typewriter("Attack: +2 ("+attack+")");
+			typewriter("Magic Attack: +2 ("+magicAttack+")");
+			typewriter("Max HP: +10 ("+maxHP+")");
+			typewriter("Mana: +1 ("+maxMana+")");
+			allocateStats();
+			exp-=100;
+			expToLevel=200;
+			level=4;
+			prepare();
+		}
+	}
+	if(level==4) {
+		if(exp>=200) {
+			typewriter("You leveled up! (Level 5)");
+			typewriter("Your stats have increased!");
+			attack+=3;
+			magicAttack+=3;
+			defense+=1;
+			maxHP+=10;
+			maxMana+=2;
+			typewriter("Attack: +3 ("+attack+")");
+			typewriter("Magic Attack: +3 ("+magicAttack+")");
+			typewriter("Defense: +1 ("+defense+")");
+			typewriter("Max HP: +10 ("+maxHP+")");
+			typewriter("Mana: +2 ("+maxMana+")");
+			allocateStats();
+			exp-=200;
+			expToLevel=350;
+			level=5;
+			prepare();
+			rank=1;
+			typewriter("You've ranked up! (Rank: Rookie -> Novice)");
+			typewriter("Would you like to see the Rank Up Tutorial? (Type 'Y' for Yes or 'N' for No)");
+			String answer = scan.nextLine();
+			if(answer.equalsIgnoreCase("y")) {
+				typewriter("Welcome to the Rank Up Tutorial! You'll learn everything you need to know about Rank Ups!");
+				typewriter("When you reach a certain level, you'll Rank Up! (Level 5 to reach Novice)");
+				typewriter("Ranking Up gives many different benefits.");
+				typewriter("For starters, it gives you a new skill to use in battle!");
+				typewriter("It also allows you to choose a passive skill as well!");
+				typewriter("The passive skill selection will look like this:");
+				System.out.println("Choose a passive skill!");
+				System.out.println("Passive Skills:");
+				System.out.println("");
+				System.out.println("(Novice) HP Up: Gain +5 Max HP per level.");
+				System.out.println("(Novice) Mana Up: Gain +1 Max Mana per level.");
+				System.out.println("(Novice) Quick Leveling: Gain 15% more EXP from battles.");
+				System.out.println("(Novice) Midas Touch: Gain 20% more Gold from battles.");
+				System.out.println("");
+				System.out.println("(Intermediate) Attack Up: Gain +1 Attack per level.");
+				System.out.println("(Intermediate) Magic Attack Up: Gain +1 Magic Attack per level.");
+				System.out.println("(Intermediate) Critical Hit Master: Critical Hits deal 1.5 damage instead of 1.25.");
+				System.out.println("");
+				System.out.println("(Skilled) Basic Attack Master: Basic Attacks deal 15% more damage.");
+				System.out.println("(Skilled) Iron Body: You take 15% less damage from attacks.");
+				System.out.println("");
+				System.out.println("(Master) Skill Master: Skills deal 15% more damage.");
+				System.out.println("(Master) Mana Conservationist: Skills use 20% less mana.");
+				System.out.println("What would you like to choose? (Type the first letter of each word to answer - Example: HP Up, type 'HU')");
+				typewriter("When selecting passive skills, you can only choose from passive skills from your rank or below ");
+				typewriter("For example, if you're the Intermediate rank, you can choose from Novice or Intermediate passive skills, but not anything above it like Skilled or Master passive skills.");
+				typewriter("As the name suggests, these skills will be passively applied whenever applicable.");
+				typewriter("Only one passive skill can be choosen per rank up and it is NOT changeable, so choose wisely!");
+				typewriter("And that's it for the Rank Up Tutorial!");
+				typewriter("");
+			}else {
+				typewriter("Okay then!");
+			}
+			typewriter("Next Rank: Intermediate");
+			typewriter("Level until next Rank: Level 10");
+			typewriter("");
+			levelToRankUp=10;
+			newSkill=true;
+			if(knight==true) {
+				typewriter("New Skill Unlocked!");
+				typewriter("Shield Bash (3 Mana): Deals medium damage and scales off defense.");
+			}
+			if(archer==true) {
+				typewriter("New Skill Unlocked!");
+				typewriter("Fire Arrow (3 Mana): Deals medium damage and inflicts Fire on the enemy. Lasts 3 turns.");
+			}
+			if(heavyKnight==true) {
+				typewriter("New Skill Unlocked!");
+				typewriter("Raging Fury (4 Mana): Deals high damage and scales off Rage.");
+			}
+			if(mage==true) {
+				typewriter("New Skill Unlocked!");
+				typewriter("Mana Regen (3 Mana): Regenerates small amounts of Mana every turn. Lasts 4 turns.");
+			}
+			typewriter("");
+			passiveSkill();
+		}
+	}
+	if(level==5) {
+		if(exp>=350) {
+			typewriter("You leveled up! (Level 6)");
+			typewriter("Your stats have increased!");
+			attack+=2;
+			magicAttack+=2;
+			maxHP+=5;
+			typewriter("Attack: +2 ("+attack+")");
+			typewriter("Magic Attack: +2 ("+magicAttack+")");
+			typewriter("Max HP: +5 ("+maxHP+")");
+			if(hpUp==true) {
+				typewriter("");
+				typewriter("Max HP: +3 ("+maxHP+")");
+			}
+			if(manaUp==true) {
+				typewriter("");
+				typewriter("Max Mana: +1 ("+maxMana+")");
+			}
+			allocateStats();
+			exp-=350;
+			expToLevel=500;
+			level=6;
+			prepare();
+		}
+	}
+}
+public static void passiveSkill() {
+	typewriter("Choose a passive skill!");
+	typewriter("Passive Skills:");
+	typewriter("");
+	typewriter("(Novice) HP Up: Gain +5 Max HP per level.");
+	typewriter("(Novice) Mana Up: Gain +1 Max Mana per level.");
+	typewriter("(Novice) Quick Leveling: Gain 15% more EXP from battles.");
+	typewriter("(Novice) Midas Touch: Gain 20% more Gold from battles.");
+	typewriter("");
+	typewriter("(Intermediate) Attack Up: Gain +1 Attack per level.");
+	typewriter("(Intermediate) Magic Attack Up: Gain +1 Magic Attack per level.");
+	typewriter("(Intermediate) Critical Hit Master: Critical Hits deal 1.5 damage instead of 1.25.");
+	typewriter("");
+	typewriter("(Skilled) Basic Attack Master: Basic Attacks deal 15% more damage.");
+	typewriter("(Skilled) Iron Body: You take 15% less damage from attacks.");
+	typewriter("");
+	typewriter("(Master) Skill Master: Skills deal 15% more damage.");
+	typewriter("(Master) Mana Conservationist: Skills use 20% less mana.");
+	typewriter("What would you like to choose? (Type the first letter of each word to answer - Example: HP Up, type 'HU')");
+	String answer= scan.nextLine();
+	if(answer.equalsIgnoreCase("hu")) {
+		hpUp=true;
+		typewriter("HP Up was chosen!");
+	}else {
+		if(answer.equalsIgnoreCase("mu")) {
+			manaUp=true;
+			typewriter("Mana Up was chosen!");
+		}else {
+			if(answer.equalsIgnoreCase("ql")) {
+				quickLeveling=true;
+				typewriter("Quick Leveling was chosen!");
+			}else {
+				if(answer.equalsIgnoreCase("mt")) {
+					midasTouch=true;
+					typewriter("Midas Touch was chosen!");
+				}else {
+					passiveSkill();
+				}
+			}
+		}
+	}
+}
+public static void passiveSkillCheck() {
+	if(quickLeveling==true) {
+		expValue*=1.15;
+	}
+	if(midasTouch==true) {
+		goldValue*=1.2;
+	}
+}
+public static void allocateStats() {
+	typewriter("");
+	typewriter("Where would you like to allocate extra stats? (Type 'A' for Attack, 'MA' for Magic Attack, 'H' for Health, or 'M' for Mana)");
+	String answer = scan.nextLine();
+	if(answer.equalsIgnoreCase("a")) {
+		if(knight==true) {
+			typewriter("Your attack increased by 1!");
+			attack+=1;
+			typewriter("Attack: +1 ("+attack+")");
+		}else {
+			typewriter("Your attack increased by 2!");
+			attack+=2;
+			typewriter("Attack: +2 ("+attack+")");
+		}
+		typewriter("");
+	}else {
+		if(answer.equalsIgnoreCase("ma")) {
+			typewriter("Your magic attack increased by 2!");
+			magicAttack+=2;
+			typewriter("Magic Attack: +2 ("+magicAttack+")");
+			typewriter("");
+		}else {
+			if(answer.equalsIgnoreCase("hp")) {
+				typewriter("Your HP increased by 5!");
+				maxHP+=5;
+				typewriter("Max HP: +5 ("+maxHP+")");
+				typewriter("");
+			}else {
+				if(answer.equalsIgnoreCase("m")) {
+					typewriter("Your Mana increased by 2!");
+					maxMana+=2;
+					typewriter("Max Mana: +2 ("+maxMana+")");
+					typewriter("");
+				}else {
+						allocateStats();
+					}
+				}
+			}
+		}
+}
+public static void playerDefeated() {
+	setBuffs();
+	typewriter("");
+	typewriter("You have been defeated!");
+	typewriter(".     .     .");
+	typewriter("A mysterious voice calls to you.");
+	typewriter("'"+Pname+"... you can't give up. This world needs you!'");
+	typewriter("(Type anything to continue)");
+	scan.nextLine();
+	typewriter("");
+		if(kingGuard==true) {
+			skip();
+		}
+		if(heavySoldier==1) {
+			heavySoldierSkip();
+		}
+		if(heavySoldier==2) {
+			heavySoldier2Skip();
+		}
+		if(arkhein==true) {
+			arkheinSkip();
+		}
+		if(goblin==true) {
+			prepare();
+			goblin=false;
+			bandit=false;
+			wolf=false;
+			goblinBrute=false;
+			overworld();
+		}
+		if(bandit==true) {
+			prepare();
+			goblin=false;
+			bandit=false;
+			wolf=false;
+			goblinBrute=false;
+			overworld();
+		}
+		if(wolf==true) {
+			prepare();
+			goblin=false;
+			bandit=false;
+			wolf=false;
+			goblinBrute=false;
+			overworld();
+		}
+		if(goblinBrute==true) {
+			prepare();
+			goblin=false;
+			bandit=false;
+			wolf=false;
+			goblinBrute=false;
+			overworld();
+		}
+		if(zackery==true) {
+			prepare();
+			zackery=false;
+			zackeryText=false;
+			ultimateUnlocked=false;
+			overworld();
+		}
+		if(skeleton==true) {
+			prepare();
+			skeleton=false;
+			phoenixPrison();
+		}
+		if(aequalisSoul==true) {
+			prepare();
+			aequalisSoul=false;
+			aequalisSoulPhase2=false;
+			a_attack=0;
+			a_defend=0;
+			a_item=0;
+			a_skill=0;
+			a_buff=0;
+			a_debuff=0;
+			a_total=0;
+			a_adaptation=0;
+			phoenixPrison();
+		}
+}
+//enemy add ^
+public static void shop() {
+	System.out.println("");
+	System.out.println("'What would you like to buy?'");
+	System.out.println("Health Potion: Your standard health potion. Heals 30 HP - 10g");
+	System.out.println("Sandwich: Ham and cheese sandwich. Yum! Heals 15 HP - 5g");
+	System.out.println("Mana Potion: Your standard mana potion. Restores 6 Mana - 10g");
+	System.out.println("Gold: "+gold+"");
+	System.out.println("(Type 'HP' for Health Potion, 'S' for Sandwich, 'MP' for Mana Potion, 'T' to Talk, or 'L' to Leave)");
+	String answer= scan.nextLine();
+	if(answer.equalsIgnoreCase("hp")) {
+		if(gold<10) {
+			System.out.println("");
+			typewriter("You don't have enough gold for that!");
+		}else {
+			healthPotion+=1;
+			gold-=10;
+			System.out.println("");
+			typewriter("You bought a health potion!");
+			typewriter("'Thank you for your purchase!'");
+			shop();
+		}
+	}
+	if(answer.equalsIgnoreCase("s")) {
+		if(gold<5) {
+			System.out.println("");
+			typewriter("You don't have enough gold for that!");
+		}else {
+			sandwich+=1;
+			gold-=5;
+			System.out.println("");
+			typewriter("You bought a sandwich!");
+			typewriter("'Thank you for your purchase!'");
+			shop();
+		}
+	}
+	if(answer.equalsIgnoreCase("mp")) {
+		if(gold<10) {
+			System.out.println("");
+			typewriter("You don't have enough gold for that!");
+		}else {
+			manaPotion+=1;
+			gold-=10;
+			System.out.println("");
+			typewriter("You bought a mana potion!");
+			typewriter("'Thank you for your purchase!'");
+			shop();
+		}
+	}
+	if(answer.equalsIgnoreCase("t")) {
+		typewriter("'Oh, you want to chat? Okay!'");
+		typewriter("'Living conditions for the peasants have been rough lately. Minimal pay from labor, harsh working conditions...'");
+		typewriter("'It's like they don't care for people unless they're military! What more do we need to expand?! We already agreed to keep our side of the land, why would we need more!'");
+		typewriter("There is a moment of silence. You can't help but feel like fighting for this kingdom isn't the best choice, but it's not like you can't, either.");
+		typewriter("'Sorry, I got a bit ahead of myself there. You should stock up a bit; with these wars going on, I can't imagine it being very safe anymore.'");
+		shop();
+	}
+	if(answer.equalsIgnoreCase("l")) {
+		typewriter("You thank the cleric for their services and leave the shop.");
+		typewriter("You make your way back to the castle, unsure if you're prepared or not for the battles ahead...");
+		leaveShop();
+	}else {
+		shop();
+	}
+}
+public static void skillKnight() {
+	System.out.println("Your skills include:");
+	System.out.println("Iron Defense (3 Mana)- Raise your defense by 1.25 times for 4 turns.");
+	System.out.println("Arc Slash (2 Mana)- Deals medium damage.");
+	if(newSkill==true) {
+		System.out.println("Shield Bash (3 Mana): Deals medium damage and scales off defense.");
+	}
+	System.out.println("Which shall you choose? (Type the first letter of each word to use the skill - Example: Iron Defense, type 'ID'. You can also type 'B' for Back)");
+	String answer = scan.nextLine();
+    if(answer.equalsIgnoreCase("id")) {
+    	if(currentMana<3) {
+    		noMana();
+    	}else {
+    		if(aequalisSoul==true) {
+    			a_skill+=1;
+    			a_buff+=3;
+    		}
+    		currentMana-=3;
+    		if(a_adaptation==5) {
+    			typewriter("??? interrupted you while you were using your skill, reducing the effect of it!");
+    			ironDefense=3;
+    		}else {
+    			ironDefense=4;
+    		}
+        	typewriter("You slam your shield down. You gain Iron Defense!");
+        	beforeEnemyAttack();
+    	}
+    }
+    if(answer.equalsIgnoreCase("as")) {
+    	if(currentMana<2) {
+    		noMana();
+        }else {
+        if(aequalisSoul==true) {
+    		a_skill+=1;
+    	}
+    	currentMana-=2;
+    	typewriter("You swing your sword in an arc!");
+    	tempAttack=attack+weaponAttack;
+    	tempAttack*=1.5;
+    	damage=tempAttack-enemyDefense;
+    	playerRandom();
+    	enemyHP-=damage;
+    	ultimate+=damage/15;
+    	typewriter("You dealt "+damage+" damage!");
+    	}
+    	beforeEnemyAttack();
+    }
+    if(answer.equalsIgnoreCase("sb")) {
+    	if(newSkill==false) {
+    		skillKnight();
+    	}else {
+    		if(currentMana<3) {
+        		noMana();
+            }else {
+            if(aequalisSoul==true) {
+        		a_skill+=1;
+        	}
+        	currentMana-=3;
+        	typewriter("You bash the enemy with your shield!");
+        	tempAttack=attack+=weaponAttack;
+        	if(ironDefense>=1) {
+        		tempDefense=defense;
+        		tempDefense*=1.25;
+        		tempAttack=tempAttack+=tempDefense;
+        		tempDefense=0;
+        	}else {
+        		tempAttack=tempAttack+=defense;
+        	}
+        	tempAttack*=1.4;
+        	damage=tempAttack-enemyDefense;
+        	playerRandom();
+        	enemyHP-=damage;
+        	ultimate+=damage/15;
+        	typewriter("You dealt "+damage+" damage!");
+        	}
+    		beforeEnemyAttack();
+    	}
+    }
+    	if(answer.equalsIgnoreCase("b")) {
+    		enemyFormat();
+    	}else {
+    		skillKnight();
+    	}
+}
+public static void skillArcher() {
+	System.out.println("Your skills include:");
+	System.out.println("Smoke Bomb (4 Mana): Dodge one attack and deal damage");
+	System.out.println("Sharpshooter (3 Mana): Deal medium damage");
+	if(newSkill==true) {
+		typewriter("Fire Arrow (3 Mana): Deals medium damage and inflicts Fire on the enemy. Lasts 3 turns.");
+	}
+	System.out.println("Which shall you choose? (Type the first letter of each word to use the skill - Example: Smoke Bomb, type 'SB'. You can also type 'B' for Back)");
+	String answer = scan.nextLine();
+    if(answer.equalsIgnoreCase("sb")) {
+    	if(currentMana<4) {
+    		noMana();
+    	}else {
+    	if(aequalisSoul==true) {
+    		a_skill+=1;
+    		a_defend+=2;
+    	}
+    	currentMana-=4;
+    	typewriter("You pull out a smoke bomb and throw it on the ground, concealing you!");
+    	typewriter("You draw your bow and shoot!");
+    	damage=attack+weaponAttack-enemyDefense;
+    	playerRandom();
+    	enemyHP-=damage;
+    	ultimate+=damage/15;
+    	typewriter("You dealt "+damage+" damage!");
+    	if(a_adaptation==2) {
+    		enemyDamage=enemyAttack-defense;
+			enemyDamage=enemyDamage-armorDefense;
+			enemyRandom();
+			enemyDamage*=0.5;
+			currentHP-=enemyDamage;
+			typewriter("However, ??? sensed you and barely slashed you with the tip of the spear, dealing "+enemyDamage+" damage to you!");
+    	}else {
+    		typewriter("Because of the smoke bomb, the enemy missed!");
+    	}
+    	if(fire>=1) {
+    		damage=enemyMaxHP/20;
+    		enemyHP-=damage;
+    		typewriter("The enemy took "+damage+" Fire damage!");
+    	}
+    	checkBuffs();
+    	if(kingGuard==true) {
+    		kingGuard();
+    	}
+    	if(heavySoldier>=1) {
+    		heavySoldier();
+    	}
+    	if(arkhein==true) {
+    		arkhein();
+    	}
+    	if(goblin==true) {
+    		goblin();
+    	}
+    	if(bandit==true) {
+    		bandit();
+    	}
+    	if(wolf==true) {
+    		wolf();
+    	}
+    	if(goblinBrute==true) {
+    		goblinBrute();
+    	}
+    	if(zackery==true) {
+    		zackery();
+    	}
+    	if(skeleton==true) {
+			skeleton();
+		}
+    	if(aequalisSoul==true) {
+			aequalisSoul();
+		}
+       }
+    }
+    if(answer.equalsIgnoreCase("s")) {
+    	if(currentMana<3) {
+    		noMana();
+    	}else {
+    	if(aequalisSoul==true) {
+    		a_skill+=1;
+    	}
+    	currentMana-=3;
+    	typewriter("You focus and draw your bow carefully, aiming for the head, then fire!");
+    	tempAttack=attack+weaponAttack;
+    	tempAttack*=1.5;
+    	damage=tempAttack-enemyDefense;
+    	playerRandom();
+    	enemyHP-=damage;
+    	ultimate+=damage/15;
+    	typewriter("You dealt "+damage+" damage!");
+    	beforeEnemyAttack();
+      }
+    }
+    if(answer.equalsIgnoreCase("fa")) {
+    	if(newSkill==false) {
+    		skillArcher();
+    	}else {
+    		if(currentMana<3) {
+        		noMana();
+            }else {
+            if(aequalisSoul==true) {
+        		a_skill+=1;
+        		a_debuff+=2;
+        	}
+        	currentMana-=3;
+        	typewriter("You light your arrow on fire and then shoot!");
+        	tempAttack=attack+weaponAttack;
+        	tempAttack*=1.25;
+        	damage=tempAttack-enemyDefense;
+        	playerRandom();
+        	enemyHP-=damage;
+        	ultimate+=damage/15;
+        	typewriter("You dealt "+damage+" damage!");
+        	if(a_adaptation==6) {
+        		typewriter("??? partially shook off the fire!");
+        		fire=2;
+        	}else {
+        		fire=3;
+        	}
+        	typewriter("The enemy got inflicted with Fire!");
+        	}
+    		beforeEnemyAttack();
+    	}
+    }
+    	if(answer.equalsIgnoreCase("b")) {
+    		enemyFormat();
+    	}else {
+    		skillArcher();
+    	}
+}
+//enemy add ^
+//enemy add ^
+public static void skillHeavyKnight() {
+	System.out.println("Your skills include:");
+	System.out.println("Rage (3 Mana): Raise your attack by 1.25 times for 3 turns.");
+	System.out.println("Spin Slash (3 Mana): Deals medium damage");
+	if(newSkill==true) {
+		System.out.println("Raging Fury (4 Mana): Deals high damage and scales off Rage.");
+	}
+	System.out.println("Which shall you choose? (Type the first letter of each word to use the skill - Example: Spin Slash, type 'SS'. You can also type 'B' for Back)");
+	String answer = scan.nextLine();
+    if(answer.equalsIgnoreCase("r")) {
+    	if(currentMana<3) {
+    		noMana();
+    	}else {
+    		if(aequalisSoul==true) {
+    			a_skill+=1;
+    			a_buff+=3;
+    		}
+    		currentMana-=3;
+        	rage=4;
+        	typewriter("You shout and are filled with anger. You gain Rage!");
+        	beforeEnemyAttack();
+    }
+    }
+    if(answer.equalsIgnoreCase("ss")) {
+    	if(currentMana<3) {
+    		noMana();
+    	}else {
+    		if(aequalisSoul==true) {
+    			a_skill+=1;
+    		}
+    		currentMana-=3;
+    		typewriter("You put the greatsword on your shoulder and start spinning!");
+    		tempAttack=attack+weaponAttack;
+        	tempAttack*=1.4;
+        	if(rage>=1) {
+        		tempAttack*=1.25;
+        	}
+        	damage=tempAttack-enemyDefense;
+        	playerRandom();
+        	enemyHP-=damage;
+        	ultimate+=damage/15;
+        	typewriter("You dealt "+damage+" damage!");
+        	}
+    		beforeEnemyAttack();
+        	}
+    if(answer.equalsIgnoreCase("rf")) {
+    	if(newSkill==false) {
+    		skillHeavyKnight();
+    	}else {
+    		if(currentMana<4) {
+        		noMana();
+            }else {
+            if(aequalisSoul==true) {
+        		a_skill+=1;
+        	}
+        	currentMana-=4;
+        	typewriter("You roar with anger and charge at the enemy!");
+        	tempAttack=attack+weaponAttack;
+        	if(rage==0) {
+        		tempAttack*=1.4;
+        	}
+        	if(rage==1) {
+        		tempAttack*=1.35;
+        	}
+        	if(rage==2) {
+        		tempAttack*=1.65;
+        	}
+        	if(rage==3) {
+        		tempAttack*=1.8;
+        	}
+        	if(rage>=1) {
+        		tempAttack*=1.25;
+        	}
+        	damage=tempAttack-enemyDefense;
+        	playerRandom();
+        	enemyHP-=damage;
+        	ultimate+=damage/15;
+        	typewriter("You dealt "+damage+" damage!");
+        	}
+    		beforeEnemyAttack();
+    	}
+    }
+    if(answer.equalsIgnoreCase("b")) {
+		enemyFormat();
+	}else {
+		skillHeavyKnight();
+	}
+}
+public static void skillMage() {
+	System.out.println("Your skills include:");
+	System.out.println("Mana Ball (5 Mana): Deal high damage.");
+	System.out.println("Mana Shield (4 Mana): Reflect all incoming attacks.");
+	if(newSkill==true) {
+		typewriter("Mana Regen (3 Mana): Regenerates small amounts of Mana every turn. Lasts 4 turns.");
+	}
+	System.out.println("Which shall you choose? (Type the first letter of each word to use skill - Example: Mana Ball, type 'MB'. You can also type 'B' for Back)");
+	String answer = scan.nextLine();
+    if(answer.equalsIgnoreCase("mb")) {
+    	if(currentMana<5) {
+    		noMana();
+    	}else {
+    		if(aequalisSoul==true) {
+    			a_skill+=1;
+    		}
+    		currentMana-=5;
+    		tempMagicAttack=magicAttack;
+        	tempMagicAttack*=2;
+        	typewriter("You charge up a mana ball using your wand and it explodes on impact!");
+        	damage=tempMagicAttack-enemyDefense;
+        	damage=damage+weaponMagicAttack;
+        	playerRandom();
+        	enemyHP-=damage;
+        	ultimate+=damage/15;
+        	typewriter("You dealt "+damage+" damage!");
+        	beforeEnemyAttack();
+    	}
+    }
+    if(answer.equalsIgnoreCase("ms")) {
+    	if(currentMana<4) {
+    		noMana();
+    	}else {
+    		if(aequalisSoul==true) {
+    			a_skill+=1;
+    			a_defend+=2;
+    		}
+    		currentMana-=4;
+    		typewriter("You put up a mana shield!");
+    		if(kingGuard==true) {
+    			typewriter("The King's Guard Knight slashes at you!");
+        	}
+        	if(heavySoldier>=1) {
+        		typewriter("The Heavy Knight cleaves his greatsword at you!");
+       		}
+       		if(arkhein==true) {
+       			typewriter("Arkhein slices his double-edged blade at you!");
+       		}
+       		if(goblin==true) {
+       			typewriter("The Goblin swings its knife at you!");
+       		}
+       		if(bandit==true) {
+       			typewriter("The Bandit stabs their dagger at you!");
+       		}
+       		if(wolf==true) {
+       			typewriter("The Wolf swipes its claws at you!");
+       		}
+       		if(goblinBrute==true) {
+       			typewriter("The Goblin Brute slams its mace at you!");
+       		}
+       		if(zackery==true) {
+       			typewriter("Zackery's daggers shred your armor!");
+       		}
+       		if(skeleton==true) {
+    			typewriter("The Skeleton whacks its bones at you!");
+    		}
+       		if(aequalisSoul==true) {
+    			typewriter("??? thrusts its ghostly spear at you!");
+    		}
+   			}
+    		enemyDamage=enemyAttack-enemyDefense;
+    		if(a_adaptation==2) {
+        		enemyDamage*=1.25;
+    		}else {
+        		enemyDamage*=2;
+    		}
+    		enemyRandom();
+    		enemyHP-=enemyDamage;
+    		ultimate+=enemyDamage/15;
+    		typewriter("Due to the magic shield, the attack reflects back and deals "+enemyDamage+" damage!");
+    		if(a_adaptation==2) {
+    			enemyDamage=enemyAttack-defense;
+    			enemyDamage=enemyDamage-armorDefense;
+    			enemyRandom();
+    			enemyDamage*=0.5;
+    			currentHP-=enemyDamage;
+    			typewriter("However, ??? partially broke through the shield and dealt "+enemyDamage+" damage to you!");
+    		}
+    		if(manaRegen>=1) {
+    			currentMana+=2;
+    			if(currentMana>=maxMana) {
+    				currentMana=maxMana;
+    				typewriter("Your Mana was maxed out!");
+    			}
+    			typewriter("You regened 2 Mana!");
+    		}
+    		checkBuffs();
+    		if(kingGuard==true) {
+    			kingGuard();
+    		}
+    		if(heavySoldier>=1) {
+    			heavySoldier();
+    		}
+    		if(arkhein==true) {
+    			arkhein();
+    		}
+    		if(goblin==true) {
+        		goblin();
+        	}
+    		if(bandit==true) {
+        		bandit();
+        	}
+    		if(wolf==true) {
+        		wolf();
+        	}
+    		if(goblinBrute==true) {
+    			goblinBrute();
+    		}
+    		if(zackery==true) {
+    			zackery();
+    		}
+    		if(skeleton==true) {
+    			skeleton();
+    		}
+    		if(aequalisSoul==true) {
+    			aequalisSoul();
+    		}
+    	  }
+    if(answer.equalsIgnoreCase("mr")) {
+    	if(newSkill==false) {
+    		skillMage();
+    	}else {
+    		if(currentMana<3) {
+        		noMana();
+            }else {
+            if(aequalisSoul==true) {
+        		a_skill+=1;
+        		a_buff+=3;
+        	}
+        	currentMana-=3;
+        	typewriter("You swirl your wand around, creating a sparkling blue aura!");
+        	if(a_adaptation==5) {
+    			typewriter("??? interrupted you while you were casting your spell, reducing the effect of it!");
+    			manaRegen=3;
+    		}else {
+    			manaRegen=4;
+    		}
+        	typewriter("You gain Mana Regen!");
+        	beforeEnemyAttack();
+        	}
+    	}
+    }
+    if(answer.equalsIgnoreCase("b")) {
+		enemyFormat();
+	}else {
+		skillMage();
+	}
+}
+//enemy add ^
+//enemy add ^
+public static void kingGuard() {
+	if(enemyHP<=0) {
+		setBuffs();
+		typewriter("");
+		typewriter("You have defeated the King's Guard Knight!");
+		typewriter("You gained 15 EXP! (15/15)");
+		typewriter("You gained 0 Gold! Gold: "+gold+"");
+		level=2;
+		typewriter("You leveled up! (Level 2)");
+		typewriter("Your stats have increased!");
+		attack+=3;
+		magicAttack+=2;
+		defense+=1;
+		maxHP+=10;
+		maxMana+=2;
+		typewriter("Attack: +3 ("+attack+")");
+		typewriter("Magic Attack: +2 ("+magicAttack+")");
+		typewriter("Defense: +1 ("+defense+")");
+		typewriter("Max HP: +10 ("+maxHP+")");
+		typewriter("Mana: +2 ("+maxMana+")");
+		allocateStats();
+		kingGuard=false;
+		kingGuardDefeated();
+		}else {
+			if(currentHP<=0) {
+				playerDefeated();
+			}else {
+			System.out.println("");
+			System.out.println("The King's Guard Knight Approaches You!");
+			enemyFormat();
+			}
+		  }
+	}
+public static void kingGuardDefeated() {
+	typewriter("");
+	typewriter("The King's Guard Knight backs off and starts clapping.");
+	typewriter("'Well done! You are definitely a skilled warrior! You could maybe even join the King's Guard!'");
+	typewriter("You grin as the instructor walks over to you.");
+	typewriter("'It seems as if you're the most capable here!' the instructor said with a smile.");
+	typewriter("You look around. Everyone is still fighting their own knight.");
+	typewriter("'Valiant soldier, what is your name?'");
+	typewriter("You tell the instructor your name.");
+	typewriter("'Well "+Pname+", I figure that your training is done for the day. I'll keep my eye on you though,' the instructor said as he motioned for the knight to leave.");
+	typewriter("You nod and make your way back to the castle.");
+	typewriter("				One Day Later...");
+	typewriter("You decide that it might be a good idea to get some supplies before the war happens. You head your way to the nearby shop in your town.");
+	typewriter("Once you make it to the shop, the cleric greets you.");
+	typewriter("'Welcome! We have the finest wares in all of Contra! Take a look!");
+	shop();
+}
+public static void leaveShop() {
+	typewriter("				Several Days Later...");
+	typewriter("You wake up to soldiers at your sleeping quarters.");
+	typewriter("'Wake up! Today is the day we arm ourselves for the upcoming war!'");
+	typewriter("You get up grogily from your bed as the soldiers continue to shout.");
+	typewriter("Instantly, you pick up your weapon from the armory and are escorted out into the front of the castle.");
+	typewriter("There stood hundreds of soldiers prepared for battle. The enemy was only miles away over the horizon.");
+	typewriter("As more soldiers lined up, the enemy approached.");
+	typewriter("The instructor got on his horse and galloped to the front of the group.");
+	typewriter("'Soldiers! Today is the day that your training pays off! Fight with bravery, grit, and most importantly, glory!'");
+	typewriter("Everyone cheered. A few seconds later, the preparations were complete.");
+	typewriter("'Alright then, soldiers. It's time. I shall lead and direct you in battle, just as I taught.'");
+	typewriter("Everyone nodded their heads in approval.");
+	typewriter("The instructor nodded his head as well.");
+	typewriter("'CHAAAAAAAAAAARGE!!!!!'");
+	typewriter("Instantly, everyone started sprinting as fast as they could toward the enemy. The new, invigorated troops were determined to prove themselves.");
+	typewriter("As you approached the enemy, they halted and put up a magical barrier.");
+	typewriter("The instructor ordered everyone to halt as well.");
+	typewriter("'MAGES! TAKE DOWN THE BARRIER!' the instructor shouted.");
+	typewriter("Suddenly, more than a dozen mages ran to the front of the group.");
+	typewriter("They all charged up a giant mana ball and blasted it at the barrier.");
+	typewriter("The barrier instantly shattered.");
+	typewriter("'NOW! ATTAAAAAAACK!' the instructor ordered.");
+	typewriter("Everyone began moving again and the two sides clashed.");
+	typewriter("You defeated one enemy solider, then another.");
+	typewriter("Suddenly, a giant enemy soldier came up to you.");
+	typewriter("'HA! You seem to be fine in battle. Let me teach you a lesson!'");
+	typewriter("You angrily prepare your weapon.");
+	enemyAttack=20;
+	enemyDefense=7;
+	enemyMaxHP=150;
+	enemyHP=150;
+	heavySoldier=1;
+	prepare();
+	heavySoldier();
+}
+public static void heavySoldier() {
+	if(enemyHP<=0) {
+		setBuffs();
+		typewriter("");
+		typewriter("You have defeated the Heavy Knight!");
+		exp+=15;
+		typewriter("You gained 15 EXP! ("+exp+"/60)");
+		typewriter("You gained 0 Gold! Gold: "+gold+"");
+		typewriter("");
+		if(heavySoldier==1) {
+			heavySoldier=0;
+			heavySoldierDefeated();
+		}else {
+			heavySoldier=0;
+			heavySoldier2Defeated();
+		}
+	}else {
+	if(currentHP<=0) {
+		playerDefeated();
+		}else {
+			System.out.println("");
+			if(heavySoldier==1) {
+			System.out.println("The Heavy Knight Waltzes Toward You!");
+			}else {
+				System.out.println("The Heavy Knight Angrily Sprints Toward You!");
+			}
+			enemyFormat();
+		}
+	}
+}
+public static void heavySoldierSkip() {
+	typewriter("Everyone began moving again and the two sides clashed.");
+	typewriter("You defeated one enemy solider, then another.");
+	typewriter("Suddenly, a giant enemy soldier came up to you.");
+	typewriter("'HA! You seem to be fine in battle. Let me teach you a lesson!'");
+	typewriter("You angrily prepare your weapon.");
+	enemyAttack=20;
+	enemyDefense=7;
+	enemyMaxHP=150;
+	enemyHP=150;
+	heavySoldier=1;
+	prepare();
+	heavySoldier();
+}
+public static void heavySoldierDefeated() {
+	typewriter("The heavy knight staggers backward.");
+	typewriter("'W-What? Impossible!-'");
+	typewriter("The heavy knight collapses on the floor.");
+	typewriter("You grin in triumph.");
+	typewriter("You look around. It's a stalemate; no one is making progress.");
+	typewriter("Suddenly, you hear a slam behind you.");
+	typewriter("Startled, you turn around to see another heavy knight.");
+	typewriter("'For King Arkhein!' the heavy knight shouted as he lifted his sword from the ground.");
+	enemyMaxHP=175;
+	enemyHP=175;
+	enemyAttack=22;
+	enemyDefense=7;
+	heavySoldier=2;
+	prepare();
+	heavySoldier();
+}
+public static void heavySoldier2Skip() {
+	typewriter("Suddenly, you hear a slam behind you.");
+	typewriter("Startled, you turn around to see another heavy knight.");
+	typewriter("'For King Arkhein!' the heavy knight shouted as he lifted his sword from the ground.");
+	enemyMaxHP=175;
+	enemyHP=175;
+	enemyAttack=22;
+	enemyDefense=7;
+	heavySoldier=2;
+	prepare();
+	heavySoldier();
+}
+public static void heavySoldier2Defeated() {
+	typewriter("'I-I'm sorry... Arkhein...' the heavy knight said before collapsing on the floor.");
+	typewriter("You catch your breath as you sheathe your weapon.");
+	typewriter("The King's army was pushing back against the enemy; we were finally making progress!");
+	typewriter("You look back at the instructor.");
+	typewriter("'Ah, "+Pname+", I was looking for you! I have a plan, just for you,' the instructor said as he gallopped on his horse toward you.");
+	typewriter("You tilt your head in confusion.");
+	typewriter("'I know you're a very capable warrior. That is why I am enlisting you with the task of being the force that breaks into the enemy castle once and for all.'");
+	typewriter("Suddenly, you go wide eyed. You, being the leader of the army?");
+	typewriter("'I know its a lot to ask, but you're clearly up to the task. So, will you take my offer?'");
+	typewriter("You think for a moment. Is this really a good idea...?");
+	typewriter("'I'll raise your pay permanently...' the instructor said in a cunning tone.");
+	typewriter("You roll your eyes in defeat and accept the instructor's offer.");
+	typewriter("'Great. FALL BACKKKK!!!' the instructor screamed as the army walked backward.");
+	typewriter("'GOD'S HAND FORMATION!!!'");
+	typewriter("Suddenly, everyone starting moving in a collective motion, forming a hand-like figure.");
+	typewriter("At the center of the hand is you and the instructor.");
+	typewriter("'ALRIGHT EVERYONE! MARCH FORWARD!' the instructor shouted as he motioned to follow him.");
+	typewriter("The enemy was not prepared for this. In a scramble, they set up a wall of soldiers in front of the castle.");
+	typewriter("'MAGES! MANA SHIELD!'");
+	typewriter("Suddenly, multiple beams of mana shot into the sky, forming a barrier around you.");
+	typewriter("The enemy archers and mages started to fire at the shield, though to no avail.");
+	typewriter("Finally, you reach the castle gate.");
+	typewriter("'NOW, TAKE DOWN THE CASTLE GATE!'");
+	typewriter("Suddenly, the mages took down the shield around you and started firing mana balls at the castle gate, exploding and damaging it.");
+	typewriter("The archers started firing at the enemy soldiers and archers as the King's Guardsmen protect the front of the army.");
+	typewriter("The plan was working. The gate was being destroyed.");
+	typewriter("'"+Pname+"!' the instructor said as the mages ran out of mana, 'Now is your time! You have the strength to knock it down, I'm sure! The King's Guard shall protect you.'");
+	typewriter("You gulp in nervousness. Gripping your weapon harder, you charge at the gate, backed up by the King's Guard.");
+	if(knight==true) {
+		typewriter("With your shield, you ram into the gate as hard as you can. Weakened by the mages, the gate collapses into rubble.");
+	}
+	if(archer==true) {
+		typewriter("With your bow, you infuse a mana explosion onto the tip of your arrow and shoot. Weakened by the mages, the gate collapses into rubble.");
+	}
+	if(heavyKnight==true) {
+		typewriter("With your greatsword, you slam into the gate as hard as you can. Weakened by the mages, the gate collapses into rubble.");
+	}
+	if(mage==true) {
+		typewriter("With your wand, you charge up a gigantic mana ball and explode it on the gate. Weakened by the mages, the gate collapses into rubble.");
+  }
+	typewriter("A cheer rings out among the soldiers. The enemy, now left open, retreats further back.");
+	typewriter("'NOW! THE ENEMY IS OPEN! MARCH THROUGH THE GATE!' the instructor yelled as the soldiers began to march.");
+	typewriter("'"+Pname+"!' the instructor shouted, 'Come over here!'");
+	typewriter("You walk over to the insturctor.");
+	typewriter("'Incredible job! You're doing great! I just have one last thing to ask.'");
+	typewriter("You look at the instructor in anticipation.");
+	typewriter("'I need you to help me defeat King Arkhein.'");
+	typewriter("Your jaw drops. Defeating the king? Arkhein is one of the most powerful leaders in the nation!");
+	typewriter("'You and I combined will be far more capable than him. Trust me.'");
+	typewriter("You sigh. It's not like you have a choice.");
+	typewriter("'Good. I've already planned on what we will do. Just follow me for now.'");
+	typewriter("You start walking and following the instructor as the soldiers make a path for you.");
+	typewriter("'ALRIGHT! NOW IS THE TIME! STORM THROUGH THE CASTLE!!'");
+	typewriter("Suddenly, in a not-so-orderly fashion, the soldiers broke off from the God's Hand formation and started fighting whoever they could see.");
+	typewriter("'That should be a good distraction for us. Hurry along!' the instructor explained as he galloped on his horse toward a set of stairs.");
+	typewriter("You rush to follow him, weaving between enemy soldiers and fights.");
+	typewriter("You make your way up the set of stairs. Making a left, you see the throne room guarded by two enemy soldiers.");
+	typewriter("'I'll take care of these soldiers. You can continue forward and confront the king.'");
+	typewriter("You nod. Even though the soldiers try to stop you, the instructor defends you. You are able to make your way into the throne room.");
+	typewriter("");
+	typewriter("As you walk in, Arkhein speaks from his throne.");
+	typewriter("'Welcome, soldier! I did not expect guests so soon!'");
+	typewriter("The walls were an extravagent wood and gilded with gold. A red carpet spanned the entrance of the room to the king's throne. Next to the throne was a massive double-edged sword.");
+	typewriter("You prepare your weapon.");
+	typewriter("'Now, now, there's no need to get violent. Why, I think it'd be better to have a tea party, don't you think?'");
+	typewriter("You slowly approach Arkhein.");
+	typewriter("'Hmph. I guess my peace offer was not enough for you. Maybe a bribe?'");
+	typewriter("You pick up your pace.");
+	typewriter("'So be it,' the king declared as he stood up and picked up his double-edged blade.");
+	typewriter("'You shall feel the wrath of Arkhein!'");
+	enemyMaxHP=300;
+	enemyHP=300;
+	enemyAttack=20;
+	enemyDefense=8;
+	arkhein=true;
+	prepare();
+	arkhein();
+}
+public static void arkhein(){
+	if(enemyHP<=0) {
+		setBuffs();
+		typewriter("");
+		typewriter("You have defeated Arkhein!");
+		typewriter("You gained 30 EXP! (60/60)");
+		typewriter("You gained 0 Gold! Gold: "+gold+"");
+		level=3;
+		typewriter("You leveled up! (Level 3)");
+		typewriter("Your stats have increased!");
+		attack+=2;
+		magicAttack+=1;
+		maxHP+=10;
+		typewriter("Attack: +2 ("+attack+")");
+		typewriter("Magic Attack: +1 ("+magicAttack+")");
+		typewriter("Max HP: +10 ("+maxHP+")");
+		allocateStats();
+		arkhein=false;
+		arkheinPhase2=false;
+		prepare();
+		arkheinDefeated();
+	}else {
+	if(currentHP<=0) {
+		playerDefeated();
+	}else {
+	if(enemyHP>150) {
+		System.out.println("");
+		System.out.println("Arkhein, King of Feudum, paces toward you!");
+		enemyFormat();
+	}else {
+		if(enemyHP<=150) {
+			if(arkheinPhase2==false) {
+				typewriter("");
+				typewriter("Suddenly, the instructor burst into the room.");
+				typewriter("'"+Pname+"! I am here to help!' the instructor shouted as he barged in the room.");
+				typewriter("Arkhein staggers back.");
+				typewriter("'Ugh, another one? This is preposterous! Don't make me show you my true power!'");
+				typewriter("You smirk. *This* is how powerful the king is?");
+				typewriter("'Your time in the throne is over. Surrender now or face the consequences!' the instructor declared confidently.");
+				typewriter("Arkhein angrily sighed.");
+				typewriter("'You leave me no choice,' Arkhein said as he jumped backward toward the far end of the room.");
+				typewriter("Suddenly, Arkhein coated his blade with blazing fire using a torch on the wall.");
+				typewriter("'Now you shall feel the pain of a thousand blades!'");
+				typewriter("The instructor looks back at you.");
+				typewriter("'Here, let me heal you; you seem injured.'");
+				typewriter("The instructor hands you a potion. You down it in one gulp and feel revitalized!");
+				currentHP=maxHP;
+				currentMana=maxMana;
+				arkheinPhase2=true;
+				enemyHP=175;
+				enemyAttack=25;
+				arkhein();	
+			}else {
+				if(arkheinPhase2==true){
+					System.out.println("");
+					System.out.println("Arkhein, King of Feudum, paces toward you!");
+					enemyFormat();
+				}
+			  }
+			}
+		 }
+	  }
+   }
+}
+public static void arkheinSkip() {
+	typewriter("You pick up your pace.");
+	typewriter("'So be it,' the king declared as he stood up and picked up his double-edged blade.");
+	typewriter("'You shall feel the wrath of Arkhein!'");
+	enemyMaxHP=200;
+	enemyHP=200;
+	enemyAttack=20;
+	enemyDefense=8;
+	arkhein=true;
+	prepare();
+	arkhein();
+}
+public static void arkheinDefeated() {
+	typewriter("'Wh-What...?' Arkhein said as he walked backward.");
+	typewriter("'M-Me, defeated by a peasant and an instructor? This cannot be!'");
+	typewriter("The instructor started laughing. 'I never knew Arkhein, King of Feudum, was that weak!'");
+	typewriter("Blood dripped from Arkhein's mouth.");
+	typewriter("'No. I cannot let this happen to my rightful kingdom! You and your army will fall!'");
+	typewriter("Arkhein became swallowed by rage. A red aura swelled around him.");
+	typewriter("'Hehehehe... HAHAHAHA!! DARKNESS CONSUMES ME!'");
+	typewriter("The instructor starts pacing back. '"+Pname+", I-I've never seen this evil power before. We-'");
+	typewriter("Suddenly, Arkhein leapt forward and slashed the instructor off his horse.");
+	typewriter("'AAAGH!!' the instructor screamed as Arkhein stood above him.");
+	typewriter("The instructor looked back at you. '"+Pname+"... S-Save our kingdom... D-Don't let Arkhein become victorious... please... I-'");
+	typewriter("Then the instructor collapsed dead on the floor, a puddle of blood forming around his lifeless corpse.");
+	typewriter("You look at the instructor, then Arkhein, with fear.");
+	typewriter("'HAHAHAHA! YOU COULDN'T SAVE HIM IN THE END, COULD YOU?! YOUR PRECIOUS INSTRUCTOR, NOW DEAD, WAS THE ONLY LIFEBLOOD YOU HAD! Pathetic.'");
+	typewriter("Your entire body was shaken with fear.");
+	typewriter("Arkhein points his blade at you. 'You're next. HAHAHAHAHA!'");
+	typewriter("Arkhein leaps toward you, but you dodge just in time.");
+	typewriter("'What, are you scared?! FIGHT ME!!' Arkhein screamed as he rushed toward you.");
+	typewriter("You spot a window. You could exit through there!");
+	typewriter("You knock down a giant statue, blocking Arkhein's path.");
+	typewriter("It buys you just enough time to break the window and hop through it as Arkhein effortlessly sliced through the statue.");
+	typewriter("");
+	typewriter("Sprinting full force, you get back onto the battlefield only to find that it is in ruin.");
+	typewriter("Only a few of your soldiers were left, but they were wounded. You figured that inside the castle was worse.");
+	typewriter("Without any direction left to go, you return back to Feodalitas while helping as many wounded soldiers as you can.");
+	typewriter("Looking behind you as you make your way toward Feodalitas, you find Arkhein standing at the castle gate engulfed by a dark power, a menacing aura surrounding him.");
+	typewriter("");
+	typewriter("Once you got there, you were greeted by King Corruptus.");
+	typewriter("'What are you doing here?' Corrutpus said with an attitude, 'Aren't you supposed to be fighting in the war?'");
+	typewriter("You explain the situation to Corruptus.");
+	typewriter("'That's impossible! My men are stronger than any army!'");
+	typewriter("You look down at the ground.");
+	typewriter("Corruptus turns around in dissapointment and begins to talk to one of the generals. You overhear bits of their conversation.");
+	typewriter("'Can't punish if they're already dead-...'");
+	typewriter("'-eed to retreat. We don't have any options-...'");
+	typewriter("'-rm a plan after. Just get them back-...'");
+	typewriter("Suddenly, Corruptus turns around.");
+	typewriter("'Soldier, get back inside the castle and to your sleeping quarters. My men will take you there.'");
+	typewriter("You nod as you're escorted away.");
+	typewriter("");
+	typewriter("				The Next Day...");
+	typewriter("Silence filled the quarters. As you get up from your thin bed to look around, you see that many, many people were gone. Not many survived this war.");
+	typewriter("'Soldiers! Report to the training field immediately!' A King Guard yelled as he marched around the area.");
+	typewriter("With some struggle, you get up and make your way toward the back of the castle, not knowing what awaits...");
+	typewriter("Eventually, everyone is lined up on the training grounds. The army, from what you could tell, looks like it was cut in half. The king is definitely not going to be happy.");
+	typewriter("Corruptus, with his elite bodyguards behind him, began to pace from left to right.");
+	typewriter("'...Arkhein was able to successfully repulse our efforts to capture his kingdom. Do you know what this means?'");
+	typewriter("Corruptus looked up and into the nervous soldiers eyes. Not one of them said anything.");
+	typewriter("'He will not forget this. His army will grow more and more in size until we cannot defeat him anymore. That was our best chance at victory.'");
+	typewriter("Corruptus looked up at his castle with a slightly somber look.");
+	typewriter("'You all need to train harder and harder until you become as powerful as the elites standing behind me, you hear? This kingdom hinges on it.'");
+	typewriter("Corruptus started to walk away, then stopped before seemingly remembering something.");
+	typewriter("'Which one of you is "+Pname+"?'");
+	typewriter("You look at Corruptus as the soldiers around you move aside.");
+	typewriter("'Come with me. We have several matters to discuss. The rest of you start training!'");
+	typewriter("");
+	typewriter("Corruptus sat on his throne as you kneeled on the steps leading up to it.");
+	typewriter("'I've heard of your efforts in battle and I must say... I'm impressed. Defeating the King Guard first in training, breaking down the castle door, and even standing up to King Arkhein himself. I'm suprised you're even here right now' Corruptus said with a slight chuckle.");
+	typewriter("'I have a mission for you. You know how dire our circumstances will become soon, so we need more power. Go to the distant town of Phoenix to the east and meet my informant in the tavern there. Order 'The Pearl' when you're ready. He will give you more information on my plan. I will send a message to him via letter to warn of your coming.'");
+	typewriter("You stand up and nod. It's not like you really have a choice, anyway.");
+	typewriter("'Alright then. I will give you some gold for your travels. You have 24 hours before you start your quest. Good luck, "+Pname+". You'll need it.'");
+	gold+=20;
+	typewriter("You gained 20 gold! Gold: "+gold+"");
+	typewriter("You turn around and walk out of the castle. This entire thing is insane and you didn't even have a say in it. You sigh as you make your way back to your house to stay the night...");
+	typewriter("				The Next Day...");
+	typewriter("With more tearful goodbyes, you grab your supplies and head east toward the town of Phoenix...");
+	typewriter("");
+	typewriter("");
+	typewriter("On your travels, you can encounter enemies, fast travel to previously visited places (which will have indicators of what is available there), or use items.");
+	overworld();
+}
+public static void overworld() {
+	System.out.println("");
+	System.out.println("What will you do?");
+	System.out.println("Locations:");
+	System.out.println("Home (Type 'H')");
+	System.out.println("Phoenix (Shop, Inn, Main Quest) (Type 'P')");
+	System.out.println("");
+	System.out.println("Battle (Type 'B')");
+	System.out.println("");
+	System.out.println("Items (Type 'I')");
+	System.out.println("");
+	System.out.println("Menu (Type 'M')");
+	System.out.println("");
+	System.out.println("Health: "+currentHP+"/"+maxHP+"");
+	System.out.println("Mana: "+currentMana+"/"+maxMana+"");
+	String answer = scan.nextLine();
+	if(answer.equalsIgnoreCase("h")) {
+		if(returnHome==false) {
+			typewriter("You can't go back there yet; you have to go to Phoenix!");
+			overworld();
+		}else {
+			typewriter("You decide to head home.");
+			//add more
+		}
+	}
+	if(answer.equalsIgnoreCase("p")) {
+		typewriter("You decide to head to Phoenix.");
+		if(phoenixDiscovered==false) {
+			typewriter("On your way there, you encounter a goblin camp. Trying not to get spotted, you hide behind a tree. Peeking around the tree, you see that they are simply enjoying a meal. However, you have to get around them somehow.");
+			typewriter("You try to sneakily walk around the camp... but accidentally step on a twig, alerting the goblins of your presence!");
+			typewriter("You easily dispatch the smaller goblins, but a giant goblin with a mace approaches you!");
+			enemyMaxHP=250;
+			enemyHP=250;
+			enemyDefense=10;
+			enemyAttack=20;
+			goblinBrute=true;
+			prepare();
+			goblinBrute();
+		}else {
+			phoenix();
+		}
+	}
+	if(answer.equalsIgnoreCase("b")) {
+		randomEnemy();
+	}
+	if(answer.equalsIgnoreCase("i")) {
+		itemOverworld();
+	}
+	if(answer.equalsIgnoreCase("m")) {
+		menu();
+	}else {
+		overworld();
+	}
+}
+public static void itemOverworld() {
+	if(greaterHealthPotion>=1) {
+		System.out.println("Greater Health Potion: "+greaterHealthPotion+"");
+	}
+	if(healthPotion>=1) {
+		System.out.println("Health Potion: "+healthPotion+"");
+	}
+	if(sandwich>=1) {
+		System.out.println("Sandwich: "+sandwich+"");
+	}
+	if(manaPotion>=1) {
+		System.out.println("Mana Potion: "+manaPotion+"");
+	}
+	System.out.println("What would you like to use? (Type the first letter of each word to use an item - Example: Health Potion, Type 'HP'. If you want to go back, type 'B' for Back)");
+	String answer = scan.nextLine();
+	if(answer.equalsIgnoreCase("hp")) {
+		if(healthPotion==0) {
+			typewriter("You don't have any health potions!");
+			overworld();
+		}
+		typewriter("You use a health potion!");
+		healthPotion-=1;
+		currentHP+=30;
+		if(currentHP>=maxHP) {
+			currentHP=maxHP;
+			typewriter("You chug down your health potion till the last drop.");
+			typewriter("Your HP was maxed out!");
+			overworld();
+		}else {
+			typewriter("You chug down your health potion till the last drop.");
+			typewriter("You recover 30 HP!");
+			overworld();
+		}
+	}
+	if(answer.equalsIgnoreCase("s")) {
+		if(sandwich==0) {
+			typewriter("You don't have any sandwiches!");
+			overworld();
+		}
+		typewriter("You use a sandwich!");
+		sandwich-=1;
+		currentHP+=15;
+		if(currentHP>=maxHP) {
+			currentHP=maxHP;
+			typewriter("You munch down on your sandwich. Delicious!");
+			typewriter("Your HP was maxed out!");
+			overworld();
+		}else {
+			typewriter("You munch down on your sandwich. Delicious!");
+			typewriter("You recover 15 HP!");
+			overworld();
+		}
+	}
+	if(answer.equalsIgnoreCase("mp")) {
+		if(manaPotion==0) {
+			typewriter("You don't have any mana potions!");
+			overworld();
+		}
+		typewriter("You use a mana potion!");
+		manaPotion-=1;
+		currentMana+=6;
+		if(currentMana>=maxMana) {
+			currentMana=maxMana;
+			typewriter("You chug down your mana potion till the last drop.");
+			typewriter("Your Mana was maxed out!");
+			overworld();
+		}else {
+			typewriter("You chug down your mana potion till the last drop.");
+			typewriter("You recover 6 Mana!");
+			overworld();
+		}
+	}
+	if(answer.equalsIgnoreCase("ghp")) {
+		if(greaterHealthPotion==0) {
+			typewriter("You don't have any greater health potions!");
+			overworld();
+		}
+		typewriter("You use a greater health potion!");
+		greaterHealthPotion-=1;
+		currentHP+=50;
+		if(currentHP>=maxHP) {
+			currentHP=maxHP;
+			typewriter("You guzzle down your greater health potion and feel somewhat revitalized.");
+			typewriter("Your HP was maxed out!");
+			overworld();
+		}else {
+			typewriter("You guzzle down your greater health potion and feel somewhat revitalized.");
+			typewriter("You recover 50 HP!");
+			overworld();
+		}
+	}
+	if(answer.equalsIgnoreCase("b")) {
+		overworld();
+	}else {
+		itemOverworld();
+	}
+}
+public static void menu() {
+	System.out.println("");
+	System.out.println("Stats:");
+	System.out.println("");
+	System.out.println("Health: "+maxHP+"");
+	System.out.println("Mana: "+maxMana+"");
+	System.out.println("Defense: "+defense+"");
+	defenseTotal=defense+armorDefense;
+	System.out.println("Defense Total (Defense + Defense Bonuses): "+defenseTotal+"");
+	System.out.println("Attack: "+attack+"");
+	attackTotal=attack+weaponAttack;
+	System.out.println("Attack Total (Attack + Attack Bonuses): "+attackTotal+"");
+	System.out.println("Magic Attack: "+magicAttack+"");
+	magicAttackTotal=magicAttack+weaponMagicAttack;
+	System.out.println("Magic Total (Magic Attack + Magic Attack Bonuses): "+magicAttackTotal+"");
+	System.out.println("Gold: "+gold+"");
+	if(rank==0) {
+		System.out.println("Rank: Rookie");
+	}
+	if(rank==1) {
+		System.out.println("Rank: Novice");
+	}
+	System.out.println("Level To Rank Up: "+levelToRankUp+"");
+	System.out.println("Level: "+level+"");
+	System.out.println("Exp: "+exp+"");
+	System.out.println("Exp Until Level Up: "+expToLevel+"");
+	System.out.println("");
+	System.out.println("Passive Skills:");
+	if(hpUp==true) {
+		System.out.println("(Novice) HP Up: Gain +5 Max HP per level.");
+	}
+	if(manaUp==true) {
+		System.out.println("(Novice) Mana Up: Gain +1 Max Mana per level.");
+	}
+	if(quickLeveling==true) {
+		System.out.println("(Novice) Quick Leveling: Gain 15% more EXP from battles.");
+	}
+	if(midasTouch==true) {
+		System.out.println("(Novice) Midas Touch: Gain 20% more Gold from battles.");
+	}
+	System.out.println("");
+	System.out.println("Equipment (Type 'E')");
+	System.out.println("Change Text Speed (Type 'TS')");
+	System.out.println("View Tutorials (Type 'T')");
+	System.out.println("Back (Type 'B')");
+	typewriter("(Type the thing you want to access)");
+	String answer = scan.nextLine();
+	if(answer.equalsIgnoreCase("e")) {
+		equipment();
+	}else {
+		if(answer.equalsIgnoreCase("ts")) {
+			typewriter("How fast would you like the text speed? (Type 'VF' for Very Fast, 'F' for Fast, 'N' for Normal, or 'S' for Slow)");
+		      String answer1 = scan.nextLine();
+		      if(answer1.equalsIgnoreCase("vf")) {
+		    	  textSpeed=3;
+		      }
+		      if(answer1.equalsIgnoreCase("f")) {
+		    	  textSpeed=9;
+		      }
+		      if(answer1.equalsIgnoreCase("n")) {
+		    	  textSpeed=15;
+		      }
+		      if(answer1.equalsIgnoreCase("s")) {
+		    	  textSpeed=20;
+		      }
+		      typewriter("Text speed changed!");
+		      menu();
+
+		}else {
+			if(answer.equalsIgnoreCase("t")) {
+					menuTutorial();
+				}else {
+				if(answer.equalsIgnoreCase("b")) {
+					overworld();
+				}else {
+					menu();
+				}
+			}
+		}
+	}
+}
+public static void menuTutorial() {
+	typewriter("");
+	typewriter("What tutorial would you like to access?");
+	typewriter("Basic Tutorial (Type 'BT')");
+	if(ultimateUnlocked==true) {
+		typewriter("Ultimate Tutorial (Type 'UT')");
+	}
+	if(rank==1) {
+		typewriter("Rank Up Tutorial (Type 'RUT')");
+	}
+	typewriter("(Type the tutorial you want to view. You can also Type 'B' to go Back)");
+	String answer= scan.nextLine();
+	if(answer.equalsIgnoreCase("bt")) {
+		typewriter("Welcome to the Basic Tutorial! You'll learn everything you need in battle!");
+		typewriter("To start, battle formats will look like this:     ");
+		System.out.println("");
+		System.out.println("The King's Guard Knight Approaches You!");
+		System.out.println("Enemy HP: 100/100");
+		System.out.println("HP: "+currentHP+"/"+maxHP+"");
+		System.out.println("Mana: "+currentMana+"/"+maxMana+"");
+		System.out.println("What will you do? (Type 'Attack', 'Defend', 'Item', or 'Skill')");
+		System.out.println("");
+		typewriter("You can see the enemy's HP, your HP, and your current mana. If you have any status effects, they'll appear there, too.");
+		typewriter("The options you can choose include: attack, defend, item, and skill.");
+		typewriter("Attack uses your base attack damage minus the enemy's defense when dealing damage. It also restores 2 mana.");
+		typewriter("Defend multiplies your defense by 1.5 times for one turn. It also restores 4 mana.");
+		typewriter("Item uses a consumable object to grant various effects, such as healing.");
+		typewriter("Skills are different for every class. For example, the only class to have the skill 'Arc Slash' is the Knight.");
+		typewriter("Skill descriptions are very important in telling you what the skill does. Always read them before using them!");
+		typewriter("When your HP equals zero, you lose. When the enemy's HP equals zero, you win.");
+		typewriter("And that's it for the Basic Tutorial!");
+		menuTutorial();
+	}
+	if(answer.equalsIgnoreCase("ut")) {
+		typewriter("Welcome to the Ultimate Tutorial! You'll learn everything you need to know about ultimates!");
+		typewriter("The way ultimates work is simple - it increases by 3% every turn plus the damage you dealt that turn divded by 15.");
+		typewriter("For example...");
+		typewriter("If you deal 60 damage to the enemy, you'll gain 3% (every turn) + 4% (damage/15) for a total of 7%.");
+		typewriter("Once the ultimate reaches 100%, you can use it to change the tide of battle to your favor!");
+		typewriter("And that's it for the Ultimate Tutorial!");
+		menuTutorial();
+	}
+	if(answer.equalsIgnoreCase("rut")) {
+		typewriter("Welcome to the Rank Up Tutorial! You'll learn everything you need to know about Rank Ups!");
+		typewriter("When you reach a certain level, you'll Rank Up! (Level 5 to reach Novice)");
+		typewriter("Ranking Up gives many different benefits.");
+		typewriter("For starters, it gives you a new skill to use in battle!");
+		typewriter("It also allows you to choose a passive skill as well!");
+		typewriter("The passive skill selection will look like this:");
+		System.out.println("Choose a passive skill!");
+		System.out.println("Passive Skills:");
+		System.out.println("");
+		System.out.println("(Novice) HP Up: Gain +5 Max HP per level.");
+		System.out.println("(Novice) Mana Up: Gain +1 Max Mana per level.");
+		System.out.println("(Novice) Quick Leveling: Gain 15% more EXP from battles.");
+		System.out.println("(Novice) Midas Touch: Gain 20% more Gold from battles.");
+		System.out.println("");
+		System.out.println("(Intermediate) Attack Up: Gain +1 Attack per level.");
+		System.out.println("(Intermediate) Magic Attack Up: Gain +1 Magic Attack per level.");
+		System.out.println("(Intermediate) Critical Hit Master: Critical Hits deal 1.5 damage instead of 1.25.");
+		System.out.println("");
+		System.out.println("(Skilled) Basic Attack Master: Basic Attacks deal 15% more damage.");
+		System.out.println("(Skilled) Iron Body: You take 15% less damage from attacks.");
+		System.out.println("");
+		System.out.println("(Master) Skill Master: Skills deal 15% more damage.");
+		System.out.println("(Master) Mana Conservationist: Skills use 20% less mana.");
+		System.out.println("What would you like to choose? (Type the first letter of each word to answer - Example: HP Up, type 'HU')");
+		typewriter("When selecting passive skills, you can only choose from passive skills from your rank or below ");
+		typewriter("For example, if you're the Intermediate rank, you can choose from Novice or Intermediate passive skills, but not anything above it like Skilled or Master passive skills.");
+		typewriter("As the name suggests, these skills will be passively applied whenever applicable.");
+		typewriter("Only one passive skill can be choosen per rank up and it is NOT changeable, so choose wisely!");
+		typewriter("And that's it for the Rank Up Tutorial!");
+		menuTutorial();
+	}
+	if(answer.equalsIgnoreCase("b")) {
+		menu();
+	}else {
+		menuTutorial();
+	}
+}
+public static void equipment() {
+	System.out.println("");
+	System.out.println("Weapons:");
+	if(knight==true) {
+		if(swordAndShield==1) {
+			System.out.println("Sword and Shield - +1 Attack");
+		}
+		if(swordAndShield==2) {
+			System.out.println("Sword and Shield - +1 Attack (Equipped)");
+		}
+		if(reinforcedSwordAndShield==1) {
+			System.out.println("Reinforced Sword and Shield - +2 Attack");
+		}
+		if(reinforcedSwordAndShield==2) {
+			System.out.println("Reinforced Sword and Shield - +2 Attack (Equipped)");
+		}
+	}
+	if(archer==true) {
+		if(bow==1) {
+			System.out.println("Bow - +1 Attack");
+		}
+		if(bow==2) {
+			System.out.println("Bow - +1 Attack (Equipped)");
+		}
+		if(reinforcedBow==1) {
+			System.out.println("Reinforced Bow - +3 Attack");
+		}
+		if(reinforcedBow==2) {
+			System.out.println("Reinforced Bow - +3 Attack (Equipped)");
+		}
+	}
+	if(heavyKnight==true) {
+		if(greatsword==1) {
+			System.out.println("Greatsword - +2 Attack");
+		}
+		if(greatsword==2) {
+			System.out.println("Greatsword - +2 Attack (Equipped)");
+		}
+		if(reinforcedGreatsword==1) {
+			System.out.println("Reinforced Greatsword - +4 Attack");
+		}
+		if(reinforcedGreatsword==2) {
+			System.out.println("Reinforced Greatsword - +4 Attack (Equipped)");
+		}
+	}
+	if(mage==true) {
+		if(wand==1) {
+			System.out.println("Wand - +1 Attack, +2 Magic Attack");
+		}
+		if(wand==2) {
+			System.out.println("Wand - +1 Attack, +2 Magic Attack (Equipped)");
+		}
+		if(reinforcedWand==1) {
+			System.out.println("Reinforced Wand - +2 Attack, +4 Magic Attack");
+		}
+		if(reinforcedWand==2) {
+			System.out.println("Reinforced Wand - +2 Attack, +4 Magic Attack (Equipped)");
+		}
+	}
+	System.out.println("");
+	System.out.println("Armor: ");
+	if(lightArmor==1) {
+		System.out.println("Light Armor - +1 Defense");
+	}
+	if(lightArmor==2) {
+		System.out.println("Light Armor - +1 Defense (Equipped)");
+	}
+	if(ironArmor==1) {
+		System.out.println("Iron Armor - +2 Defense");
+	}
+	if(ironArmor==2) {
+		System.out.println("Iron Armor - +2 Defense (Equipped)");
+	}
+	System.out.println("");
+	System.out.println("Accessories: ");
+	System.out.println("(There arent any in the game yet lol)");
+	System.out.println("");
+	System.out.println("What would you like to equip? (Type the first letter of each word to equip the equipment - Example: Sword and Shield, Type 'SS')");
+	System.out.println("(You can also type 'Back' to go back)");
+	String answer = scan.nextLine();
+	if(answer.equalsIgnoreCase("ss")) {
+		if(swordAndShield==1) {
+			typewriter("You equipped the Sword and Shield!");
+			swordAndShield=2;
+			reinforcedSwordAndShield=1;
+			weaponAttack=1;
+			equipment();
+		}else {
+			equipment();
+		}
+	}
+	if(answer.equalsIgnoreCase("rss")) {
+		if(reinforcedSwordAndShield==1) {
+			typewriter("You equipped the Reinforced Sword And Shield!");
+			reinforcedSwordAndShield=2;
+			swordAndShield=1;
+			weaponAttack=2;
+			equipment();
+		}else {
+			equipment();
+		}
+	}
+	if(answer.equalsIgnoreCase("b")) {
+		if(bow==1) {
+			typewriter("You equipped the Bow!");
+			bow=2;
+			reinforcedBow=1;
+			weaponAttack=1;
+			equipment();
+		}else {
+			equipment();
+		}
+	}
+	if(answer.equalsIgnoreCase("rb")) {
+		if(reinforcedBow==1) {
+			typewriter("You equipped the Reinforced Bow!");
+			reinforcedBow=2;
+			bow=1;
+			weaponAttack=3;
+			equipment();
+		}else {
+			equipment();
+		}
+	}
+	if(answer.equalsIgnoreCase("g")) {
+		if(greatsword==1) {
+			typewriter("You equipped the Greatsword!");
+			greatsword=2;
+			reinforcedGreatsword=1;
+			weaponAttack=2;
+			equipment();
+		}else {
+			equipment();
+		}
+	}
+	if(answer.equalsIgnoreCase("rg")) {
+		if(reinforcedGreatsword==1) {
+			typewriter("You equipped the Reinforced Greatsword!");
+			reinforcedGreatsword=2;
+			greatsword=1;
+			weaponAttack=4;
+			equipment();
+		}else {
+			equipment();
+		}
+	}
+	if(answer.equalsIgnoreCase("w")) {
+		if(wand==1) {
+			typewriter("You equipped the Wand!");
+			wand=2;
+			reinforcedWand=1;
+			weaponAttack=1;
+			weaponMagicAttack=2;
+			equipment();
+		}else {
+			equipment();
+		}
+	}
+	if(answer.equalsIgnoreCase("rw")) {
+		if(reinforcedWand==1) {
+			typewriter("You equipped the Reinforced Wand!");
+			reinforcedWand=2;
+			wand=1;
+			weaponAttack=2;
+			weaponMagicAttack=4;
+			equipment();
+		}else {
+			equipment();
+		}
+	}
+	if(answer.equalsIgnoreCase("la")) {
+		if(lightArmor==1) {
+			typewriter("You equipped the Light Armor!");
+			lightArmor=2;
+			ironArmor=1;
+			armorDefense=1;
+			equipment();
+		}else {
+			equipment();
+		}
+	}
+	if(answer.equalsIgnoreCase("ia")) {
+		if(ironArmor==1) {
+			typewriter("You equipped the Iron Armor!");
+			ironArmor=2;
+			lightArmor=1;
+			armorDefense=2;
+			equipment();
+		}else {
+			equipment();
+		}
+	}
+	if(answer.equalsIgnoreCase("back")) {
+		menu();
+	}else {
+		equipment();
+	}
+}
+public static void randomEnemy() {
+	int randomNumber = rand.nextInt(3);
+	if(randomNumber==0) {
+		typewriter("As you're traveling, a goblin enters into your vision. However, the goblin seems to have spotted you, too, and is coming your way!");
+		enemyMaxHP=100;
+		enemyHP=100;
+		enemyAttack=18;
+		enemyDefense=6;
+		goblin=true;
+		goblin();
+	}
+	if(randomNumber==1) {
+		typewriter("As you're traveling, you hear the rustling of a bush. Not eager to check it out, you keep walking. This was a bad mistake, however; a bandit pops out of the bush and ambushes you!");
+		enemyMaxHP=130;
+		enemyHP=130;
+		enemyAttack=19;
+		enemyDefense=4;
+		bandit=true;
+		bandit();
+	}
+	if(randomNumber==2) {
+		typewriter("As you're traveling, the sounds of the wilderness suddenly go silent. When looking around, nothing seems to be out of the ordinary. Suddenly, a wolf leaps out of the edge of your vision, eager to find its next meal!");
+		enemyMaxHP=115;
+		enemyHP=115;
+		enemyAttack=18;
+		enemyDefense=6;
+		wolf=true;
+		wolf();
+	}
+}
+public static void goblin() {
+	if(enemyHP<=0) {
+		setBuffs();
+		typewriter("");
+		typewriter("You have defeated the Goblin!");
+		expValue=20;
+		goldValue=3;
+		passiveSkillCheck();
+		exp+=expValue;
+		typewriter("You gained "+expValue+" EXP! ("+exp+"/"+expToLevel+")");
+		gold+=goldValue;
+		typewriter("You gained "+goldValue+" Gold! Gold: "+gold+"");
+		checkLevel();
+		goblin=false;
+		overworld();
+	}else {
+	if(currentHP<=0) {
+		playerDefeated();
+	}else {
+		System.out.println("");
+		System.out.println("The Goblin Wobbles Towards You!");
+		enemyFormat();
+    }
+  }
+}
+public static void bandit() {
+	if(enemyHP<=0) {
+		setBuffs();
+		typewriter("");
+		typewriter("You have defeated the Bandit!");
+		expValue=15;
+		goldValue=5;
+		passiveSkillCheck();
+		exp+=expValue;
+		typewriter("You gained "+expValue+" EXP! ("+exp+"/"+expToLevel+")");
+		gold+=goldValue;
+		typewriter("You gained "+goldValue+" Gold! Gold: "+gold+"");
+		checkLevel();
+		bandit=false;
+		overworld();
+	}else {
+	if(currentHP<=0) {
+		playerDefeated();
+	}else {
+		System.out.println("");
+		System.out.println("The Bandit Circles Around You!");
+		enemyFormat();
+    }
+  }
+}
+public static void wolf() {
+	if(enemyHP<=0) {
+		setBuffs();
+		typewriter("");
+		typewriter("You have defeated the Wolf!");
+		expValue=25;
+		goldValue=3;
+		passiveSkillCheck();
+		exp+=expValue;
+		typewriter("You gained "+expValue+" EXP! ("+exp+"/"+expToLevel+")");
+		gold+=goldValue;
+		typewriter("You gained "+goldValue+" Gold! Gold: "+gold+"");
+		checkLevel();
+		wolf=false;
+		overworld();
+	}else {
+	if(currentHP<=0) {
+		playerDefeated();
+	}else {
+		System.out.println("");
+		System.out.println("The Wolf Angrily Growls At You!");
+		enemyFormat();
+    }
+  }
+}
+public static void goblinBrute() {
+	if(enemyHP<=0) {
+		setBuffs();
+		typewriter("");
+		typewriter("You have defeated the Goblin Brute!");
+		expValue=40;
+		goldValue=10;
+		exp+=expValue;
+		passiveSkillCheck();
+		typewriter("You gained "+expValue+" EXP! ("+exp+"/"+expToLevel+")");
+		gold+=goldValue;
+		typewriter("You gained "+goldValue+" Gold! Gold: "+gold+"");
+		checkLevel();
+		goblinBrute=false;
+		goblinBruteDefeated();
+	}else {
+	if(currentHP<=0) {
+		playerDefeated();
+	}else {
+		System.out.println("");
+		System.out.println("The Goblin Brute Flourishes His Mace At You!");
+		enemyFormat();
+    }
+  }
+}
+public static void goblinBruteDefeated() {
+	phoenixDiscovered=true;
+	typewriter("The giant goblin falls over in defeat. You sigh in relief as you continue making your way toward Phoenix...");
+	typewriter("");
+	typewriter("				Some Time Later...");
+	typewriter("Eventually, after a lot of walking, the town of Phoenix comes into sight. From what you've heard back on the farm, it was the grandest town of Feodalitas filled with wealth and opportunities. Looking at the town now, it's very clear the rumor was true.");
+	typewriter("Giant buildings seemingly stretched to the sky with massive walls surrounding the entire town. You can only imagine what Corruptus wants in this town...");
+	typewriter("");
+	typewriter("Making your way inside, you begin to notice just how lively this town is. Tiny shops filled the walkways with people dancing around and laughing. A vibrant hue was plastered on every building you can see. The smells were unimaginable, too; the fresh, baked goods along with the roasting of meats flow through your nostrils as you breathe in. You wonder how such a town could exist in a kingdom like this...");
+	typewriter("You remind yourself of your mission; get to the tavern and find the king's informant there.");
+	typewriter("However, it couldn't hurt to check a few stores here and there...");
+	typewriter("As you're looking around, you see a giant shop labeled 'Adventurer's Stop!'. Perfect for gearing up for whatever the king has planned.");
+	typewriter("'Welcome to the Adventurer's Stop, where all your adventuring needs are displayed right before your very eyes!' the shopkeeper said as you approached the store, 'Take a look!'");
+	phoenixShop();
+}
+public static void phoenixShop() {
+	System.out.println("");
+	System.out.println("");
+	System.out.println("'Anything catch your eye?'");
+	System.out.println("Weapons:");
+	if(knight==true) {
+		System.out.println("Reinforced Sword and Shield: A sword and shield reinforced with iron. +2 Attack - 25g");
+	}
+	if(archer==true) {
+		System.out.println("Reinforced Bow: A bow reinforced with iron. +3 Attack - 25g");
+	}
+	if(heavyKnight==true) {
+		System.out.println("Reinforced Greatsword: A greatsword reinforced with iron. +4 Attack - 25g");
+	}
+	if(mage==true) {
+		System.out.println("Reinforced Wand: A wand reinforced with iron. +2 Attack, +4 Magic Attack - 25g");
+	}
+	System.out.println("");
+	System.out.println("Armor:");
+	System.out.println("Iron Armor: A fully iron-made armor. Pretty tough and can defend from swords well. +2 Defense - 20g");
+	System.out.println("");
+	System.out.println("Items:");
+	System.out.println("Health Potion: Your standard health potion. Heals 30 HP - 10g");
+	System.out.println("Greater Health Potion: Now comes in a bigger bottle. Heals 50 HP - 15g");
+	System.out.println("Mana Potion: Your standard mana potion. Restores 6 Mana - 10g");
+	System.out.println("");
+	System.out.println("Gold: "+gold+"");
+	System.out.println("(Type the first letter of each word to purchase something - Example: Reinforced Sword and Shield, Type 'RSS'. You can also type 'T' to Talk, or 'L' to Leave)");
+	System.out.println("(Also, you only need to buy equipment once. Buying it more than once is useless.)");
+	String answer= scan.nextLine();
+	if(answer.equalsIgnoreCase("rss")) {
+		if(knight==true) {
+			if(gold<25) {
+			System.out.println("");
+			typewriter("You don't have enough gold for that!");
+			phoenixShop();
+			}else {
+				reinforcedSwordAndShield=1;
+				gold-=25;
+				System.out.println("");
+				typewriter("You bought the Reinforced Sword and Shield!");
+				typewriter("'Don't worry, there's plenty more to buy!'");
+				phoenixShop();
+		}
+	}else {
+		phoenixShop();
+	}
+	}
+	if(answer.equalsIgnoreCase("rb")) {
+		if(archer==true) {
+			if(gold<25) {
+			System.out.println("");
+			typewriter("You don't have enough gold for that!");
+			phoenixShop();
+			}else {
+				reinforcedBow=1;
+				gold-=25;
+				System.out.println("");
+				typewriter("You bought the Reinforced Sword and Shield!");
+				typewriter("'Don't worry, there's plenty more to buy!'");
+				phoenixShop();
+		}
+	}else {
+		phoenixShop();
+	}
+	}
+	if(answer.equalsIgnoreCase("rg")) {
+		if(heavyKnight==true) {
+			if(gold<25) {
+			System.out.println("");
+			typewriter("You don't have enough gold for that!");
+			phoenixShop();
+			}else {
+				reinforcedGreatsword=1;
+				gold-=25;
+				System.out.println("");
+				typewriter("You bought the Reinforced Greatsword!");
+				typewriter("'Don't worry, there's plenty more to buy!'");
+				phoenixShop();
+		}
+	}else {
+		phoenixShop();
+	}
+	}
+	if(answer.equalsIgnoreCase("rw")) {
+		if(mage==true) {
+			if(gold<25) {
+			System.out.println("");
+			typewriter("You don't have enough gold for that!");
+			phoenixShop();
+			}else {
+				reinforcedWand=1;
+				gold-=25;
+				System.out.println("");
+				typewriter("You bought the Reinforced Wand!");
+				typewriter("'Don't worry, there's plenty more to buy!'");
+				phoenixShop();
+		}
+	}else {
+		phoenixShop();
+	}
+	}
+	if(answer.equalsIgnoreCase("ia")) {
+		if(gold<20) {
+			System.out.println("");
+			typewriter("You don't have enough gold for that!");
+		}else {
+			ironArmor=1;
+			gold-=20;
+			System.out.println("");
+			typewriter("You bought iron armor!");
+			typewriter("'Don't worry, there's plenty more to buy!'");
+			phoenixShop();
+		}
+	}
+	if(answer.equalsIgnoreCase("hp")) {
+		if(gold<10) {
+			System.out.println("");
+			typewriter("You don't have enough gold for that!");
+		}else {
+			healthPotion+=1;
+			gold-=10;
+			System.out.println("");
+			typewriter("You bought a health potion!");
+			typewriter("'Don't worry, there's plenty more to buy!'");
+			phoenixShop();
+		}
+	}
+	if(answer.equalsIgnoreCase("ghp")) {
+		if(gold<15) {
+			System.out.println("");
+			typewriter("You don't have enough gold for that!");
+		}else {
+			greaterHealthPotion+=1;
+			gold-=15;
+			System.out.println("");
+			typewriter("You bought a greater health potion!");
+			typewriter("'Don't worry, there's plenty more to buy!'");
+			phoenixShop();
+		}
+	}
+	if(answer.equalsIgnoreCase("mp")) {
+		if(gold<10) {
+			System.out.println("");
+			typewriter("You don't have enough gold for that!");
+		}else {
+			manaPotion+=1;
+			gold-=10;
+			System.out.println("");
+			typewriter("You bought a mana potion!");
+			typewriter("'Don't worry, there's plenty more to buy!'");
+			phoenixShop();
+		}
+	}
+	if(answer.equalsIgnoreCase("t")) {
+		typewriter("'I'd love to have a conversation!'");
+		typewriter("'Y'know, I love this town. It's super lively, has great people, and it's amazing for buisness.'");
+		typewriter("'But I've also definitely seen the worse people as well. Shady those people are. I don't dare get close to them.'");
+		typewriter("'But hey, I guess every town has a bad bunch, huh? Just stay vigilant, thats all.'");
+		phoenixShop();
+	}
+	if(answer.equalsIgnoreCase("l")) {
+		typewriter("You thank the shopkeeper for the wares and leave the Adventurer's Stop.");
+		typewriter("Now in the middle of town, you find yourself with three options. You can either go back to the overworld and train, go to the tavern and meet the king's informant, or rest in the inn to prepare for the battles ahead.");
+		typewriter("(Although you can procced now, if you haven't hit at least Level 4 yet, it is recommended to go back and level up)");
+		phoenix();
+	}else {
+		phoenixShop();
+	}
+}
+public static void phoenix() {
+	typewriter("");
+	typewriter("What will you do?");
+	System.out.println("Go to the Adventurer's Stop (Shop)");
+	System.out.println("Go to the Tavern (Main Quest)");
+	System.out.println("Go to the Inn (Restore HP and Mana)");
+	System.out.println("Go to the Overworld (Enemy)");
+	typewriter("(Type 'AS' for Adventurer's Stop, 'T' for Tavern, 'I' for Inn, or 'O' for Overworld)");
+	String answer= scan.nextLine();
+	if(answer.equalsIgnoreCase("as")) {
+		typewriter("You decide to head to the Adventurer's Stop.");
+		phoenixShop();
+	}
+	if(answer.equalsIgnoreCase("t")) {
+		typewriter("You decide to head to the tavern.");
+		phoenixTavern();
+	}
+	if(answer.equalsIgnoreCase("i")) {
+		typewriter("You decide to head to the inn.");
+		phoenixInn();
+		
+	}
+	if(answer.equalsIgnoreCase("o")) {
+		typewriter("You decide to head to the Overworld.");
+		overworld();
+	}else {
+		phoenix();
+	}
+}
+public static void phoenixInn() {
+	typewriter("'Welcome!' the innkeeper excitedly exclaimed, 'Do you need to rest a while?'");
+	typewriter("'Don't worry, it'll only cost you 2 Gold per night!'");
+	typewriter("Gold: "+gold+"");
+	typewriter("What will you do? (You can either type 'R' to rest by paying 2 Gold to restore your HP and Mana or type 'L' to Leave.)");
+	String answer1= scan.nextLine();
+	if(answer1.equalsIgnoreCase("r")) {
+		if(gold>=2) {
+			typewriter("You decide to pay the 2 Gold to go to rest.");
+			gold-=2;
+			System.out.println("");
+			System.out.println("");
+			System.out.println("");
+			typewriter("After a while, you feel invigorated!");
+			typewriter("(HP and Mana restored)");
+			prepare();
+			typewriter("You thank the innkeeper and leave back to the center of town.");
+			System.out.println("");
+			phoenix();
+		}else {
+			typewriter("You don't have enough gold!");
+		}
+	}
+	if(answer1.equalsIgnoreCase("l")) {
+		phoenix();
+	}else {
+		phoenixInn();
+	}
+}
+public static void phoenixTavern() {
+	if(zackeryDefeated==false) {
+		typewriter("The door bells jingle as you walk in. The tavern is a lot more mellow than the outside; only a few people were in the bar and most of them weren't talking.");
+		typewriter("Finally, some peace and quiet.");
+		typewriter("You walk over to the bartender and sit on the leather stool.");
+		typewriter("'What do you want this evening?' the bartender said as he approached you.");
+		typewriter("You order 'The Pearl'.");
+		typewriter("The bartender stops and stares for a moment. 'Understood. I'll get that ready for you in a minute' the bartender said as he quickly scurried to the back of the tavern.");
+		typewriter("You nervously wait for a while, anticipating who this 'informant' could be.");
+		typewriter(".    .    .");
+		typewriter("Suddenly, a man in a cloak silently exited the back of the tavern and walked toward you before sitting down on the stool next to you.");
+		typewriter("'So the time has come...' the man in the cloak trailed off as he looked away.");
+		typewriter("'My name is Zackery. Zack for short' Zackery said as he looked back at you, 'You must be the person the king sent. Though, I must admit, you don't look very strong.'");
+		typewriter("You angrily glare at this 'Zackery' character.");
+		typewriter("'Woah woah, no need to be angry. We're working toward a common goal here. Speaking of, did Corruptus ever tell you *why* you're here?'");
+		typewriter("You shake your head.");
+		typewriter("'Of course not' Zackery sighed, 'I always have to do everything around here.'");
+		typewriter("'Do you remember those old tales with Aequalis and all that?' Zackery said as he ordered a drink, 'Well, supposedly, there's more to the story.'");
+		typewriter("'Aequalis was a deity. More specifically, the God of Judgement. Now, the evidence for this is shakey, but if it's true, it would help prove something else...'");
+		typewriter("'Aequalis supposedly knew about her potential death and possibly even the Crystals of Deorc themselves, so she hid something that could counter it.'");
+		typewriter("'It was something not unlike the Crystals themselves, but it wasn't dark or even light powers; it was something... greater.");
+		typewriter("'We don't know what the power contained in it is, buuuut we do have a potential location for it.'");
+		typewriter("'The original castle of Contra was built right on top of this very town. Sound suspicous? Well, if you're not convinced...'");
+		typewriter("Zackery pulled out a map from his pocket and unfolded it onto the bar table.");
+		typewriter("'The layout of the castle looked something like this. The place we're looking at is the prisoners cellar. Why, I hear you asking? Well, they didn't keep prisoners back in the day; they rehabilitated then released them. Perfect place for a secret treasure, huh?'");
+		typewriter("'The prisoners cellar relative to Phoenix is right in this graveyard' Zackery said as he pointed to a point on the map.");
+		typewriter("'Well then, if you're ready, lets leave' Zackery said as he stood up.");
+		typewriter("You shrug. You're as ready as you can be.");
+		typewriter("'Not much of a talker huh? Well, alright. Lets go!'");
+		typewriter("As you're exiting the tavern, Zackery stopped in his tracks.");
+		typewriter("'Before we go, though...'");
+		typewriter("Zackery pulled out two daggers from their sheathes as he smirked.");
+		typewriter("'Let's see if you're really ready!'");
+		enemyMaxHP=300;
+		enemyHP=300;
+		enemyDefense=5;
+		enemyAttack=25;
+		zackery=true;
+		prepare();
+		zackery();
+	}else {
+		if(phoenixPrison==false) {
+			typewriter("Entering the tavern, Zackery looks at your direction before getting up and walking to you.");
+			typewriter("'Now, let's actually leave.'");
+			typewriter("");
+			typewriter("				Some Time Later...");
+			typewriter("");
+			typewriter("You and Zackery have made it. It's a lot more unsettling than you thought it would be; a foggy haze looms around you as you wander the eerily silent graveyard. Many headstones litter the area. You sense that something is off about all this. Zackery, however, seems to be completely oblivious to it.");
+			typewriter("'Alright. We're almost there. It should be just about...'");
+			typewriter("Zackery points to a nearby cellar in the ground.");
+			typewriter("'There. Now, don't get too scared' Zackery said with a laugh, 'We still need you.'");
+			typewriter("You nod through your slight anxiety. You try to take control of your emotions, but some innate sense seems to be repeatedly telling you that something is wrong. Regardless, you press on.");
+			typewriter("With bated breath, you both enter the cellar.");
+			typewriter("");
+			typewriter("You thought it couldn't get any worse, but here you are. The cellar is damp, dark, and water drips from the ceiling. The only light in the cellar is Zackery's seemingly miniscule torch in this vast darkness. It looks like it hasn't been entered in a very long time, too. The floor, the walls, the ceiling - everything seems to be damaged and rundown. Your eerie feeling is only getting worse. You ask Zackery if he can sense it, too.");
+			typewriter("'... Not really, though I can see why you'd be afraid. Don't worry, no one has been down here for centuries.'");
+			typewriter("Despite Zackery's words not helping, You swallow your fears and press on.");
+			typewriter("Making your way further in the cellar, you start to see the environment change. The walls start being engraved with some weird symbol that only get more frequent as you press on.");
+			typewriter("'Those are probably symbols of the old land of Contra' Zackery said as he put his torch closer to the wall, 'Facinating.'");
+			typewriter("Eventually, the walls expand into a large area. Small, rigid prison cells surround you. This area looks even older than the entrance.");
+			typewriter("'We're here. This is the 'prison' that Aequalis used. Now we just gotta find some sort of secret entrance. Let's split up and get more ground. Head to the center and shout if you find anything.'");
+			typewriter("You agree to the idea, though it is a bit risky.");
+			typewriter("You head to the center of the area to decide where to go...");
+			phoenixPrison=true;
+			phoenixPrison();	
+		}else {
+			typewriter("You decide to head back to the prison.");
+			phoenixPrison();
+		}
+	}
+}
+public static void zackery() {
+	if(enemyHP<=0) {
+		setBuffs();
+		typewriter("");
+		typewriter("You have defeated Zackery!");
+		zackeryDefeated=true;
+		expValue=100;
+		goldValue=20;
+		passiveSkillCheck();
+		exp+=expValue;
+		typewriter("You gained "+expValue+" EXP! ("+exp+"/"+expToLevel+")");
+		gold+=goldValue;
+		typewriter("You gained "+goldValue+" Gold! Gold: "+gold+"");
+		checkLevel();
+		zackery=false;
+		prepare();
+		zackeryDefeated();
+	}else {
+	if(currentHP<=0) {
+		playerDefeated();
+	}else {
+	if(enemyHP>175) {
+		System.out.println("");
+		System.out.println("Zackery Spins His Daggers!");
+		enemyFormat();
+	}else {
+		if(enemyHP<=175) {
+			if(zackeryText==false) {
+				typewriter("");
+				typewriter("Zackery scoffs, slightly out of breath.");
+				typewriter("'Not bad. Not bad at all. But I'd be lying if I said this was my all.'");
+				typewriter("Zackery smirked as he wiped sweat from his forehead.");
+				typewriter("'Bring it!'");
+				typewriter("");
+				typewriter("");
+				typewriter("Seeing Zackery fired up stirs something within you!");
+				typewriter("An ancient power surrounds you!");
+				typewriter("");
+				typewriter("Would you like to see the tutorial for ultimates? (Type 'Y' for Yes or 'N' for No)");
+				String answer = scan.nextLine();
+				if(answer.equalsIgnoreCase("y")) {
+					typewriter("Welcome to the Ultimate Tutorial! You'll learn everything you need to know about ultimates!");
+					typewriter("The way ultimates work is simple - it increases by 3% every turn plus the damage you dealt that turn divded by 15.");
+					typewriter("For example...");
+					typewriter("If you deal 60 damage to the enemy, you'll gain 3% (every turn) + 4% (damage/15) for a total of 7%.");
+					typewriter("Once the ultimate reaches 100%, you can use it to change the tide of battle to your favor!");
+					typewriter("And that's it for the Ultimate Tutorial! Now go beat Zackery!");
+				}else {
+					typewriter("Okay then. Go beat Zackery!");
+				}
+				ultimateUnlocked=true;
+				ultimate=90;
+				zackeryText=true;
+				enemyAttack=27;
+				zackery();	
+			}else {
+				if(zackeryText==true){
+					System.out.println("");
+					System.out.println("Zackery's Focus Heightens!");
+					enemyFormat();
+				}
+			  }
+			}
+		 }
+	  }
+   }
+}
+public static void zackeryDefeated() {
+	typewriter("");
+	typewriter("Zackery walks backward out of breath.");
+	typewriter("'Alright, alright, you're definitely something. I can see why the king chose you now.'");
+	typewriter("Zackery smiled.");
+	typewriter("'I'll let you prepare a bit before we set off. Head back to the tavern once you're ready. I'll be waiting.'");
+	typewriter("You nod as you leave the tavern. All of this stuff is crazy talk, but it also piques your interest. Maybe you can finally gain some control of your life besides just being tossed around by higher powers.");
+	typewriter("With this in mind, you head to the center of town to prepare...");
+	phoenix();
+}
+public static void phoenixPrison() {
+	typewriter("");
+	System.out.println("You're at the center of the prison. Your options are:");
+	System.out.println("Shout to Zackery (Type 'SZ')");
+	System.out.println("Check out the Prison Cells (Type 'PC')");
+	System.out.println("Check out the Far Side of the prison (Type 'FS')");
+	System.out.println("Look around the Center for anything useful (Type 'LC')");
+	System.out.println("Go to the Upper Floor of the prison (Type 'UF')");
+	System.out.println("Go back to Phoenix (Type 'GP')");
+	System.out.println("Check your Inventory (Type 'I')");
+	System.out.println("(Type the thing you want to do)");
+	String answer= scan.nextLine();
+	if(answer.equalsIgnoreCase("i")) {
+		inventory();
+	}
+	if(answer.equalsIgnoreCase("sz")) {
+		shoutZackery();
+	}
+	if(answer.equalsIgnoreCase("pc")) {
+		typewriter("You decide to look inside the prison cells.");
+		prisonCells();
+	}
+	if(answer.equalsIgnoreCase("fs")) {
+		typewriter("You decide to inspect the far side of the prison.");
+		farSidePrison();
+	}
+	if(answer.equalsIgnoreCase("lc")) {
+		typewriter("You decide to look around the center of the prison.");
+		lookCenter();
+	}
+	if(answer.equalsIgnoreCase("uf")) {
+		typewriter("You decide to head to the upper floor of the prison.");
+		upperFloorPrison();
+	}
+	if(answer.equalsIgnoreCase("gp")){
+		phoenix();
+	}else {
+		phoenixPrison();
+	}
+}
+public static void shoutZackery() {
+	if(secretEntrance==false) {
+		typewriter("You have nothing to tell Zackery!");
+		phoenixPrison();
+	}else {
+		//secret entrance to boss fight
+		typewriter("");
+	}
+}
+public static void prisonCells() {
+	if(prisonCellsDiscovered==true) {
+		typewriter("One cell labeled '7' has cobwebs in every crevease and a skeleton inside. You shiver as you look at it.");
+		typewriter("Another cell labeled '12' has a crack in the wall. It would make sense if this prison were real, but you remind yourself that all of this is a cover up.");
+		typewriter("A third cell labeled '35' is closed and needs a key to be opened. However, it looks like something valuable could be inside.");
+	}else {
+		prisonCellsDiscovered=true;
+		typewriter("Going cell by cell, you check for anything that could be useful.");
+		typewriter("One cell labeled '7' has cobwebs in every crevease and a skeleton inside. You shiver as you look at it.");
+		typewriter("Another cell labeled '12' has a crack in the wall. It would make sense if this prison were real, but you remind yourself that all of this is a cover up.");
+		typewriter("A third cell labeled '35' is closed and needs a key to be opened. However, it looks like something valuable could be inside.");
+		typewriter("Otherwise, every other cell is empty.");
+	}
+	typewriter("");
+	System.out.println("Your options are:");
+	System.out.println("Go back to the Center of the prison (Type 'C')");
+	System.out.println("Check Cell 7 (Type 'C7')");
+	System.out.println("Check Cell 12 (Type 'C12')");
+	System.out.println("Check Cell 35 (Type 'C35')");
+	System.out.println("Use something in your Inventory (Type 'I')");
+	typewriter("(Type the thing you want to do)");
+	String answer= scan.nextLine();
+	if(answer.equalsIgnoreCase("i")) {
+		inventory();
+	}
+	if(answer.equalsIgnoreCase("c")) {
+		phoenixPrison();
+	}
+	if(answer.equalsIgnoreCase("c7")) {
+		typewriter("You decide to look inside Cell 7.");
+		cell7();
+	}
+	if(answer.equalsIgnoreCase("c12")) {
+		typewriter("You decide to look inside Cell 12.");
+		cell12();
+	}
+	if(answer.equalsIgnoreCase("c35")) {
+		typewriter("You decide to look inside Cell 35.");
+		cell35();
+	}else {
+		prisonCells();
+	}
+}
+public static void cell7() {
+	if(cell7Discovered==true) {
+		typewriter("Your sense of dread only increases as you stay in the cell.");
+		typewriter("The diary is still next to the skeleton.");
+	}else {
+		cell7Discovered=true;
+		typewriter("As you enter the cell, you get a looming sense of dread. Something horrible happened here.");
+		typewriter("However, that wouldn't make sense. This whole place is a cover up, isn't it?");
+		typewriter("Looking around further, you find a diary placed next to the skeleton.");
+	}
+	typewriter("");
+	System.out.println("Your options are:");
+	System.out.println("Check out some of the Other Cells (Type 'OC')");
+	System.out.println("Read the Diary (Type 'RD')");
+	System.out.println("Use something in your Inventory (Type 'I')");
+	typewriter("(Type the thing you want to do)");
+	String answer= scan.nextLine();
+	if(answer.equalsIgnoreCase("i")) {
+		inventory();
+	}
+	if(answer.equalsIgnoreCase("oc")) {
+		prisonCells();
+	}
+	if(answer.equalsIgnoreCase("rd")) {
+		typewriter("You decide to read the diary.");
+		typewriter("You pick up the diary and flip to the first page...");
+		typewriter("");
+		typewriter("'Day 1'");
+		typewriter("'I came here looking for some ancient artifact. I'm an esteemed treasure hunter, so this should be easy work.'");
+		typewriter("'Apparently, it has immense power that even rivals the Crystals of long ago.'");
+		typewriter("You look at the skeleton for a second. Looks like he knew about this, too. Your feeling of dread only heightens as you continue reading.");
+		typewriter("'It's in Contra's prison. Didn't even know they had one. Living in Contra has always been peaceful.'");
+		typewriter("'I'll be recording all my findings in this journal. I could be famous for these writings!'");
+		typewriter("");
+		typewriter("Day 1 ends there. Would you like to continue reading? (Type 'Y' for Yes or 'N' for No)");
+		String answer1 = scan.nextLine();
+		if(answer1.equalsIgnoreCase("y")) {
+			typewriter("'Day 2'");
+			typewriter("'This whole place is empty. Why have a prison if you don't keep any prisoners?'");
+			typewriter("'I doubt there's no place I haven't checked yet, but there has to be something here. I can just feel it.'");
+			typewriter("'The locals aren't very fond of me for poking around the prison. They call me a 'madman'. Tch, I'll show them once I've found the ancient artifact.'");
+			typewriter("");
+			typewriter("Day 2 ends there. Would you like to continue reading? (Type 'Y' for Yes or 'N' for No)");
+			String answer2 = scan.nextLine();
+			if(answer2.equalsIgnoreCase("y")) {
+				typewriter("'Day 4'");
+				typewriter("'I saw it. The light. It came from the wall. I'm not crazy. I'm *not* crazy.'");
+				typewriter("'I tried everything to break the wall. Everything. Giant hammers, mana explosions, yet nothing has worked.'");
+				typewriter("'I have to get in there. I have to see the light again. I have to feel its warm embrace.'");
+				typewriter("'I'm not crazy. I am *not* crazy.'");
+				typewriter("");
+				typewriter("Day 4 ends there. Would you like to continue reading? (Type 'Y' for Yes or 'N' for No)");
+				String answer3 = scan.nextLine();
+				if(answer3.equalsIgnoreCase("y")) {
+					typewriter("Most of the writing is illegible - it looks like scribbles.");
+					typewriter("However, you can barely read some of it...");
+					typewriter("'D-- 7'");
+					//Day 7
+					typewriter("'Th- --gh- -f t-e sca-- is --e -ns-e-. --e li--t o- -h- ---le -- th- a--w-r'");
+					//The light of the scale is the answer
+					typewriter("'-hen -h- l-g-t -hi-e- u-on y-u, sal-a-io- i- n--h. W--- t-e -i-h- s--n-s -p-- -o-, ---v-t--n -s -ig-'");
+					//When the light shines upon you, salvation is nigh
+					typewriter("'Aeq--l-s -s t-e b--ng-r o- ju-t--. ---ua-i- i- -h- -ri--e- -f --s-ice.'");
+					//Aequalis is the bringer of justice
+					typewriter("'A--ep- it- sw--t, imp--t-a- g-f-. -cc--t --s --ee-, ---ar-i-l -i-t.'");
+					//Accept its sweet, impartial gift
+					typewriter("These last words, however, are abundantly clear to you - they're written on an entirely seperate page and covers the entirety of it.");
+					typewriter("'SALVATION IS NIGH'");
+					typewriter("");
+					typewriter("");
+					if(readDiary==false) {
+						readDiary=true;
+						typewriter("Flipping through the rest of the diary, you only find a few gold coins at the end of the pages.");
+						typewriter("You gained 5 gold!");
+						gold+=5;
+						typewriter("");
+					}
+				}
+			}
+		}
+		typewriter("You put down the diary and can't help but feel bad for the treasure hunter.");
+		if(skeletonDefeated==false) {
+			typewriter("As you start to leave, you hear rattling behind you as a shiver is sent down your spine.");
+			typewriter("Quickly looking back, you see that the skeleton has come alive, and it doesn't look friendly!");
+			enemyMaxHP=150;
+			enemyHP=150;
+			enemyDefense=5;
+			enemyAttack=30;
+			skeleton=true;
+			prepare();
+			skeleton();
+		}else {
+			cell7();
+		}
+	}else {
+		cell7();
+	}	
+}
+public static void skeleton() {
+	if(enemyHP<=0) {
+		setBuffs();
+		typewriter("");
+		typewriter("You have defeated the Skeleton!");
+		expValue=40;
+		goldValue=5;
+		passiveSkillCheck();
+		exp+=expValue;
+		typewriter("You gained "+expValue+" EXP! ("+exp+"/"+expToLevel+")");
+		gold+=goldValue;
+		typewriter("You gained "+goldValue+" Gold! Gold: "+gold+"");
+		checkLevel();
+		skeleton=false;
+		skeletonDefeated=true;
+		typewriter("The skeleton shatters yet again and becomes a pile of bones.");
+		typewriter("Still feeling a bit shocked, you wonder how something like the revival of the dead could even be possible.");
+		typewriter("Well... it doesn't matter now. You have to get back to your mission.");
+		typewriter("");
+		cell7();
+	}else {
+	if(currentHP<=0) {
+		playerDefeated();
+	}else {
+		System.out.println("");
+		System.out.println("The Skeleton Rattles Toward You!");
+		enemyFormat();
+    }
+  }
+}
+public static void cell12() {
+	room=1;
+	if(cell12Discovered==true) {
+		typewriter("The cell is riddled with debris, with the wall having a large crack in it.");
+		typewriter("Nothing else is useful in this cell.");
+	}else {
+		cell12Discovered=true;
+		typewriter("The cell is riddled with debris. The wall above has a large crack in it.");
+		typewriter("It looks like someone was trying to escape. However, you figure it's just an illusion to hide something.");
+		typewriter("Nothing else of usefulness is in sight as you skim around the cell.");
+	}
+	typewriter("");
+	System.out.println("Your options are:");
+	System.out.println("Check out some of the Other Cells (Type 'OC')");
+	if(wallBroken==false) {
+		System.out.println("Inspect the Crack in the wall further (Type 'IC')");
+	}else {
+		System.out.println("Go through the Secret Entrance (Type 'SE')");
+	}
+	System.out.println("Use something in your Inventory (Type 'I')");
+	typewriter("(Type the thing you want to do)");
+	String answer= scan.nextLine();
+	if(answer.equalsIgnoreCase("i")) {
+		inventory();
+	}
+	if(answer.equalsIgnoreCase("oc")) {
+		prisonCells();
+	}
+	if(answer.equalsIgnoreCase("se")) {
+		if(wallBroken==true) {
+			typewriter("You decide to go through the secret entrance.");
+			secretWall();
+		}else {
+			cell12();
+		}
+	}
+	if(answer.equalsIgnoreCase("ic")) {
+		if(wallBroken==false) {
+			typewriter("You inspect the wall closer.");
+			typewriter("It seems like the wall is very weak, as just the brush of your hand errodes some of the wall even further.");
+			typewriter("However, it would take way too much time to do it like that - if you had some sort of tool you could use to break the wall in more efficiently, then you could see what's on the other side...");
+			cell12();
+		}else {
+			cell12();
+		}
+	}else {
+		cell12();
+	}
+}
+public static void secretWall() {
+	if(secretWallDiscovered==true) {
+		typewriter("There's some sort of riddle on the wall.");
+		typewriter("It looks like it holds some sort of treasure. Maybe it can be useful in the future.");
+		typewriter("There's nothing else of note in this room.");
+	}else {
+		secretWallDiscovered=true;
+		typewriter("You carefully squeeze through the wall and make it to the other side.");
+		typewriter("Seems like something was hidden here after all. You pick up a broken piece of... something. If you had to guess, it looks like a piece of a scale.");
+		typewriter("- Scale Piece Obtained! -");
+		scalePiece+=1;
+		typewriter("That isn't all, though. There's also some sort of riddle on the wall.");
+		typewriter("It looks like it holds some sort of treasure. Maybe it can be useful in the future.");
+	}
+	typewriter("");
+	System.out.println("Your options are:");
+	System.out.println("Go back to Cell 12 (Type 'C12')");
+	System.out.println("Check the Riddle on the wall (Type 'CR')");
+	System.out.println("Use something in your Inventory (Type 'I')");
+	typewriter("(Type the thing you want to do)");
+	String answer= scan.nextLine();
+	if(answer.equalsIgnoreCase("i")) {
+		inventory();
+	}
+	if(answer.equalsIgnoreCase("c12")) {
+		cell12();
+	}
+	if(answer.equalsIgnoreCase("cr")) {
+		typewriter("You decide to check the riddle on the wall.");
+		typewriter("");
+	}else {
+		cell12();
+	}
+}
+public static void cell35() {
+	if(cell35Discovered==true) {
+		
+	}else {
+		cell35Discovered=true;
+	}
+	typewriter("");
+}
+public static void farSidePrison() {
+	if(farSidePrisonDiscovered==true) {
+		typewriter("The same symbols of Contra and the giant symbol that looks like it could be a keyhole are there.");
+	}else {
+		typewriter("The far side of the prison has nothing of importance besides a giant wall.");
+		typewriter("Upon closer inspection, there are the same symbols of Contra from before on the wall along with a new, giant symbol towering above them. To you, at least, it kind of looks like an imbalanced scale.");
+		typewriter("The giant symbol also looks like something similar in shape could be put in it, almost like a keyhole.");
+		farSidePrisonDiscovered=true;
+	}
+	typewriter("");
+	System.out.println("Your options are:");
+	System.out.println("Go back to the Center of the prison (Type 'C')");
+	System.out.println("Use something in your Inventory (Type 'I')");
+	typewriter("(Type the thing you want to do)");
+	String answer= scan.nextLine();
+	if(answer.equalsIgnoreCase("i")) {
+		inventory();
+	}
+	if(answer.equalsIgnoreCase("c")) {
+		phoenixPrison();
+	}
+	if(answer.equalsIgnoreCase("d")){
+		typewriter("oh no scary glowing monster guy attacks you good luck");
+		enemyMaxHP=650;
+		enemyHP=650;
+		enemyDefense=0;
+		enemyAttack=25;
+		aequalisSoul=true;
+		boss=true;
+		enemyAttackRarity=0;
+		prepare();
+		aequalisSoul();
+	}else {
+		farSidePrison();
+	}
+}
+public static void lookCenter() {
+	if(lookCenterDiscovered==true) {
+		typewriter("Unfortunately, there is nothing else useful in this location.");
+	}else {
+		lookCenterDiscovered=true;
+		typewriter("At first, nothing of notice comes into view. However, you spot a rusty hammer on the floor. It could become useful later!");
+		typewriter("");
+		typewriter("- Rusty Hammer Obtained! -");
+		typewriter("");
+		hammer=1;
+		typewriter("Unfortunately, that's all that could help you in this location.");
+	}
+	typewriter("");
+	System.out.println("Your options are:");
+	System.out.println("Go back to the Center of the prison (Type 'C')");
+	System.out.println("Use something in your Inventory (Type 'I')");
+	typewriter("(Type the thing you want to do)");
+	String answer= scan.nextLine();
+	if(answer.equalsIgnoreCase("i")) {
+		inventory();
+	}
+	if(answer.equalsIgnoreCase("c")) {
+		phoenixPrison();
+	}else {
+		lookCenter();
+	}
+}
+public static void upperFloorPrison() {
+	typewriter("");
+}
+public static void inventory() {
+	typewriter("You currently have:");
+	if(hammer==1) {
+		typewriter("Rusty Hammer (Type 'RH')");
+	}
+	if(scalePiece>0) {
+		if(scalePiece<4) {
+			typewriter("Scale Piece: "+scalePiece+"");
+		}
+	}
+	if(scalePiece==4) {
+		typewriter("Scale (Type 'S')");
+	}
+	typewriter("What would you like to do? (Type the thing you want to use - You can also type 'B' to go Back)");
+	String answer = scan.nextLine();
+	if(answer.equalsIgnoreCase("rh")) {
+		if(hammer==1) {
+			if(room==1) {
+				typewriter("");
+				typewriter("You pick up the hammer. This can definitely be used to break down the wall.");
+				typewriter("You carefully hammer away at the wall. It shatters as you make the final hit you need to fit through the crack.");
+				typewriter("- Rusty Hammer Lost -");
+				hammer=0;
+				//handle after?
+				wallBroken=true;
+			}else {
+				typewriter("You can't use the Rusty Hammer here!");
+			}
+		}
+	}
+	if(answer.equalsIgnoreCase("b")) {
+		
+	}else {
+		inventory();
+	}
+}
+public static void aequalisSoul() {
+	if(enemyHP<=0) {
+		setBuffs();
+		typewriter("");
+		typewriter("You have defeated ???!");
+		expValue=75;
+		goldValue=0;
+		passiveSkillCheck();
+		exp+=expValue;
+		typewriter("You gained "+expValue+" EXP! ("+exp+"/"+expToLevel+")");
+		gold+=goldValue;
+		typewriter("You gained "+goldValue+" Gold! Gold: "+gold+"");
+		checkLevel();
+		aequalisSoul=false;
+		aequalisSoulPhase2=false;
+		prepare();
+		aequalisSoulDefeated();
+	}else {
+	if(currentHP<=0) {
+		playerDefeated();
+	}else {
+	if(enemyHP>350) {
+		System.out.println("");
+		System.out.println("??? Floats Menacingly Above You!");
+		enemyFormat();
+	}else {
+		if(enemyHP<=350) {
+			if(aequalisSoulPhase2==false) {
+				typewriter("");
+				typewriter("The mysterious glowing figure floats backward. It looks unfazed from all of your attacks.");
+				typewriter("A voice coming from all sides of you speaks omnisciently.");
+				typewriter("a_attack: "+a_attack+"");
+				typewriter("a_defend: "+a_defend+"");
+				typewriter("a_item: "+a_item+"");
+				typewriter("a_skill: "+a_skill+"");
+				typewriter("a_buff: "+a_buff+"");
+				typewriter("a_debuff: "+a_debuff+"");
+				if(a_attack>a_total) {
+					a_total=a_attack;
+					a_adaptation=1;
+				}
+				if(a_defend==a_total) {
+					int randomNumber = rand.nextInt(2);
+					if(randomNumber==1) {
+					a_adaptation=2;
+					}
+				}else {
+					if(a_defend>a_total) {
+						a_total=a_defend;
+						a_adaptation=2;
+					}
+				}
+				if(a_item==a_total) {
+					int randomNumber = rand.nextInt(2);
+					if(randomNumber==1) {
+					a_adaptation=3;
+					}
+				}else {
+					if(a_item>a_total) {
+						a_total=a_item;
+						a_adaptation=3;
+					}
+				}
+				if(a_skill==a_total) {
+					int randomNumber = rand.nextInt(2);
+					if(randomNumber==1) {
+					a_adaptation=4;
+					}
+				}else {
+					if(a_skill>a_total) {
+						a_total=a_skill;
+						a_adaptation=4;
+					}
+				}
+				if(a_buff==a_total) {
+					int randomNumber = rand.nextInt(2);
+					if(randomNumber==1) {
+					a_adaptation=5;
+					}
+				}else {
+					if(a_buff>a_total) {
+						a_total=a_buff;
+						a_adaptation=5;
+					}
+				}
+				if(a_debuff==a_total) {
+					int randomNumber = rand.nextInt(2);
+					if(randomNumber==1) {
+					a_adaptation=6;
+					}
+				}else {
+					if(a_debuff>a_total) {
+						a_adaptation=6;
+					}
+				}
+				if(a_adaptation==1) {
+					typewriter("'You seem to enjoy swinging your weapon around, don't you? Let's see about that...'");
+				}
+				if(a_adaptation==2) {
+					typewriter("'You seem to enjoy shielding yourself from danger, don't you? Let's see about that...'");
+				}
+				if(a_adaptation==3) {
+					typewriter("'You seem to enjoy sifting through that bag of yours, don't you? Let's see about that...'");
+				}
+				if(a_adaptation==4) {
+					typewriter("'You seem to enjoy displaying your skills, don't you? Let's see about that...'");
+				}
+				if(a_adaptation==5) {
+					typewriter("'You seem to enjoy giving yourself various advantages in combat, don't you? Let's see about that...'");
+				}
+				if(a_adaptation==6) {
+					typewriter("'You seem to enjoy degrading my physical abilites, don't you? Let's see about that...'");
+				}
+				typewriter("A shiver is sent down your spine. The mysterious being is learning your patterns. You need to find a new strategy!");
+				aequalisSoulPhase2=true;
+				enemyAttackRarity=1;
+				aequalisSoul();
+			}else {
+				if(aequalisSoulPhase2==true){
+					System.out.println("");
+					System.out.println("??? Reads Your Every Move!");
+					enemyFormat();
+				}
+			  }
+			}
+		 }
+	  }
+   }
+}
+public static void aequalisSoulDefeated() {
+	typewriter("'chat this is not real'");
+}
+public static void typewriter(String text) {
+	  int i;
+	  for(i = 0; i < text.length(); i++){
+	      System.out.printf("%c", text.charAt(i));
+	      try{
+	          Thread.sleep(textSpeed);//pause between characters
+	      }catch(InterruptedException ex){
+	          Thread.currentThread().interrupt();
+	      }
+	  }
+	    System.out.println("");
+	}
+}
