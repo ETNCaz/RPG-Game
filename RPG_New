@@ -1078,7 +1078,7 @@ public static void enemyFormat() {
 	System.out.println("");
 	System.out.println(""+enemyApproach+"");
 	if(boss==true) {
-		System.out.println("Enemy HP: ???/??? ("+enemyHP+"/"+enemyMaxHP+")");
+		System.out.println("Enemy HP: ???/???");
 	}else {
 		System.out.println("Enemy HP: "+enemyHP+"/"+enemyMaxHP+"");
 	}
