@@ -4410,6 +4410,7 @@ public static void inventory() {
 				typewriter("Using the rusty hammer, you repeatedly slam into the pieces until they finally combine into one coherent piece.");
 				typewriter("");
 				typewriter("- Complete Scale Obtained! -");
+				typewriter("");
 				typewriter("All you have to do now is to figure out how to use it...");
 				typewriter("");
 				scalePiece=0;
