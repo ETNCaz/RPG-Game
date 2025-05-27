@@ -1,0 +1,1158 @@
+package unit1;
+import java.util.Scanner;
+public class Story {
+	  //version 1.01
+	  public static String name;
+	  public static String Pname;
+	  public static int textSpeed=25;
+	  public static int morality=0;
+	  public static Scanner scan = new Scanner(System.in);
+	  
+	  public static void main(String[] args) {
+		  typewriter("Welcome to your story!");
+	      typewriter("What is your name?");
+	      Pname = scan.nextLine();
+	      typewriter("Hello, "+ Pname +"!");
+	      typewriter("Would you like to speed up the text? (Type 'Yes' or 'No')");
+	      String answer = scan.nextLine();
+	      if(answer.equalsIgnoreCase("yes")) {
+	    	  textSpeed=10;
+	    	  typewriter("Okay then, lets get started!");
+	      }else {
+	    	  if(answer.equalsIgnoreCase("no"));
+	    	  typewriter("Okay then, lets get started!");
+	      }
+	      typewriter("In this game, you can type certain words in order to choose certain options to progress the story; simple enough.");
+	      typewriter("With that out of the way, would you like to begin the story? (Type 'Yes' or 'No')");
+	      String answer2 = scan.nextLine();
+	      if(answer2.equalsIgnoreCase("yes")) {
+	          intro();
+	      }else {
+	      if(answer2.equalsIgnoreCase("no")) {
+	      	  typewriter("You're no fun. I had an entire NOVEL planned out an you just left D:");
+	        }
+	      }
+	    }
+	    public static void intro() {
+	    	typewriter("Okay, "+ Pname +". Our story begins in the year 2050. The zombie apocalypse has begun, and you're in the middle of it.");
+	    	typewriter("You also have a friend, what shall his name be?");
+	        name = scan.nextLine();
+	        typewriter("You have a friend named "+ name +" who got bitten by one of the zombies. You don't know if he's infected or not, but you both assume the worst.");
+	        typewriter("You and "+ name +" have recently entered into a bunker, but you have minimal food and water and only one gun with one clip. You may need to leave soon to get supplies.");
+	        typewriter("Suddenly, you hear a knock at the door. Will you answer it? (Type 'Yes' or 'No')");
+	        String answer = scan.nextLine();
+	        if(answer.equalsIgnoreCase("yes")) {
+	        	choice1();
+	        }else {
+	        if(answer.equalsIgnoreCase("no")) {
+	        	choice2();
+	        }else {
+	        if(answer.equalsIgnoreCase("fight")) {
+	        	choice1AABASkip();
+	        }else {
+	        if(answer.equalsIgnoreCase("zombie")) {
+	        	choice2BBASkip();
+	        }else {
+	        if(answer.equalsIgnoreCase("code")) {
+	        	choice2BBBASkip();
+	        }else {
+	        if(answer.equalsIgnoreCase("t3")) {
+	        	choice2T3Skip();
+	        }else {
+	        if(answer.equalsIgnoreCase("riddle")) {
+	        	choice2BSkip();
+	        }else {
+	        if(answer.equalsIgnoreCase("noise")) {	
+	        	choice1ASkip();
+	        	  }
+	            }
+	          }
+	        }
+	      }
+	    }
+	  }
+    }
+  }
+public static void choice1() {
+	typewriter("You decide to open the door and hope for the best.");
+	typewriter("On the other side of the door is a woman. 'Hello! My name is Cassie, and I'm looking for survivors. Are you in need of anything?'");
+	typewriter(""+ name +" comes sprinting to the door. 'Y-Yes, please, we need assistance. We're running out of supplies.'");
+	typewriter("'Well then, just your luck!' Cassie said with a smile, 'Follow me outside and I'll give you some supplies.'");
+	typewriter("You, however, are a bit skeptical. This random woman comes waltzing by, promising supplies. It must be too good to be true, right?");
+	typewriter("You tell "+ name +" your concerns, but he shakes his head. 'We have to take every chance we can get, especially with our current state.'");
+	typewriter("Yet, you're still not fully convinced. Will you take Cassie's offer? (Type 'Yes' or 'No')");
+	String answer = scan.nextLine();
+    if(answer.equalsIgnoreCase("yes")) {
+    	choice1A();
+    }else {
+    if(answer.equalsIgnoreCase("no")) {
+    	choice1B();
+    }
+  }
+}
+public static void choice2() {
+	typewriter("You decide not to open the door, assuming the worst.");
+	typewriter("Whatever it is knocks on the door once more, then the sound dissipates.");
+	typewriter("You suddenly have a feeling of dread, though you can't place why.");
+	typewriter("You spend the next few days rationing food to survive, but because you don't have any first aid, "+ name +"'s wound is getting worse.");
+	typewriter("On the 6th day, "+ name +" comes up to you with a solemn look on his face.");
+	typewriter("'I think... I think I'm turning into a zombie' "+ name +" said, frowning, 'We have a gun on the table over there. I don't want you to turn; I want you to live a normal life once this is over.'");
+	typewriter("You start shaking your head furiously. No, it hasn't come to this you tell him. This can't be happening. Yet, you realize, it is happening.");
+	typewriter("Will you take the gun and shoot "+ name +" to prevent him from infecting you? (Type 'Yes' or 'No')");
+	String answer = scan.nextLine();
+    if(answer.equalsIgnoreCase("yes")) {
+    	choice2A();
+    }else {
+    if(answer.equalsIgnoreCase("no")) {
+    	choice2B();
+    }
+  }
+}
+public static void choice1A() {
+	typewriter("You decide to take Cassie's offer, agreeing with "+ name +".");
+	typewriter("You take the gun with you as Cassie leads you to a helicopter. 'Hop on!' Cassie said enthusiastially.");
+	typewriter("You sit next to "+ name +" and are flown to a far away safehouse.");
+	typewriter("'See, I told you this was a good idea, "+ Pname +"!' "+ name +" said with a mocking tone.");
+	typewriter("The helicopter lands on the roof of the building and you follow Cassie's lead down the nearby stairs.");
+	typewriter("You go down one floor before Cassie stops.");
+	typewriter("'Ah, here we are! This is where we keep all the survivors. Let me show you around!' Cassie said as she motioned to follow her.");
+	typewriter("The inside was dreary; it was a rundown parking center. The walls were tattered and water was dripping from the ceiling.");
+	typewriter("However, there were several tents that could be used for shelter and containers filled with food and water.");
+	typewriter("'I know it's not much, but it's the best we have.' Cassie said a bit sorrowfully.");
+	typewriter("She then pointed toward one of the tents. 'Take that one over there.' Cassie said assertively, 'It's one of the last one's we have.'");
+	typewriter("You and "+ name +" thank Cassie profusely and enter the tent. It's at least better than what you had before.");
+	typewriter("You decide to sleep for the night while "+ name +" stays up for a bit longer.");
+	typewriter("In your sleep, you hear a lot of groaning and steps passing by you.");
+	typewriter("Even though you are curious as to what is happening, you consider that it could be dangerous.");
+	typewriter("Will you investigate the noise? (Type 'Yes' or 'No')");
+	typewriter("(If you fail here, you can type 'Noise' at the first option of the game, which is deciding whether or not to let the person knocking on your door in, to go straight here)");
+	String answer = scan.nextLine();
+    if(answer.equalsIgnoreCase("yes")) {
+    	choice1AA();
+    }else {
+    if(answer.equalsIgnoreCase("no")) {
+    	choice1AB();
+    }
+  }
+}
+public static void choice1ASkip() {
+	typewriter("Will you investigate the noise? (Type 'Yes' or 'No')");
+	typewriter("(Don't forget that you can go straight here if you fail by typing 'Noise' at the first option in the game)");
+	String answer = scan.nextLine();
+    if(answer.equalsIgnoreCase("yes")) {
+    	choice1AA();
+    }else {
+    if(answer.equalsIgnoreCase("no")) {
+    	choice1AB();
+    }
+  }
+}
+public static void choice1B() {
+	typewriter("You decide not to take Cassie's offer, as you are suspicious of her intentions.");
+	typewriter("'A-Are you sure? We're only trying to help!' Cassie asked worryingly.");
+	typewriter("'Come on man, this is what we were waiting for! This is going to help us a lot!' "+ name +" said desperately.");
+	typewriter("You assure them both that you don't want to go.");
+	typewriter("'I'm sorry but... I'm leaving. I won't miss this opportunity. Goodbye, "+ Pname +".' "+ name +" said, slightly tearing up.");
+	typewriter("Cassie and "+ name +" leave as you shut the door. Seconds later, you hear whiring sounds that fade soon after.");
+	typewriter("Though you aren't sure you made the right decision, you press on.");
+	typewriter("Throughout the next couple days, you run out of food. You need to explore in order to find supplies.");
+	typewriter("With a sigh, you exit the bunker and search for a place to scavenge.");
+	typewriter("On the left is a grocery store, though it has been abandoned.");
+	typewriter("On the right is a pawn shop. It may have useful things, but it could also yield nothing.");
+	typewriter("Which way shall you go? (Type 'Left' or 'Right')");
+	String answer = scan.nextLine();
+    if(answer.equalsIgnoreCase("left")) {
+    	choice1BA();
+    }else {
+    if(answer.equalsIgnoreCase("right")) {
+    	choice1BB();
+    }
+  }
+}
+public static void choice1AA() {
+	typewriter("You decide to check out the noise in curiousity.");
+	typewriter("You get up grogily and rub your eyes. The sounds were clearer now; groaning along with screaming.");
+	typewriter("You decide that a weapon might be useful. You grab your gun with one clip and walk outside the tent.");
+	typewriter("It was certainly a sight to see. Zombies flooded the area as people screamed and ran away.");
+	typewriter("You gripped your gun tighter as you shouted for "+ name +".");
+	typewriter("There was no response.");
+	typewriter("Suddenly, a zombie leaped from behind you. Down on the ground, you punch him in the skull, fracturing it.");
+	typewriter("You sigh in relief, get back up, and look around for possibilities of where "+ name +" could be.");
+	typewriter("On the left is the staircase you entered from, now flooded with people trying to escape.");
+    typewriter("On the right is deeper into the parking lot and, though you don't know if there's an exit, he could be there.");
+    typewriter("Which way shall you go? (Type 'Left' or 'Right')");
+    String answer = scan.nextLine();
+    if(answer.equalsIgnoreCase("left")) {
+    	choice1AAA();
+    }else {
+    if(answer.equalsIgnoreCase("right")) {
+    	choice1AAB();
+    }
+  }
+}
+public static void choice1AB() {
+	typewriter("You decide not to check out the noise in fear of what it could be.");
+	typewriter("Minutes pass, and you continue to hear groaning, but now you could hear faint screams.");
+	typewriter("Suddenly, a zombie barges into your tent and bites you in the neck.");
+	typewriter("You scream in pain as you kick and punch the zombie off of you.");
+	typewriter("You hear heavy amounts of gunfire outside as you seethe in pain.");
+	typewriter("'Everyone get behind me!' Cassie shouted as more zombies were being shot down.");
+	typewriter("After a bit more gunfire, all the zombies were dead. You shouted for help.");
+	typewriter("Cassie entered the tent and her face filled with fear.");
+	typewriter("'MEDIC! WE NEED A MEDIC, IMMEDIATELY!' Cassie screamed as she looked around for a bandage.");
+	typewriter("You black out as you hear footsteps rushing over.");
+	typewriter("");
+	typewriter("					...");
+	typewriter("");
+	typewriter("You wake up in a hospital bed with 2 doctors around you.");
+	typewriter("'You're awake! Good!' one of them said with a smile.");
+	typewriter("Your neck is still throbbing in pain, but at least you're conscious now.");
+	typewriter("You ask the doctors where "+ name +" is.");
+	typewriter("'Oh, the one that just recently came here? Well, he came asking for you earlier. I'll bring him over now,' the other doctor said.");
+	typewriter("The doctor called "+ name +" over. After a little bit, he appeared around the corner.");
+	typewriter("'Hey! I heard you were awake. What's up!' "+ name +" said, beaming with joy.");
+	typewriter("You tell him that you're doing a bit better and what happened at the camp.");
+	typewriter("'Oh, damn. That sucks. Sorry I wasn't there to help, I was just-'");
+	typewriter(""+ name +" was cut off by one of the doctors.");
+	typewriter("'Crap! The zombie venom is getting to the patient's blood! The patient is turning! Evacuate and get the ZEF!'");
+	typewriter(""+ name +" looks at you in despair. 'W-What do you mean?! There has to be some cure, right?!'");
+	typewriter("One of the doctors look at "+ name +" solenmly. 'There is no cure yet, not that we know of at least...'");
+	typewriter("The last thing you see is "+ name +" looking at you with tears as several armed men surround you.");
+	typewriter("You wish that "+ name +" hopefully survives the apocalypse.");
+	typewriter("					The End");
+	typewriter("				    (Turned Ending)");
+}
+public static void choice1BA() {
+	typewriter("You decide to head left toward the grocery store.");
+	typewriter("You make your way toward the grocery store by foot, taking the gun with one clip with you.");
+	typewriter("As you're getting closer, you realize that the grocery store is infested with zombies.");
+	typewriter("Nervous, you open the door as silently as possible to get inside.");
+	typewriter("Under the cover of darkness as there are no functioning lights, there are two stores that pique your interest.");
+	typewriter("On the left is a store full of food and water.");
+	typewriter("On the right is a store full of weaponry.");
+	typewriter("Which one will you choose? (Type 'Left' or 'Right')");
+	String answer = scan.nextLine();
+    if(answer.equalsIgnoreCase("left")) {
+    	choice1BAA();
+    }else {
+    if(answer.equalsIgnoreCase("right")) {
+    	choice1BAB();
+    }
+  }
+}
+public static void choice1BB() {
+	typewriter("You decide to head right toward the pawn shop.");
+	typewriter("You make your way toward the pawn shop by foot, taking the gun with one clip with you.");
+	typewriter("It's a small store with one shopkeeper.");
+	typewriter("You greet her has you walk in.");
+	typewriter("'Why, hello there! I don't get many visitors often, so it's a pleasure to have you. Please, look around!'");
+	typewriter("You smile at the shopkeeper and look around. The only things that can really help you are hunting supplies (a spear, bear traps, and a hunting rifle) and some food and water.");
+	typewriter("You look in your pocket. Luckily, you still have some cash on you.");
+	typewriter("You give the money and take the hunting supplies along with the food and water with you.");
+	typewriter("'Hey, thanks for coming! You're always welcome here!' the shopkeeper said as she waved bye.");
+	typewriter("You return back to your bunker without much difficulty.");
+	typewriter("It's now very lonely, and you're starting to miss "+ name +" a lot.");
+	typewriter("					Several days later...");
+	typewriter("You spent the next few days rationing food and water.");
+	typewriter("Suddenly, you hear a knock, followed by several knocks at the door.");
+	typewriter("You're worried that it may be zombies, though it could just be a group of people.");
+	typewriter("Will you open the door? (Type 'Yes' or 'No')");
+	String answer = scan.nextLine();
+    if(answer.equalsIgnoreCase("yes")) {
+    	choice1BBA();
+    }else {
+    if(answer.equalsIgnoreCase("no")) {
+    	choice1BBB();
+    }
+  }
+}
+public static void choice1AAA() {
+	typewriter("You decide to left toward the staircase.");
+	typewriter("Although you make it there, it's crowded and difficult to manuever in.");
+	typewriter("Suddenly, you hear a collection of screams as the crowd in the stairs shifts upwards.");
+	typewriter("Zombies were at the bottom of the staircase!");
+	typewriter("You quickly make your way back to the top, but now that area was flooded with even more zombies.");
+	typewriter("Surrounded, you have no choice but to fight back.");
+	typewriter("You remember the gun in your hand, though it only has one clip.");
+	typewriter("You punch the nearest zombie in the stomach, making it collapse on the floor.");
+	typewriter("You shoot all the other nearby zombies, running out of bullets, but they keep on coming.");
+	typewriter("You keep fighting the zombies with your fists and legs, but you get scratched and bitten all over as all the other survivors around you get infected.");
+	typewriter("Writhing in pain, you fight with the last of your energy, but it's no use.");
+	typewriter("With your last dying breath, you hope that "+ name +" makes it out alive...");
+	typewriter("					The End");
+	typewriter("			   (Fight Until the Bitter End Ending)");
+}
+public static void choice1AAB() {
+	typewriter("You decide to go right, deeper into the parking lot.");
+	typewriter("Sprinting, you make your way further down the parking lot.");
+	typewriter("Lots of zombies were crowding the area, but there were too many to be shot down. Instead, you swerve around them, shouting for "+ name +" over and over again.");
+	typewriter("Suddenly, you hear a response. 'H-Help!' the voice cried.");
+	typewriter("Your eyes widen as you rush over to see "+ name +" surronded by zombies.");
+	typewriter("You have to think fast.");
+	typewriter("You grip your gun harder and shoot the zombies surrounding "+ name +".");
+	typewriter("With a sigh of relief, you rush over to him.");
+	typewriter("'Y-Yo! You saved me! T-Thanks! I almost thought I was a goner there!' "+ name +" said with a chuckle.");
+	typewriter("Suddenly, more zombies flooded through the way you came from.");
+	typewriter("'Crap! What are we gonna do?' "+ name +" said as he backed away in fear.");
+	typewriter("You and "+ name +" get backed into the corner of the wall as the zombies surround you.");
+	typewriter("You close your eyes as you accept your fate...");
+	typewriter("Suddenly, you hear mulitple shots ring out, which kill the zombies in front of you.");
+	typewriter("You open your eyes to see Cassie with several armed men, their shirts labeled 'ZEF'.");
+	typewriter("'Thank goodness we came here in time!' Cassie exclaimed.");
+	typewriter("You nod as you exit and look around. The encampment was in ruins. People were bleeding on the ground, with several of the tents and supplies knocked over.");
+	typewriter("'WE NEED MEDICS, NOW!' Cassie shouted as she ordered the armed men around, 'Can you two help get survivors to the medical area? It's just one flight downstairs.'");
+	typewriter("You and "+ name +" both accepted as you each took a person down the stairs.");
+	typewriter("       				Several minutes later...");
+	typewriter("You and "+ name +" are rearranging the tents when Cassie comes up to you.");
+	typewriter("'Hey, thanks for your guys help, I greatly appreciate it. It seems like you both are capable. Why not become a member of the ZEF?' Cassie asked.");
+	typewriter("You ask what the ZEF is.");
+	typewriter("'It's short for 'Zombie Extermination Force'. You get to help more people by getting rid of all the zombies.'");
+	typewriter("You look at "+ name +". 'Hell yeah, the more I can help people, the merrier!' "+ name +" said with a smile.");
+	typewriter("You nod in approval.");
+	typewriter("'Well then, you're in! Follow me downstairs and I'll show you the ZEF armory'.");
+	typewriter("You follow Cassie down two flights of stairs and enter a room with a sign above it that says 'ZEF Personel Only'.");
+	typewriter("You look around. The entire room is filled to the brink with different kinds of guns and weapons along with bulletproof vests.");
+	typewriter("'Pick to your liking!' Cassie said enthusiastically.");
+	typewriter(""+ name +"'s face beamed. 'Woah! So many weapons! It's going to take me so long to choose!'.");
+	typewriter("You laugh in agreement as you look around.");
+	typewriter("Along with holsters for pistols, walkie talkies, and knives, which both you and "+ name +" picked up, there are shotguns, snipers, and assault rifles.");
+	typewriter(""+ name +" eagerly took the shotgun. 'I'm more of an 'up close and personal' type of guy, yknow?' he said to you as he picked it up.");
+	typewriter("You decide to go with the assault rifle, as it's the most balanced of the bunch.");
+	typewriter("'Good choices. I'll see you on your next mission then, recruits!' Cassie exclaimed, 'Just... don't do anything stupid in the meantime'.");
+	typewriter("					Several days later...");
+	typewriter("Both you and "+ name +" haven't had any assignments.");
+	typewriter("'Ugh, when is something going to happen? I-I mean, not like I want it to, but...'");
+	typewriter("You look at "+ name +" and shake your head.");
+	typewriter("Suddenly, Cassie spoke into the walkie talkie.");
+	typewriter("'EVERYONE, GET TO THE ENTRANCE OF THE SETTLEMENT IMMEDIATELY! SOMEONE IS OUTSIDE AND HAS THREATENED TO DESTROY THE CAMP!'");
+	typewriter("You instanly turned to "+ name +" with a dissapointing look.");
+	typewriter("'Be careful what you wish for I guess...' "+ name +" said as you both made your way to the entrance of the building.");
+	typewriter("A dozen more ZEF soldiers were already there once you arrived. There was a mysterious cloaked figure with a sword that eminated a green aura.");
+	typewriter("'DON'T MOVE OR WE'LL SHOOT!' Cassie shouted at the cloaked figure, 'STOP THIS NOW AND WE'LL LET YOU GO!'");
+	typewriter("The cloaked figure chuckled and waved his finger at Cassie. 'Now now now, that's not an appropriate way to greet a guest.'");
+	typewriter("He then pointed at Cassie. 'I only need you.'");
+	typewriter("'W-What? N-No, you won't kill me!' Cassie said, her voice a bit shakey.");
+	typewriter("'Fine then. Have it that way.'");
+	typewriter("The cloaked figure smirked before seemingly teleporting in a blue smoke and slashing one of the ZEF soldiers around you, killing them.");
+	typewriter("'FIRE!!!' Cassie shouted. Although everyone started firing, no one could hit him. He continued slashing down everyone one by one.");
+	typewriter("By the end of it, only you and "+ name +" were standing.");
+	typewriter("'Now will you let up, Cassie?' the cloaked figure asked, 'Or do I have to kill more?'");
+	typewriter("You looked at "+ name +" and both knew what the other one was thinking; we have to stop this person.");
+	typewriter("But how?");
+	typewriter("Cassie gulped. 'U-Uh...' she said in a desperate panic.");
+	typewriter("Suddenly, "+ name +" pulled out his shotgun and fired at the cloaked figure. A few bullets hit him, startling and injuring him.");
+	typewriter("'Agh! Enough! I'll finish them anyway!' the cloaked figure said in a fit of rage.");
+	typewriter("He then teleported and slashed "+ name +" down, but only held his sword to your neck.");
+	typewriter("'Will you do the same?' the cloaked figure asked.");
+	typewriter("You remembered the knife you have in your pocket, leaving you with a choice.");
+	typewriter("Will you attempt to stab the cloaked figure or let him take Cassie away? (Type 'Stab' or 'Do Nothing')");
+	String answer = scan.nextLine();
+    if(answer.equalsIgnoreCase("stab")) {
+    	choice1AABA();
+    }else {
+    if(answer.equalsIgnoreCase("do nothing")) {
+    	choice1AABB();
+    }
+  }
+}
+public static void choice1BAA() {
+	typewriter("You decide to head left toward the store full of food and water.");
+	typewriter("You silently creep your way toward the store, avoiding all the zombies along the way.");
+	typewriter("You observe the food and water. You can only take a tiny bit with you, but it's better than nothing.");
+	typewriter("Suddenly, you hear groaning behind you. You quickly turn around to see a horde of zombies crowding the door.");
+	typewriter("In a fit of panic, you draw out your pistol and start firing.");
+	typewriter("However, this only alerts more zombies and draws them to you.");
+	typewriter("Surrounded by zombies, there isn't anything you can do but fight with your bare hands.");
+	typewriter("But it isn't enough. You're swallowed by the horde and become their next meal.");
+	typewriter("					The End");
+	typewriter("		  	    (Swallowed by the Horde Ending)");
+}
+public static void choice1BAB() {
+	typewriter("You decide to head right toward the store full of weaponry.");
+	typewriter("You silently creep your way toward the store, avoiding all the zombies along the way.");
+	typewriter("You look around the store. Inside, there are many different weapons and bullet proof vests.");
+	typewriter("Suddenly, you hear groaning behind you. You quickly turn around to see a horde of zombies crowding the door.");
+	typewriter("You grab the nearest assault rifle and bullets to start shooting down all the zombies.");
+	typewriter("This only alerts more zombies and draws them to you.");
+	typewriter("However, you were able to kill the zombies at the entrance. You grab the assault rifle along with two pistols and a bullet proof vest and exit the store.");
+	typewriter("You remember that you needed food and water, so you sprint to the other store.");
+	typewriter("Quickly, you grab everything you need and escape as the zombies began to surround you.");
+	typewriter("You make your way back home in peace.");
+	typewriter("					Several days later...");
+	typewriter("You spend the next few days rationing food and water.");
+	typewriter("Suddenly, you hear a knock, followed by several knocks at the door.");
+	typewriter("You're worried that it may be zombies, though it could just be a group of people.");
+	typewriter("Regardless, you put on your bullet proof vest and pick up your assault rifle.");
+	typewriter("As you were putting on the vest, a group of zombies busted the door down and entered your bunker.");
+	typewriter("However, you're prepared, so you shoot them all down.");
+	typewriter("In safety, you prepare to live like this for however long it takes.");
+	typewriter("					The End");
+	typewriter("		  	        (Self Sufficient Ending 1)");
+}
+public static void choice1BBA() {
+	typewriter("You decide to open the door and let whatever's on the other side in.");
+	typewriter("Picking up the gun with one clip, you make your way to the door and open it.");
+	typewriter("Suddenly, a group of zombies ambush you.");
+	typewriter("You shoot most of them, but there's too many.");
+	typewriter("You get scratched and biten all over, but you manage to kill them all using your bare hands.");
+	typewriter("Without any first aid, however, you can only sit there in agonizing pain as you slowly die.");
+	typewriter("					The End");
+	typewriter("		  	       (Slow and Painful Ending)");
+}
+public static void choice1BBB() {
+	typewriter("You decide to not open the door in fear that it may be zombies.");
+	typewriter("You stand back and grab the gun with one clip just in case.");
+	typewriter("Your suspicions were correct. A group of zombies barged in and knocked the bunker door down.");
+	typewriter("You shot most of them down, but there were still some left.");
+	typewriter("Picking up the spear not wanting to waste your hunting rifle ammo, you stab the rest of the zombies to death.");
+	typewriter("In triumph, you prepare to live like this however long it takes.");
+	typewriter("					The End");
+	typewriter("		  	        (Self Sufficient Ending 2)");
+}
+public static void choice1AABA() {
+	typewriter("You decide to try and stab the cloaked figure.");
+	typewriter("In one swift motion you pull out your knife and plung it into the cloaked figure's chest.");
+	typewriter("The cloaked figure's eyes widen as he stepped back.");
+	typewriter("'W-...What?' He managed to say, 'N-No, I won't die this easily!'");
+	typewriter("Bleeding from his chest, he teleported in front of you and slashed upward.");
+	typewriter("Time seemed to slow down, your life flashing before your eyes.");
+	typewriter("You have to make a final stand.");
+	typewriter("You can choose to either block or dodge the attack. Which will you choose? (Type 'Block' or 'Dodge')");
+	typewriter("(If you fail here, you can type 'Fight' at the first option of the game, which is deciding whether or not to let the person knocking on your door in, to go straight here)");
+	String answer = scan.nextLine();
+    if(answer.equalsIgnoreCase("block")) {
+    	choice1AABAA();
+    }else {
+    if(answer.equalsIgnoreCase("dodge")) {
+    	choice1AABAB();
+    }
+  }
+}
+public static void choice1AABASkip() {
+	typewriter("You can choose to either block or dodge the attack. Which will you choose? (Type 'Block' or 'Dodge')");
+	typewriter("(Don't forget that you can go straight here if you fail by typing 'Fight' at the first option in the game)");
+	String answer = scan.nextLine();
+    if(answer.equalsIgnoreCase("block")) {
+    	choice1AABAA();
+    }else {
+    if(answer.equalsIgnoreCase("dodge")) {
+    	choice1AABAB();
+    }
+  }
+}
+public static void choice1AABB() {
+	typewriter("You decide to do nothing and hope that his carnage comes to an end.");
+	typewriter("'That's what I thought,' the cloaked figure said before teleporting in front of Cassie, 'Well, what's your decision?'");
+	typewriter("Cassie looked down, tears flowing down her cheeks. 'F-Fine... Just stop killing people, please...'");
+	typewriter("The cloaked figure smirked. 'Good,' he said before slashing Cassie down, killing her right there.");
+	typewriter("'Now no one shall find out about my plan. Hehehehe.... HAHAHAHA!' the cloaked figure laughed maniacally.");
+	typewriter("You are filled with hatred. First he killed "+ name +", now Cassie?! Tears formed in your eyes.");
+	typewriter("The cloaked figure then teleported in front of you. 'Now then, we can't have anyone knowing about this, you understand?'");
+	typewriter("In anger, you pull out your knife and try to stab the cloaked figure.");
+	typewriter("However, he predicted this, and swiftly countered, knocking you down and your knife away.");
+	typewriter("'Pathetic. Goodbye.' the cloaked figure said as he readied his weapon.");
+	typewriter("The last thing you see is the cloaked figure plunging his blade in your chest, cleanly cutting through you.");
+	typewriter("					The End");
+	typewriter("		  	    (Murdered in Cold Blood Ending)");
+}
+public static void choice1AABAA() {
+	typewriter("You decide to block the cloaked figure's upward slash.");
+	typewriter("Using your knife, you place it in front of you and brace.");
+	typewriter("The cloaked figure's sword cuts cleanly through the knife and slices you in half.");
+	typewriter("The cloaked figure approaches Cassie. 'There is no one left of your measely army. Send your prayers.' The cloaked figure grinned.");
+	typewriter("					The End");
+	typewriter("			      (Murdered in Vain Ending 1)");
+}
+public static void choice1AABAB() {
+	typewriter("You decide to dodge the cloaked figure's upward slash.");
+	typewriter("With a quick side step you avoid the swing and slash back at him with the knife.");
+	typewriter("It cuts his arm. Enraged, he teleports backward.");
+	typewriter("'Hehehehe... You are an unpredictable one.' the cloaked figure said with a maniacal tone.");
+	typewriter("He then drew out a potion from his cloak and drank it. He seemed to be reinvigorated.");
+	typewriter("You decide that the best option is to use a gun against him.");
+	typewriter("You can either use your assault rifle or the pistols in your holsters. Which will you choose? (Type 'Rifle' or 'Pistol')");
+	String answer = scan.nextLine();
+    if(answer.equalsIgnoreCase("rifle")) {
+    	choice1AABABA();
+    }else {
+    if(answer.equalsIgnoreCase("pistol")) {
+    	choice1AABABB();
+    }
+  }
+}
+public static void choice1AABABA() {
+	typewriter("You decide to pull out your rifle to shoot the cloaked figure.");
+	typewriter("Pulling out your rifle from your back, you fire at the cloaked figure.");
+	typewriter("However, he is sees this coming, and teleports behind you.");
+	typewriter("With no way to stop it, the cloaked figure slices you in half.");
+	typewriter("					The End");
+	typewriter("			      (Murdered in Vain Ending 2)");
+}
+public static void choice1AABABB() {
+	typewriter("You decide to use your pistols to shoot the cloaked figure.");
+	typewriter("Pulling out both pistols from your holsters, you shoot at the cloaked figure.");
+	typewriter("However, he is swift, and dodges your bullets.");
+	typewriter("The cloaked figure then teleports behind you and tries to slash you.");
+	typewriter("Because you have pistols out, however, you are more mobile and can dodge out of the way, shooting the cloaked figure more.");
+	typewriter("A few shots connect, sending the cloaked figure down onto the ground.");
+	typewriter("'I-... how... could... I... be... defeated...' the cloaked figure said as he bled out.");
+	typewriter("You looked down at your pistols, then at Cassie, who is shocked beyond belief, then at "+ name +", who is laying on the floor.");
+	typewriter("Tears begin to form as you rush over to "+ name +". Cassie starts to call for medics.");
+	typewriter(""+ name +" opens his eyes. 'H-Heh, you really m-messed that guy up, eh?' "+ name +" said with a laugh.");
+	typewriter("You observe his wounds. His entire chest has been cut deeply. You tell him your concerns.");
+	typewriter("'D-Don't worry about me, "+ Pname +". Even if I d-die, at least I'll know that you s-saved everyone...'");
+	typewriter(""+ name +" slowly closed his eyes as you slam the ground in anger.");
+	typewriter("Medics began to surround you as they took "+ name +" away.");
+	typewriter("					Several hours later...");
+	typewriter("You got checked out for any injuries, and you were unscathed.");
+	typewriter("You walk into the makeshift hospital once again to check up on "+ name +".");
+	typewriter("You sit on the side of the bed, staring into his eyes, hoping he wakes up.");
+	typewriter("Suddenly, with a groan, "+ name +" opened his eyes.");
+	typewriter("Sighing and crying in relief, you hug "+ name +" as hard as you can.");
+	typewriter("'W-Woah there, gentle!' "+ name +" said with a smile, 'Did you really think I'd let that nobody kill me?'");
+	typewriter("					The End");
+	typewriter("			(Good Ending; Hero of the Apocalypse)");
+	typewriter("					Credits");
+	typewriter("Story Design: 3than");
+	typewriter("");
+	typewriter("Character Design: Ethan");
+	typewriter("");
+	typewriter("Cod1ng: Ethan");
+	typewriter("");
+	typewriter("8ug Fixing: Ethan");
+	typewriter("");
+	typewriter("6ame Testing: Ethan");
+	typewriter("");
+	typewriter("Literally this entire game: Ethan");
+	typewriter("");
+	typewriter("");
+	typewriter("					Thanks for playing!");
+	typewriter("");
+	typewriter("");
+}
+public static void choice2A() {
+	typewriter("You decide to take the gun and shoot "+ name +" to prevent him from getting infected and spreading it to you.");
+	typewriter("Mournfully, you look at the gun. 'D-Do it before I regret my decision,' "+ name +" said as he closed his eyes.");
+	typewriter("You aim the gun at "+ name +", close your eyes, and pull the trigger.");
+	typewriter("With a loud bang, you open your eyes again to see "+ name +" dead on the floor.");
+	typewriter("Sobbing, you pick up the body and place it on the wall. This, you think to yourself, will be the thing I regret the most.");
+	typewriter("You place the gun back on the table. Hopefully, you'll never need to use it again.");
+	typewriter("Days pass. Without an appetite from killing "+ name +" and unable to get more food, you are starving and on your last limb.");
+	typewriter("Suddenly, a knock, followed by multiple knocks, is heard at the door.");
+	typewriter("Too weak to move, you can only stare at the door as zombies barge through.");
+	typewriter("Closing your eyes as the zombies approach you, you regret all that you have done to get here.");
+	typewriter("					The End");
+	typewriter("		              (Alone and Starving Ending)");
+}
+public static void choice2B() {
+	typewriter("You decide not to shoot "+ name +", rather choosing to take the risk of getting infected.");
+	typewriter("'... a-are you sure?' "+ name +" asked hesitantely, 'A-Alright, I guess.'");
+	typewriter("You put the gun down back on the table, trying to dismiss all thoughts of killing "+ name +".");
+	typewriter("More days pass. Your food has run out and both of you are starving.");
+	typewriter(""+ name +"'s wound is affecting him now; he can barely walk without limping.");
+	typewriter("Knowing that the only way you will survive is scavenging for more supplies, you tell "+ name +" that you're going on an expedition.");
+	typewriter("'A-Alright...' "+ name +" said weakly.");
+	typewriter("You take the gun with one clip off the table, open the bunker door, and go outside.");
+	typewriter("You look around. Zombies were at every corner of the nearby vicinity.");
+	typewriter("You gulp. This is going to be rough.");
+	typewriter("The grocery store and pawn shop that you could have been to have already been infested by zombies. Instead, the only place you can go is forward, into the unknown.");
+	typewriter("With the only way to go being forward, you press on.");
+	typewriter("");
+	typewriter("					...");
+	typewriter("");
+	typewriter("You end up in mysterious woods, surrounded by fog.");
+	typewriter("You haven't seen any zombies since you left, which you find strange.");
+	typewriter("On the ground you find a torch on a wooden post, with a note stuck to it.");
+	typewriter("You pick up the torch and read the note.");
+	typewriter("'These woods, called the Trials of Spatium, will test your wits. This first test is puzzle solving.'");
+	typewriter("'With your torch in hand, you will have to light specific candles in order to proceed. Good luck.'");
+	typewriter("You look up. There are 5 candles, each with a specific name. The names include: cook, maid, gardener, wife, and daughter.");
+	typewriter("At the exit gate, there is another note.");
+	typewriter("'Once upon a time, a rich man lived in a mansion. Many were envious of his wealth and would do anything to get it.'");
+	typewriter("'On a brisk Sunday morning, the maid of the mansion found the rich man dead in his room. She cried for help as everyone in the mansion hurried to the scene of the crime.'");
+	typewriter("'The only people in the mansion at the time were the cook, maid, gardener, wife, and daughter.'");
+	typewriter("'Everyone started accusing each other. The gardener gave the point that the daughter would get the rich man's will. The daughter then angerly accused the gardener, saying that he could have murdered the rich man with his scissors used to cut the bushes.'");
+	typewriter("'The cook then accused the maid, for she was the one that found the body. Likewise, the maid accused the cook, as he has a big knife used for cooking.'");
+	typewriter("'The rich man's wife was furious. She told everyone that they were making completely baseless accusations and demanded everyone tell her where they were at the time of the murder. Their alibies were as follows:'");
+	typewriter("'The cook explained that he was cooking breakfast.'");
+	typewriter("'The maid explained that she was outside picking up the mail.'");
+	typewriter("'The gardener explained that he was at the back of the mansion harvesting crops.'");
+	typewriter("'The wife told everyone that she was sleeping.'");
+	typewriter("'The daughter explained that she was in her room playing with her dolls.'");
+	typewriter("'Who was the one that murdered the rich man?' (Type 'Cook','Maid','Gardener','Wife', or 'Daughter')");
+	typewriter("(If you fail here, you can type 'Riddle' at the first option of the game, which is deciding whether or not to let the person knocking on your door in, to go straight here)");
+	String answer = scan.nextLine();
+    if(answer.equalsIgnoreCase("cook")) {
+    	choice2BA();
+    }else {
+    if(answer.equalsIgnoreCase("maid")) {
+    	choice2BB();
+    }else {
+    if(answer.equalsIgnoreCase("gardener")) {
+        choice2BC();
+    }else {
+    if(answer.equalsIgnoreCase("wife")) {
+        choice2BD();
+    }else {
+    if(answer.equalsIgnoreCase("daughter")) {
+        choice2BE();
+          }
+        }
+      }
+    }
+  }
+}
+public static void choice2BSkip() {
+	typewriter("'Once upon a time, a rich man lived in a mansion. Many were envious of his wealth and would do anything to get it.'");
+	typewriter("'On a brisk Sunday morning, the maid of the mansion found the rich man dead in his room. She cried for help as everyone in the mansion hurried to the scene of the crime.'");
+	typewriter("'The only people in the mansion at the time were the cook, maid, gardener, wife, and daughter.'");
+	typewriter("'Everyone started accusing each other. The gardener gave the point that the daughter would get the rich man's will. The daughter then angerly accused the gardener, saying that he could have murdered the rich man with his scissors used to cut the bushes.'");
+	typewriter("'The cook then accused the maid, for she was the one that found the body. Likewise, the maid accused the cook, as he has a big knife used for cooking.'");
+	typewriter("'The rich man's wife was furious. She told everyone that they were making completely baseless accusations and demanded everyone tell her where they were at the time of the murder. Their alibies were as follows:'");
+	typewriter("'The cook explained that he was cooking breakfast.'");
+	typewriter("'The maid explained that she was outside picking up the mail.'");
+	typewriter("'The gardener explained that he was at the back of the mansion harvesting crops.'");
+	typewriter("'The wife told everyone that she was sleeping.'");
+	typewriter("'The daughter explained that she was in her room playing with her dolls.'");
+	typewriter("'Who was the one that murdered the rich man?' (Type 'Cook','Maid','Gardener','Wife', or 'Daughter')");
+	typewriter("(Don't forget that you can go straight here if you fail by typing 'Riddle' at the first option in the game)");
+	String answer = scan.nextLine();
+    if(answer.equalsIgnoreCase("cook")) {
+    	choice2BA();
+    }else {
+    if(answer.equalsIgnoreCase("maid")) {
+    	choice2BB();
+    }else {
+    if(answer.equalsIgnoreCase("gardener")) {
+        choice2BC();
+    }else {
+    if(answer.equalsIgnoreCase("wife")) {
+        choice2BD();
+    }else {
+    if(answer.equalsIgnoreCase("daughter")) {
+        choice2BE();
+          }
+        }
+      }
+    }
+  }
+}
+public static void choice2BA() {
+	typewriter("You decide to light the candle with the name 'Cook' attached to it.");
+	typewriter("Looking up from the note, you walk over to the candle labeled 'Cook' and light it with your torch.");
+	choice2BIncorrect();
+}
+public static void choice2BB() {
+	typewriter("You decide to light the candle with the name 'Maid' attached to it.");
+	typewriter("Looking up from the note, you walk over to the candle labeled 'Maid' and light it with your torch.");
+	typewriter("An ominous voice speaks to you.");
+	typewriter("'Correct! There is no mail on Sundays, so the maid has to be the killer. You have completed the trial. Please proceed through the gate.'");
+	typewriter("Suddenly, the gate opened, and you walk through the gate in triumph.");
+	typewriter("");
+	typewriter("					...");
+	typewriter("");
+	typewriter("You come to an intersection.");
+	typewriter("On the left is a swamp labeled 'Combat'.");
+	typewriter("On the right is a cave labeled 'Stealth'.");
+	typewriter("Which way shall you go? (Type 'Left' or 'Right')");
+	String answer = scan.nextLine();
+    if(answer.equalsIgnoreCase("left")) {
+    	choice2BBA();
+    }else {
+    if(answer.equalsIgnoreCase("right")) {
+    	choice2BBB();
+    }
+  }
+}
+public static void choice2BC() {
+	typewriter("You decide to light the candle with the name 'Gardener' attached to it.");
+	typewriter("Looking up from the note, you walk over to the candle labeled 'Gardener' and light it with your torch.");
+	choice2BIncorrect();
+}
+public static void choice2BD() {
+	typewriter("You decide to light the candle with the name 'Wife' attached to it.");
+	typewriter("Looking up from the note, you walk over to the candle labeled 'Wife' and light it with your torch.");
+	choice2BIncorrect();
+}
+public static void choice2BE() {
+	typewriter("You decide to light the candle with the name 'Daughter' attached to it.");
+	typewriter("Looking up from the note, you walk over to the candle labeled 'Daughter' and light it with your torch.");
+	choice2BIncorrect();
+}
+public static void choice2BIncorrect() {
+	typewriter("An ominous voice speaks to you.");
+	typewriter("'Incorrect! You have failed and will face dire consequences.'");
+	typewriter("Suddenly, the ground started to shake below you.");
+	typewriter("Panicing, you try to get to stable ground, but it's impossible.");
+	typewriter("The ground splits beneath you and you fall into a pit.");
+	typewriter("					The End");
+	typewriter("		                (Pit of Faliure Ending)");
+}
+public static void choice2BBA() {
+	typewriter("You decide to head left towards the swamp labeled 'Combat'.");
+	typewriter("The atmosphere is groggy; mud puddles were everywhere and the trees were lined with vines and moss.");
+	typewriter("Suddenly, you come across another note on a wooden pole along with a dagger on the ground.");
+	typewriter("'Welcome to the second trail; combat. In this trial, you will face a zombie. However, you will only be equipped with a dagger.'");
+	typewriter("'The gate will open once the zombie have been defeated. Good luck.'");
+	typewriter("You put the torch down and pick up the dagger. It's lightweight and deadly.");
+	typewriter("You look forward. Nothing was there.");
+	typewriter("You walk into the open area, waiting for something to happen.");
+	typewriter("Then, suddenly, you hear rumbling from beneath you.");
+	typewriter("You step back as a giant hand appears out of the ground!");
+	typewriter("A giant zombie awakens from the ground and stands, towering above you.");
+	typewriter("I have to fight t h i s? You think to yourself.");
+	typewriter("With a menacing roar, the fight begins.");
+	typewriter("The giant zombie slams it's hand down, but you dodge out of the way.");
+	typewriter("This leaves you with an opportunity to climb on it's arm, or you could slash at it's legs.");
+	typewriter("Which shall you choose? (Type 'Arm' or 'Leg')");
+	typewriter("(If you fail here, you can type 'Zombie' at the first option of the game, which is deciding whether or not to let the person knocking on your door in, to go straight here)");
+	String answer = scan.nextLine();
+    if(answer.equalsIgnoreCase("arm")) {
+    	choice2BBAA();
+    }else {
+    if(answer.equalsIgnoreCase("leg")) {
+    	choice2BBAB();
+    }
+  }
+}
+public static void choice2BBASkip() {
+	typewriter("Which shall you choose? (Type 'Arm' or 'Leg')");
+	typewriter("(Don't forget that you can go straight here if you fail by typing 'Zombie' at the first option in the game)");
+	String answer = scan.nextLine();
+    if(answer.equalsIgnoreCase("arm")) {
+    	choice2BBAA();
+    }else {
+    if(answer.equalsIgnoreCase("leg")) {
+    	choice2BBAB();
+    }
+  }
+}
+public static void choice2BBB() {
+	typewriter("You decide to head right towards the cave labeled 'Stealth'.");
+	typewriter("The cave is damp and pitch black. The only light available is your torch.");
+	typewriter("Suddenly, you stumble upon another wooden pole with a note, along with a dagger.");
+	typewriter("'Welcome to the second trial; stealth. In this cave, there are blind bats. However, their sense of hearing is immense. If you make even the slightest sound, they will devour you alive.'");
+	typewriter("'The gate is already open; you only have to make it to the gate in order to proceed. Good luck.'");
+	typewriter("You pick up the dagger and slowly walk forward.");
+	typewriter("You look around. On the ceiling of the cave, there were groups of bats all hanging from the ceiling.");
+	typewriter("As you continue to walk forward, you realize that the middle of the cave is blocked by boulders, leaving only the left and right sides open.");
+	typewriter("You peer into the left area. It's filled with stalagmites hanging from the ceiling and floor.");
+	typewriter("You then walk over and peer into the right area. It's filled with puddles of water.");
+	typewriter("Which side shall you choose? (Type 'Left' or 'Right')");
+	String answer = scan.nextLine();
+    if(answer.equalsIgnoreCase("left")) {
+    	choice2BBBA();
+    }else {
+    if(answer.equalsIgnoreCase("right")) {
+    	choice2BBBB();
+    }
+  }
+}
+public static void choice2BBBA() {
+	typewriter("You decide to go to the left area filled with stalagmites.");
+	typewriter("You carefully maneuver your way around the stalagmites, trying not to bump into them.");
+	typewriter("You successfully make it to the other side and into the next room.");
+	typewriter("More bats lined the ceiling.");
+	typewriter("The gate at the furthest end of the room. However, the floor is covered in spikes.");
+	typewriter("The only way over to the button is the platform in front of you.");
+	typewriter("You walk over to the platform. Next to a keypad there is a note. You take the note and read it.");
+	typewriter("'In order to use the platform to get across, you need to input a 4-digit code using the keypad.'");
+	typewriter("'The following set of numbers follows a rule:'");
+	typewriter("'7'");
+	typewriter("'63'");
+	typewriter("'567'");
+	typewriter("What will the next number be? (Type a 4-digit code)");
+	typewriter("(If you fail here, you can type 'Code' at the first option of the game, which is deciding whether or not to let the person knocking on your door in, to go straight here)");
+	String answer = scan.nextLine();
+    if(answer.equalsIgnoreCase("5103")) {
+    	choice2BBBAA();
+    }else {
+    if(answer.equalsIgnoreCase("3186")) {
+    	choice2Secret();
+    }else {
+    	typewriter("As you finish inputing the code, alarms on the platform light up and buzz, awakening the bats.");
+    	typewriter("Looking up in fear, the bats stare at you with glowing red eyes full of hunger.");
+    	typewriter("As the bats devour you, you hear an ominous voice.");
+    	typewriter("'You have failed. Try again.'");
+    	typewriter("					The End");
+    	typewriter("				   (Devoured Ending 2)");
+    }
+  }
+}
+public static void choice2BBBASkip() {
+	typewriter("'The following set of numbers follows a rule:'");
+	typewriter("'7'");
+	typewriter("'63'");
+	typewriter("'567'");
+	typewriter("What will the next number be? (Type a 4-digit code)");
+	typewriter("(Don't forget that you can go straight here if you fail by typing 'Code' at the first option in the game)");
+	String answer = scan.nextLine();
+    if(answer.equalsIgnoreCase("5103")) {
+    	choice2BBBAA();
+    }else {
+    if(answer.equalsIgnoreCase("3186")) {
+    	choice2Secret();
+    }else {
+    	typewriter("As you finish inputing the code, alarms on the platform light up and buzz, awakening the bats.");
+    	typewriter("Looking up in fear, the bats stare at you with glowing red eyes full of hunger.");
+    	typewriter("As the bats devour you, you hear an ominous voice.");
+    	typewriter("'You have failed. Try again.'");
+    	typewriter("					The End");
+    	typewriter("				   (Devoured Ending 2)");
+    }
+  }
+}
+public static void choice2BBBB() {
+	typewriter("You decide to go to the right area filled with puddles.");
+	typewriter("Extra carefully, you walk through the puddles of water, with every step making a splash.");
+	typewriter("Suddenly, you slip and fall into a bigger puddle of water.");
+	typewriter("Looking up in fear, the bats open their eyes.");
+	typewriter("They're glowing red and filled with hunger.");
+	typewriter("As the bats devour you, you hear an ominous voice.");
+	typewriter("'You have failed. Try again.'");
+	typewriter("					The End");
+	typewriter("				   (Devoured Ending 1)");
+}
+public static void choice2BBAA() {
+	typewriter("You decide to climb on the zombie's arm.");
+	typewriter("With it's arm still firmly on the ground, you hop onto it's hand.");
+	typewriter("You run up the zombie's arm as it roars and lifts it's arm back up.");
+	typewriter("Now at the top of the zombie's shoulder, you have more options.");
+	typewriter("You could either try to attack the zombie's head, essentially brute forcing it, or get onto the zombie's back and attack from there.");
+	typewriter("Which shall you choose? (Type 'Head' or 'Back')");
+	String answer = scan.nextLine();
+    if(answer.equalsIgnoreCase("head")) {
+    	choice2BBAAA();
+    }else {
+    if(answer.equalsIgnoreCase("back")) {
+    	choice2BBAAB();
+    }
+  }
+}
+public static void choice2BBAB() {
+	typewriter("You decide to slash at the zombie's legs.");
+	typewriter("Taking this opportunity for a counter attack, you rush over to the zombie's legs and slash at them.");
+	typewriter("However, the zombie recovers and stomps the ground, sending you backward.");
+	typewriter("You stop yourself by sliding on the ground and plunging the dagger into the ground, but the zombie swings again at you, slamming you against a tree.");
+	typewriter("Wounded, you try to stand back up, but the zombie slams you with it's fists again into the ground.");
+	typewriter("You hear an ominous voice as everything fades to black.");
+	typewriter("'You have failed. Try again.'");
+	typewriter("					The End");
+	typewriter("				   (Crushed Ending 1)");
+}
+public static void choice2BBAAA() {
+	typewriter("You decide to attack the zombie's head.");
+	typewriter("You swiftly slash upwards, cutting the zombie's head.");
+	typewriter("It angerly bashes you with it's head, knocking you down to the ground.");
+	typewriter("Stunned, as you look up, you see the zombie's foot stomp and crush you.");
+	typewriter("You hear an ominous voice as everything fades to black.");
+	typewriter("'You have failed. Try again.'");
+	typewriter("					The End");
+	typewriter("				   (Crushed Ending 2)");
+}
+public static void choice2BBAAB() {
+	typewriter("You decide to attack the zombie from the back.");
+	typewriter("The zombie angerly tries to bash you with it's head as you run towards its back, but you barely dodge it just in time.");
+	typewriter("You manage to get to the zombie's back, and with no way to attack you from there, you repeatedly stab the zombie over and over again.");
+	typewriter("Writhing in pain, the zombie begins to lose balance.");
+	typewriter("Using your dagger, you slide down the zombie's back, cutting through its flesh.");
+	typewriter("As you land on the ground, the zombie falls over with a slam, defeated.");
+	typewriter("You hear an ominous voice.");
+	typewriter("'Well done! You displayed valiancy in your combat! You may proceed.'");
+	typewriter("The gate opens, and you walk through with your torch and dagger.");
+	typewriter("");
+	typewriter("					...");
+	typewriter("");
+	typewriter("You eventually make it to a corner, so you turn around.");
+	typewriter("The other way, labeled 'Stealth', converged here with the path you took.");
+	typewriter("You continue to walk forward, awaiting your next trail.");
+	choice2T3();
+}
+public static void choice2BBBAA() {
+	typewriter("You input the code '5103' into the keypad.");
+	typewriter("Suddenly, the platform starts moving forward and takes you to the other side without disturbing the bats.");
+	typewriter("You stealthily make it past the gate and exit the cave with your torch and dagger.");
+	typewriter("");
+	typewriter("					...");
+	typewriter("");
+	typewriter("You eventually make it to a corner, so you turn around.");
+	typewriter("The other way, labeled 'Combat', converged here with the path you took.");
+	typewriter("You continue to walk forward, awaiting your next trial.");
+	choice2T3();
+}
+public static void choice2T3() {
+	typewriter("You walk into a big, flat, open area surrounded by trees. At the center of the room is a mysterious figure.");
+	typewriter("'Hello, and welcome to your final trial.' the mysterious figure said.");
+	typewriter("You have a strange feeling that you know this person's voice, though you don't know why.");
+	typewriter("'I have been waiting for someone like you to stumble upon the Trials of Spatium.' the mysterious figure said as he walked toward you.");
+	typewriter("Confused, you ask the person what they mean.");
+	typewriter("'Hm... You don't understand what's happening, do you? Well, I'm sure you'll find out eventually.'");
+	typewriter("Silence dawned upon both of you. The mysterious figure turned around.");
+	typewriter("'For your final trial, you will have to put all that you have learned to use.'");
+	typewriter("Suddenly, "+ name +" appeared behind the mysterious figure in a cage.");
+	typewriter("Full of anger, you demand to know why this person kidnapped "+ name +".");
+	typewriter("The mysterious figure merely continued their speech.");
+	typewriter("'In order to rescue your friend here, your wits, strength, intelligence, and swiftness along with another virtue will be tested.'");
+	typewriter("Suddenly, the ground turned into spikes as the mysterious figure levitated upward.");
+	typewriter("A platform appeared over the spikes, surrounded by a large horde of zombies, more than you've ever seen together.");
+	typewriter("Bats now formed a circle around the area.");
+	typewriter("'I wish you luck, "+ Pname +"'.");
+	typewriter("Dagger and torch in hand, you have to figure out how to take out the zombies stealthfully to not alarm the bats.");
+	typewriter("You have several options. You could either take the zombies out with the dagger or torch, or you could throw your torch at the zombies.");
+	typewriter("Which shall you choose? (Type 'Dagger', 'Torch', or 'Throw')");
+	typewriter("(If you fail here, you can type 'T3' at the first option of the game, which is deciding whether or not to let the person knocking on your door in, to go straight here)");
+	String answer = scan.nextLine();
+    if(answer.equalsIgnoreCase("dagger")) {
+    	choice2T3A();
+    }else {
+    if(answer.equalsIgnoreCase("torch")) {
+    	choice2T3B();
+    }else {
+    if(answer.equalsIgnoreCase("throw")) {
+    	choice2T3C();
+      }
+    }
+  }
+}
+public static void choice2T3Skip() {
+	typewriter("You have several options. You could either take the zombies out with the dagger or torch, or you could throw your torch at the zombies.");
+	typewriter("Which shall you choose? (Type 'Dagger', 'Torch', or 'Throw')");
+	typewriter("(Don't forget that you can go straight here if you fail by typing 'T3' at the first option in the game)");
+	String answer = scan.nextLine();
+    if(answer.equalsIgnoreCase("dagger")) {
+    	choice2T3A();
+    }else {
+    if(answer.equalsIgnoreCase("torch")) {
+    	choice2T3B();
+    }else {
+    if(answer.equalsIgnoreCase("throw")) {
+    	choice2T3C();
+      }
+    }
+  }
+}
+public static void choice2T3A () {
+	typewriter("You decide to kill the zombies with the dagger.");
+	typewriter("Sneaking up on the horde, you stab some of the zombies in the back, instantly killing them.");
+	typewriter("However, since it is such a large horde, they are able to surround you.");
+	typewriter("Even as you fight back with the dagger, the zombies keep coming.");
+	typewriter("The mysterious figure shakes his head and turns around as you are biten and mauled to death.");
+	typewriter("					The End");
+	typewriter("			      (Close to Victory Ending 1)");
+}
+public static void choice2T3B() {
+	typewriter("You decide to kill the zombies with the torch.");
+	typewriter("Sneaking up on the horde, you burn some of the zombies, and the fire spreads from zombie to zombie.");
+	typewriter("Even though you end up killing them, the bats are alerted by the sound of you lighting and backing away from the zombies.");
+	typewriter("The bats turn to look and you in unison with red glowing eyes full of hunger.");
+	typewriter("The mysterious figure shakes his head and turns around as you are swarmed and devoured by the bats.");
+	typewriter("					The End");
+	typewriter("			      (Close to Victory Ending 2)");
+}
+public static void choice2T3C() {
+	typewriter("You decide to kill the zombies by throwing your torch at them.");
+	typewriter("Putting down the dagger, you aim your arm at the zombies and throw the torch as far as you can.");
+	typewriter("It lands in the middle of the horde and burns them alive. Luckily, you were no where near the zombies and didn't make a sound.");
+	typewriter("The mysterious figure nods his head after seeing this.");
+	typewriter("You make your way to the platform sneakily. On it is another note.");
+	typewriter("'The following numbers follow a rule:'");
+	typewriter("'8'");
+	typewriter("'112'");
+	typewriter("'1568'");
+	typewriter("'What is the next number?' (Type a 5-digit code)");
+	String answer = scan.nextLine();
+    if(answer.equalsIgnoreCase("21952")) {
+    	choice2T3CA();
+    }else {
+    	typewriter("As you finish inputing the code, alarms on the platform light up and buzz, awakening the bats.");
+    	typewriter("Looking around in fear, the bats stare at you with glowing red eyes full of hunger.");
+    	typewriter("The mysterious figure shakes his head and turns around as you are swarmed and devoured by bats.");
+    	typewriter("					The End");
+    	typewriter("			      (Close to Victory Ending 3)");
+  }
+}
+public static void choice2T3CA() {
+	typewriter("You input the code '21952' into the keypad.");
+	typewriter("Suddenly, the platform activates and brings you right next to "+ name +"'s cage.");
+	typewriter("The mysterious figure seems pleased.");
+	typewriter("Suddenly, the bats disappear, allowing the mysterious figure to talk.");
+	typewriter("He floats over to you as you stare at him angerly.");
+	typewriter("'This shall be your final test, and the one that matters the most.'");
+	typewriter("'Your morality.'");
+	typewriter("You look at the mysterious figure confused.");
+	typewriter("'I have the key to "+ name +"'s cage right here,' the mysterious figure said as he made the key appear out of thin air.");
+	typewriter("'In order to get it however, I shall ask you some questions.'");
+	typewriter("You look at the mysterious figure in disbelief.");
+	typewriter("'First question. Is revenge a good or bad thing?'");
+	typewriter("You think for a moment before answering... (Type 'Good' or 'Bad')");
+	String answer = scan.nextLine();
+    if(answer.equalsIgnoreCase("good")) {
+    	typewriter("'Interesting choice.'");
+    	choice2T3CAA();
+    }else {
+    if(answer.equalsIgnoreCase("bad")) {
+    	morality+=1;
+    	typewriter("'Interesting choice.'");
+    	choice2T3CAA();
+    }
+  }
+}
+public static void choice2T3CASkip() {
+	typewriter("'First question. Is revenge a good or bad thing?'");
+	typewriter("You think for a moment before answering... (Type 'Good' or 'Bad')");
+	String answer = scan.nextLine();
+    if(answer.equalsIgnoreCase("good")) {
+    	typewriter("'Interesting choice.'");
+    	choice2T3CAA();
+    }else {
+    if(answer.equalsIgnoreCase("bad")) {
+    	morality+=1;
+    	typewriter("'Interesting choice.'");
+    	choice2T3CAA();
+    }
+  }
+}
+public static void choice2T3CAA() {
+	typewriter("'Next question.'");
+	typewriter("'What do you value more; friendship, or material gain?'");
+	typewriter("You think for a moment before answering... (Type 'Friendship' or 'Material')");
+	String answer = scan.nextLine();
+    if(answer.equalsIgnoreCase("friendship")) {
+    	morality+=1;
+    	typewriter("'Interesting choice.'");
+    	choice2T3CAAA();
+    }else {
+    if(answer.equalsIgnoreCase("material")) {
+    	typewriter("'Interesting choice.'");
+    	choice2T3CAAA();
+    }
+  }
+}
+public static void choice2T3CAAA() {
+	typewriter("'Final question.'");
+	typewriter("'Would you sacrifice yourself for a good cause?'");
+	typewriter("'You think for a moment before answering... (Type 'Yes' or 'No')");
+	String answer = scan.nextLine();
+    if(answer.equalsIgnoreCase("yes")) {
+    	morality+=1;
+    	typewriter("'Interesting choice.'");
+    	choice2T3CAAAFinal();
+    }else {
+    if(answer.equalsIgnoreCase("no")) {
+    	typewriter("'Interesting choice.'");
+    	choice2T3CAAAFinal();
+    }
+  }
+}
+public static void choice2T3CAAAFinal() {
+	if((morality)==0) {
+    	typewriter("The mysterious figure looks at you in disgust.");
+    	typewriter("'You are the most selfish and vile person I have ever met. I had hopes for you, but now, they are gone.'");
+    	typewriter("You look at the mysterious figure with hatred. This isn't fair, you think to yourself.");
+    	typewriter("Full of anger, you leap toward the mysterious figure and try to stab him with your dagger.");
+    	typewriter("The mysterious figure merely dodges as you plunge to your death.");
+    	typewriter("In your dying breaths, you hear the mysterious person say something...");
+    	typewriter("'Hmph. Good riddance.'");
+    	typewriter("					The End");
+    	typewriter("			       (Complete Monster Ending)");
+	}else { 
+		if((morality)==1) {
+    	typewriter("'You... are not the greatest person I have ever met, I shall tell you that,' the mysterious person said as they shaked their head.");
+		typewriter("'I see no reason to let "+ name +" out. Next time, maybe reflect on your morals.'");
+		typewriter("You angerly shout at the mysterious figure, demanding the key.");
+		typewriter("'No, I'm afraid I won't be doing that. Goodbye.' the mysterious figure said as he charged up an orange, fiery ball.");
+		typewriter("You try to run away, leaping to the other side of the spikes, but the mysterious figure sends the fiery ball at you and it explodes, melting you alive instantly into a pile of ash.");
+		typewriter("					The End");
+    	typewriter("			       (Morally Incorrect Ending)");
+    }else {
+    	if((morality)==2) {
+        typewriter("'Hm... I am afraid you have not done a well enough job. However, I will give you another chance.'");
+    	typewriter("'Let me ask you again...'");
+    	morality=0;
+    	choice2T3CASkip();
+    }else {
+    	if((morality)==3) {
+    	typewriter("'Well done. Fantastic job. You have earned my trust and respect,' the mysterious person said as they handed you the key.");
+		typewriter("You eagerly take the key off their hands as you open the cage.");
+		typewriter(""+ name +" hugs you intensely. 'I knew you had it in you to save me! I never thought you'd fail once!'");
+		typewriter("You look at "+ name +" with a look of doubt.");
+		typewriter("'Well... mayyybe once or twice...'");
+		typewriter("The mysterious figure applauds. 'Well, it seems as if we have a happy ending, eh?'");
+		typewriter("After letting go of "+ name +", he looks around.");
+		typewriter("'Wait a second... how in the world are we supposed to get out?'");
+		typewriter("The mysterious figure laughs. 'Don't worry, I have that part covered. Just tell me once you want to leave.'");
+		typewriter("You tell the mysterious figure that you think you're done for the day.");
+		typewriter("The mysterious person chuckled. 'Fair enough. When I teleport you back to your bunker, you'll notice I've left you a couple presents. Good luck, and I wish you well.'");
+		typewriter("Suddenly, the mysterious figure made a hand motion, and both you and "+ name +" are teleported back to the bunker.");
+		typewriter("You look around and notice that there is a box at the door.");
+		typewriter("Grinning, you pick it up and open it at the center of the bunker.");
+		typewriter("Inside was a vial labeled 'Zombie Infection Cure', a couple of guns with ammunition, food and water, and a watch.");
+		typewriter("While "+ name +" uses the vial, you observe the watch closely.");
+		typewriter("On it is small text which reads, 'TKO Apprentice Model 1'.");
+		typewriter("					The End");
+    	typewriter("			    (True Ending; A New Adventure)");
+    	typewriter("Credits:");
+    	typewriter("Story Design: Ethan");
+    	typewriter("");
+    	typewriter("Character Design: Ethan");
+    	typewriter("");
+    	typewriter("Coding: Ethan");
+    	typewriter("");
+    	typewriter("Bug Fixing: Ethan");
+    	typewriter("");
+    	typewriter("Game Testing: Ethan");
+    	typewriter("");
+    	typewriter("Literally this entire game: Ethan");
+    	typewriter("");
+    	typewriter("");
+    	typewriter("					Thanks for playing!");
+    	typewriter("");
+    	typewriter("");
+    	typewriter("");
+        }
+      }
+    }
+  }
+}
+public static void choice2Secret() {
+	typewriter("For some reason, you input the code '3186' into the keypad.");
+	typewriter("Weirdly enough, the platform starts moving downward.");
+	typewriter("After a while, the platform stops at what seems like a basement.");
+	typewriter("You walk forward and observe the walls. Notes cluttered the walls and a giant whiteboard was present at the far end of the room.");
+	typewriter("Suddenly, a mysterious figure teleported in front of you.");
+	typewriter("'How in the world did you get here?' the mysterious person asked.");
+	typewriter("You yourself wonder how you got here.");
+	typewriter("'Well then, I guess there's no harm in telling you what this is,' the mysterious figure said.");
+	typewriter("'I have been studying a phenomenon known as a 'time loop', and it seems as if you're stuck in one.'");
+	typewriter("You look at the mysterious figure confused.");
+	typewriter("'It works like this: usually, a person dies if they make a certain, 'incorrect' choice. For example, maybe you get mauled by a zombie or fall off a cliff.'");
+	typewriter("'However, if you're stuck in a time loop, instead of dying permanently, you get revived by some unknown force and have the same exact scenario play out, allowing for a different choice to happen.'");
+	typewriter("'Once you make it to a certain scenario with all the 'correct' choices, you get to live out your life as normal.'");
+	typewriter("'However, something weird I have observed is that sometimes the person stuck in a time loop somehow retains a bit of the information gained, though it is rare.'");
+	typewriter("You ask how the mysterious person who they are and how they know so much about 'time loops'.");
+	typewriter("'Hm... fine. I suppose I should introduce myself. My name is Galaxia, and I'm a space warrior. I was stuck in a time loop myself for a while, but eventually made it out after so many years.'");
+	typewriter("You ask Galaxia how you can make it out of the time loop.");
+	typewriter("'Well, so far, I've observed 2 ways. Surviving the apocalypse with "+ name +" and Cassie, or passing through all the trials in these woods.'");
+	typewriter("You then ask why Galaxia is making you do all these trials.");
+	typewriter("'To meet someone like you; a person stuck in a time loop. No normal human would be able to make it through these trials, but if you were stuck in a time loop, it'd be easy.'");
+	typewriter("You thank Galaxia for telling you all this.");
+	typewriter("'Well, this isn't the choice you were supposed to make, so you won't be able to continue...'");
+	typewriter("You look at Galaxia, first with confusion, then with fear.");
+	typewriter("'I'm sorry for what I'm about to do...' Galaxia said as he charged up a pitch black beam of energy.");
+	typewriter("Knowing that you probably won't remember any of this, you close your eyes as you're eviscerated by Galaxia's power.");
+	typewriter("					The End");
+	typewriter("		 	 (Secret Ending; Transendent Knowledge)");
+}
+public static void typewriter(String text) {
+    int i;
+    for(i = 0; i < text.length(); i++){
+        System.out.printf("%c", text.charAt(i));
+        try{
+            Thread.sleep(textSpeed);//0.25s pause between characters
+        }catch(InterruptedException ex){
+            Thread.currentThread().interrupt();
+        }
+    }
+    System.out.println("");
+}
+}
