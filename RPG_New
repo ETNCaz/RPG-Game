@@ -3,24 +3,6 @@ package unit1;
 import java.util.Random;
 import java.util.Scanner;
 
-//General Changes/Additions:
-///Change Exposition
-///Finish puzzle escape room thingy
-
-//Bug Fixes/Code Improvement:
-///'You can't use _ here' message only appears after the item has been used
-///Fix if statements (if needed - otherwise, its fine lol)
-///Make a consistent enemy code (cause some of them are repeats)
-
-//Additional Features (for the future):
-///Side Quests
-///Accessories
-///Specialized/Upgraded Equipment (better with some skills, differing stats, etc.)
-///Unlockable Classes
-///Karma (?)
-///Gems/Enhancements (?)
-///Unlockable/Classless Skills (?)
-
 public class RPG_Test {
 	public static String Pname;
 	public static String enemyAttackText;
@@ -4129,7 +4111,7 @@ public static void cafeteria() {
 			//Cl = 22    S = 4   I = 16
 			typewriter("'Using these values, get to a concentration of 100.'");
 			typewriter("");
-			typewriter("How much Cl will you put in the mixture? (Type a number 1 through 5)");
+			typewriter("How much Cl will you put in the mixture? (Type a number 0 through 5)");
 			//2
 			String answer1 = scan.nextLine();
 			if(answer1.equalsIgnoreCase("1")) {
@@ -4148,7 +4130,7 @@ public static void cafeteria() {
 				chemicalLevel+=110;
 			}
 			typewriter("");
-			typewriter("How much S will you put in the mixture? (Type a number 1 through 5)");
+			typewriter("How much S will you put in the mixture? (Type a number 0 through 5)");
 			//2
 			String answer2 = scan.nextLine();
 			if(answer2.equalsIgnoreCase("1")) {
@@ -4167,7 +4149,7 @@ public static void cafeteria() {
 				chemicalLevel+=20;
 			}
 	        typewriter("");
-			typewriter("How much I will you put in the mixture? (Type a number 1 through 5)");
+			typewriter("How much I will you put in the mixture? (Type a number 0 through 5)");
 			//3
 			String answer3 = scan.nextLine();
 			if(answer3.equalsIgnoreCase("1")) {
@@ -4426,6 +4408,8 @@ public static void inventory() {
 				typewriter("You realize you need something to combine the pieces, however. You quickly go back to the lab and make another chemical mixture.");
 				typewriter("Returning to the anvil, you pour the mixture over the scale pieces. However, just putting them together won't be enough.");
 				typewriter("Using the rusty hammer, you repeatedly slam into the pieces until they finally combine into one coherent piece.");
+				typewriter("");
+				typewriter("- Complete Scale Obtained! -");
 				typewriter("All you have to do now is to figure out how to use it...");
 				typewriter("");
 				scalePiece=0;
