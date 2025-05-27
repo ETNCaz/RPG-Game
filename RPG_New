@@ -3552,7 +3552,6 @@ public static void zackeryDefeated() {
 }
 public static void phoenixPrison() {
 	room=0;
-	scale=1;
 	typewriter("");
 	System.out.println("You're at the center of the prison. Your options are:");
 	System.out.println("Check out the Prison Cells (Type 'PC')");
