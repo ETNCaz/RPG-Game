@@ -1,0 +1,1034 @@
+package unit1;
+import java.util.Scanner;
+
+public class RPG {
+	public static String Pname;
+	public static int attack=0;
+	public static int tempAttack=0;
+	public static int storeAttack=0;
+	public static int magicAttack=0;
+	public static int tempMagicAttack=0;
+	public static int defense=0;
+	public static int tempDefense=0;
+	public static int storeDefense=0;
+	public static int currentHP=0;
+	public static int maxHP=0;
+	public static int maxMana=0;
+	public static int currentMana=0;
+	public static int level=1;
+	public static int exp=0;
+	public static int damage=0;
+	public static int knight=0;
+	public static int archer=0;
+	public static int heavyKnight=0;
+	public static int mage=0;
+	public static int enemyAttack=15;
+	public static int enemyMagicAttack=5;
+	public static int enemyDefense=5;
+	public static int enemyMaxHP=100;
+	public static int enemyHP=100;
+	public static int enemyDamage=0;
+	public static int kingGuard=0;
+	public static int heavySoldier=0;
+	public static int arkhein=0;
+	public static int arkheinPhase2=0;
+	public static Scanner scan = new Scanner(System.in);
+	
+	public static void main(String[] args) {
+		String answer2= scan.nextLine();
+		if(answer2.equalsIgnoreCase(".")) {
+			attack=17;
+			magicAttack=28;
+			defense=4;
+			currentHP=85;
+			maxHP=85;
+			maxMana=22;
+			currentMana=22;
+			mage=1;
+			kingGuard();
+		}
+		typewriter("Welcome! In this game, you control the protagonist of the story and type words to choose certain choices you want to make.");
+		typewriter("Let's start simple; what is your name? (This will be the name of the protagonist)");
+		Pname = scan.nextLine();
+		typewriter("Hello there, "+Pname+"!");
+		typewriter("Would you like to skip the intro and go straight to class selection? (Type 'Yes' or 'No')");
+		String answer1= scan.nextLine();
+		if(answer1.equalsIgnoreCase("yes")) {
+			skip();
+		}else {
+		typewriter("Alright then. With that out of the way, let's get started.");
+		typewriter("");
+		typewriter("");
+		typewriter("This adventure takes place in the land of Contra, which was ruled by Queen Aequalis. Aequalis was a fair and just ruler; no one disagreed nor hated her. Everything was peaceful for a long time... until people began to strive for power over others.");
+		typewriter("However, this was nearly impossible; Aequalis had made an impeccable military force.");
+		typewriter("Though it would be soon found that this could not be further from the truth.");
+		typewriter("Two men strived for power; Monos and Malitia. Both of them agreed to work together in order to overthrow Aequalis. To achieve this, they needed something powerful.");
+		typewriter("Old tales from even before Contra told stories about the battle between light and darkness. The powers of light were led by Licht, with the powers of darkness being led by Deorc.");
+		typewriter("Of course, the forces of light eventually won the battle. However, Deorc was too powerful to be contained in one piece; Licht was forced to obliterate Deorc into pure dark energy and store the energy into several crystals.");
+		typewriter("Licht put these crystals deep underground to where no mortal hands could find them. Everything else in the tellings of these stories were lost in obscurity.");
+		typewriter("Monos and Malitia were determined to find the Crystals of Deorc, the name given to those crystals. No one knows how they found the location of the Crystals of Deorc, but they did.");
+		typewriter("Harvesting and breaking them gave both Monos and Malitia the once-lost-in-time powers of darkness. They stormed Aequalis's castle, tearing and covering everything into darkness.");
+		typewriter("This caused what was eventually known as the War of Dividere. Aequalis was powerless to stop them. Even being the Queen of Contra, she was no match for the power of darkness. Monos and Malitia defeated her in cold blood.");
+		typewriter("Even though they worked together to defeat Aequalis, they both planned to betray each other in the end. Instantly, they attacked each other, filled with anger and hatred.");
+		typewriter("However, none of them could beat out the other. They fought viciously, but no damage was done. In the end, they agreed to rule two seperate parts of Contra.");
+		typewriter("Those two regions became known as Feudum and Feodalitas. Feudum was ruled by Monos, but now by Arkhein, and Feodalitas was ruled by Malitia, but now by Corruptus.");
+		typewriter("Ever since then, poverty and resentment plagued Contra. What was once a peaceful and just kindgom became a corrupt and greedy kingdom.");
+		typewriter("This is where you come in. You were born in Feodalitas without much money. Both your parents worked as farmers, and ever since you turned six, you've had to join them.");
+		typewriter("Years of your life passed in poverty. Farming everyday was getting boring for you.");
+		typewriter("That was, of course, until today...");
+		typewriter("");
+		typewriter("It's a bleak, rainy day. You just finished the harvest for the week and your mom called you for dinner.");
+		typewriter("As you sit down on the chair and begin eating, your mom starts to look solemnly at you.");
+		typewriter("'Malitia... is drafting people for war and you're in the age range...'");
+		typewriter("You look up in shock. A war? King Monos and Malitia signed a treaty not to attack eachother all those years ago, right?!");
+		typewriter("'I'm sorry "+Pname+", but we can't do anything to get you out of it. The training starts tommorow.'");
+		typewriter("You sigh. King Corruptus always seemed like a warmonger.");
+		typewriter("After finishing dinner, you fall asleep, hoping by some miracle that you'll be okay.");
+		typewriter("						The Next Day...");
+		typewriter("You wake up to a knock on your door and hear your mom talking worryingly.");
+		typewriter("'... p-please! My child is only 15! You can't do this!'");
+		typewriter("'It is by the order of King Corruptus. I'm very sorry.'");
+		typewriter("Fear trickles down you like a raindrop.");
+		typewriter("The King's Guard is here.");
+		typewriter("You scramble to put on your ragged clothes and hurry to the door.");
+		typewriter("'Ah! Your child has arrived! We shall take it from here.'");
+		typewriter("You squeeze your mom as tight as you can as she does the same. 'Be as good as you can, and don't forget about me, alright?'");
+		typewriter("You nod, tears forming in your eyes.");
+		typewriter("'Follow us. We shall take you to the training grounds,' one of the knights said.");
+		typewriter("As you exit the house, you hear your mom mutter, 'Be safe... please...'");
+		typewriter("							...");
+		typewriter("You make it to the entrance of the castle and enter.");
+		typewriter("The marble walls are gilded with gold. Red carpets with extravagent patterns were laid on the ground.");
+		typewriter("To the left and right are halls further into the castle while the center is a staircase that leads to the kings throne and room.");
+		typewriter("The guards lead you to the right. You turn a corner and head to the back of the castle.");
+		typewriter("The back expands into the outside. As you hold you hand over your eyes to block the sun, you see an incredibly large training field.");
+		typewriter("Training dummies and targets littered the nearby vicinity. Weapon racks lined the fences.");
+		typewriter("'Here is where you will train for the next month. You get to decide what weapon you will specialize in,' one of the guards said as the other one carried a weapon rack over. 'Everything available is right in front of you.'");
+		typewriter("You observe the rack. On it is a sword and shield, bow, greatsword, and wand.");
+		typewriter("'Which shall you choose?'");
+		typewriter("The stats are as follows:");
+		typewriter("Sword and Shield (Knight):");
+		typewriter("Attack: 15");
+		typewriter("Magic Attack: 5");
+		typewriter("Defense: 10");
+		typewriter("Max HP: 150");
+		typewriter("Mana: 10");
+		typewriter("");
+		typewriter("Bow (Archer):");
+		typewriter("Attack: 20");
+		typewriter("Magic Attack: 5");
+		typewriter("Defense: 5");
+		typewriter("Max HP: 100");
+		typewriter("Mana: 15");
+		typewriter("");
+		typewriter("Greatsword (Heavy Knight):");
+		typewriter("Attack: 25");
+		typewriter("Magic Attack: 5");
+		typewriter("Defense: 3");
+		typewriter("Max HP: 125");
+		typewriter("Mana: 10");
+		typewriter("");
+		typewriter("Wand (Mage):");
+		typewriter("Attack: 15");
+		typewriter("Magic Attack: 25");
+		typewriter("Defense: 5");
+		typewriter("Max HP: 75");
+		typewriter("Mana: 20");
+		typewriter("(Type 'Knight', 'Archer', 'Heavy Knight', or 'Mage')");
+		String answer = scan.nextLine();
+        if(answer.equalsIgnoreCase("knight")) {
+        	knight();
+        }else {
+        if(answer.equalsIgnoreCase("archer")) {
+        	archer();
+        }else {
+        if(answer.equalsIgnoreCase("heavy knight")) {
+        	heavyKnight();
+        }else {
+        if(answer.equalsIgnoreCase("mage")) {
+        	mage();
+        }else {
+        skip();
+          }
+        }
+      }
+    }
+  }
+}
+public static void skip() {
+	typewriter("Which class shall you choose? (Type 'Knight', 'Archer', 'Heavy Knight', or 'Mage')");
+	String answer = scan.nextLine();
+	if(answer.equalsIgnoreCase("knight")) {
+	  	knight();
+	}else {
+	if(answer.equalsIgnoreCase("archer")) {
+	  	archer();
+	}else {
+	if(answer.equalsIgnoreCase("heavy knight")) {
+	   	heavyKnight();
+	}else {
+	if(answer.equalsIgnoreCase("mage")) {
+    	mage();
+        }
+      }
+    }
+  }
+}
+public static void knight() {
+	attack=15;
+	magicAttack=5;
+	defense=7;
+	currentHP=150;
+	maxHP=150;
+	maxMana=10;
+	currentMana=10;
+	knight=1;
+	typewriter("'Good choice.'");
+	continue0();
+}
+public static void archer() {
+	attack=20;
+	magicAttack=5;
+	defense=5;
+	currentHP=100;
+	maxHP=100;
+	maxMana=15;
+	currentMana=15;
+	archer=1;
+	typewriter("'Good choice.'");
+	continue0();
+}
+public static void heavyKnight() {
+	attack=25;
+	magicAttack=5;
+	defense=3;
+	currentHP=125;
+	maxHP=125;
+	maxMana=10;
+	currentMana=10;
+	heavyKnight=1;
+	typewriter("'Good choice.'");
+	continue0();
+}
+public static void mage() {
+	attack=15;
+	magicAttack=25;
+	defense=5;
+	currentHP=75;
+	maxHP=75;
+	maxMana=20;
+	currentMana=20;
+	mage=1;
+	typewriter("'Good choice.'");
+	continue0();
+}
+public static void continue0() {
+	typewriter("'Now, we shall begin your training.'");
+	typewriter("				Several Weeks Later...");
+	typewriter("Over the past few weeks, you've trained as hard as you could. You've learned new battle formations, skills, and instructions.");
+	typewriter("Today was your final test.");
+	typewriter("As you step onto the training field and line up, the instructor starts speaking.");
+	typewriter("'Welcome to your final test. Today will be the most difficult assignment yet.'");
+	typewriter("The instructor made a hand motion, and members of the King's Guard marched through the entrance.");
+	typewriter("'You shall have to win in a duel against a knight of the King's Guard. I wish you luck.'");
+	typewriter("You shudder. The King's Guard contains the most esteemed knights of the entire kingdom.");
+	typewriter("One of the knights come up to you.");
+	typewriter("'Hello. I shall be the one you are sparring with,' he explained.");
+	typewriter("You nod as you draw your weapon.");
+	typewriter("'Alright then. En Garde!'");
+	typewriter("Would you like to see the tutorial? (Type 'Yes' or 'No')");
+	enemyAttack=15;
+	enemyDefense=5;
+	enemyHP=100;
+	storeAttack=attack;
+	storeDefense=defense;
+	kingGuard=1;
+	String answer= scan.nextLine();
+	if(answer.equalsIgnoreCase("yes")) {
+		tutorial();
+	}else {
+	if(answer.equalsIgnoreCase("no")) {
+		kingGuard();
+	}else {
+		continueSkip();
+	}
+  }
+}
+public static void continueSkip() {
+	typewriter("Would you like to see the tutorial? (Type 'Yes' or 'No')");
+	String answer= scan.nextLine();
+	if(answer.equalsIgnoreCase("yes")) {
+		tutorial();
+	}else {
+	if(answer.equalsIgnoreCase("no")) {
+		kingGuard();
+	}else {
+		continueSkip();
+	}
+  }
+}
+public static void tutorial() {
+	typewriter("Welcome to the tutorial! You'll learn everything you need in battle!");
+	typewriter("To start, battle formats will look like this:     ");
+	System.out.println("");
+	System.out.println("The King's Guard Knight Approaches You!");
+	System.out.println("Current Enemy HP: "+enemyHP+"");
+	System.out.println("Current HP: "+currentHP+"");
+	System.out.println("Current Mana: "+currentMana+"");
+	System.out.println("What will you do? (Type 'Attack', 'Defend', or 'Skill')");
+	typewriter("You can see the enemy's HP, your HP, and your current mana.");
+	typewriter("The options you can choose include: attack, defend, and skill.");
+	typewriter("Attack uses your base attack damage minus the enemy's defense when dealing damage. It also restores 2 mana.");
+	typewriter("Defend multiplies your defense by 1.5 times for one turn. It also restores 4 mana.");
+	typewriter("Skills are different for every class. For example, the only class to have the skill 'Arc Slash' is the Knight.");
+	typewriter("Skill descriptions are very important in telling you what the skill does. Always read them before using them!");
+	typewriter("When your HP equals zero, you lose. When the enemy's HP equals zero, you win.");
+	typewriter("And that's it for the tutorial. Now, go defeat the King's Guard Knight!");
+	kingGuard();
+}
+public static void attack() {
+	if(knight==1) {
+		typewriter("You swing your blade!");
+	}else {
+	if(archer==1) {
+		typewriter("You draw your bow and shoot!");
+	}else {
+	if(heavyKnight==1) {
+		typewriter("You cleave with your greatsword!");
+	}else {
+	if(mage==1) {
+		typewriter("You swing your wand!");
+	}
+   }
+  }
+ }
+	if(attack<=enemyDefense) {
+		enemyHP-=1;
+		typewriter("You dealt 1 damage!");
+	}else {
+	damage=attack-enemyDefense;
+	enemyHP-=damage;
+	typewriter("You dealt "+damage+" damage!");
+	}
+	if(maxMana<currentMana+2) {
+		currentMana=maxMana;
+		typewriter("Your mana was maxed out!");
+	}else {
+		currentMana+=2;
+		typewriter("Your mana increased by 2!");
+	}
+	enemyAttack();
+}
+public static void defend() {
+	typewriter("You brace yourself!");
+	if(maxMana<currentMana+4) {
+		currentMana=maxMana;
+		typewriter("Your mana was maxed out!");
+	}else {
+		currentMana+=4;
+		typewriter("Your mana increased by 4!");
+	}
+	tempDefense=defense;
+	tempDefense*=1.5;
+	enemyAttack();
+}
+public static void enemyAttack() {
+	if(kingGuard==1) {
+		typewriter("The King's Guard Knight slashes at you!");
+		}else {
+		if(heavySoldier>=1) {
+		typewriter("The Heavy Knight cleaves his greatsword at you!");
+		}else {
+		typewriter("Arkhein slices his double-edged blade at you!");
+		}
+		}
+	if(tempDefense>=enemyAttack) {
+		if(kingGuard==1) {
+		typewriter("The King's Guard Knight dealt 0 damage to you!");
+		kingGuard();
+		}else {
+		if(heavySoldier>=1) {
+		typewriter("The Heavy Knight dealt 0 damage to you!");
+		heavySoldier();
+		}else {
+		if(arkhein==1) {
+		typewriter("Arhein dealt 0 damage to you!");
+		arkhein();
+		}
+		}
+		}
+	}else {
+	if(tempDefense>0) {
+		enemyDamage=enemyAttack-tempDefense;
+		currentHP-=enemyDamage;
+		tempDefense=0;
+	}else {
+		enemyDamage=enemyAttack-defense;
+		currentHP-=enemyDamage;
+	}
+		if(kingGuard==1) {
+		typewriter("The King's Guard Knight dealt "+enemyDamage+" damage to you!");
+		kingGuard();
+		}else {
+		if(heavySoldier>=1) {
+		typewriter("The Heavy Knight dealt "+enemyDamage+" damage to you!");
+		heavySoldier();
+	    }else {
+	    if(arkhein==1) {
+	    typewriter("Arkhein dealt "+enemyDamage+" damage to you!");
+	    arkhein();
+	    }
+	  }
+    }
+  }
+}
+public static void noMana() {
+	typewriter("You don't have enough mana for that!");
+	if(kingGuard==1) {
+	kingGuard();
+	}else {
+	if(heavySoldier>=1) {
+	heavySoldier();
+	}else {
+	if(arkhein==1) {
+	arkhein();
+   }
+  }
+ }
+}
+public static void enemyFormat() {
+	System.out.println("Current Enemy HP: "+enemyHP+"");
+	System.out.println("Current HP: "+currentHP+"");
+	System.out.println("Current Mana: "+currentMana+"");
+	System.out.println("What will you do? (Type 'Attack', 'Defend', or 'Skill')");
+	String answer = scan.nextLine();
+    if(answer.equalsIgnoreCase("attack")) {
+    	attack();
+    }else {
+    if(answer.equalsIgnoreCase("defend")) {
+    	defend();
+    }else {
+    if(answer.equalsIgnoreCase("skill")) {
+    	if(knight==1) {
+    		skillKnight();
+    	}else {
+    	if(archer==1) {
+    		skillArcher();
+    	}else {
+    	if(heavyKnight==1) {
+    		skillHeavyKnight();
+    	}else {
+    	if(mage==1) {
+    		skillMage();
+    	}
+       }
+      }
+     }
+    }else {
+ 	   enemyFormat();
+   }
+  }
+ }
+}
+public static void prepare() {
+	currentMana=maxMana;
+	currentHP=maxHP;
+	storeAttack=attack;
+	storeDefense=defense;
+}
+public static void playerDefeated() {
+	typewriter("");
+	typewriter("You have been defeated!");
+	typewriter("Would you like to try again? (Type 'Yes' or 'No')");
+	String answer= scan.nextLine();
+	if(answer.equalsIgnoreCase("yes")) {
+		if(kingGuard==1) {
+			skip();
+		}else {
+		if(heavySoldier==1) {
+			heavySoldierSkip();
+		}else {
+		if(heavySoldier==2) {
+			heavySoldier2Skip();
+		}else {
+		if(arkhein==1) {
+			arkheinSkip();
+		}
+	  }
+   }
+}
+	}else {
+	if(answer.equalsIgnoreCase("no")) {
+		System.exit(0);
+	}
+}
+}
+public static void skillKnight() {
+	System.out.println("Your skills include:");
+	System.out.println("Iron Defense (3 Mana)- Raise your defense by 2");
+	System.out.println("Arc Slash (3 Mana)- Deals medium damage");
+	System.out.println("Which shall you choose? (Type 'Iron Defense' or 'Arc Slash')");
+	String answer = scan.nextLine();
+    if(answer.equalsIgnoreCase("iron defense")) {
+    	if(currentMana<3) {
+    		noMana();
+    	}else {
+    	currentMana-=3;
+    	if(defense>=enemyAttack-2) {
+    		typewriter("Your defense can't get any higher!");
+    	}else {
+    		typewriter("You slam your shield down and raise your defense by 2!");
+    		defense+=2;
+    	}
+    	enemyAttack();
+    	}
+    }else {
+    if(answer.equalsIgnoreCase("arc slash")) {
+    	if(currentMana<3) {
+    		noMana();
+        }
+    	else {
+    	currentMana-=3;
+    	tempAttack=attack;
+    	tempAttack*=1.5;
+    	typewriter("You swing your sword in an arc!");
+    	if(tempAttack<=enemyDefense) {
+    		enemyHP-=1;
+    		typewriter("You dealt 1 damage!");
+    	}else {
+    	damage=tempAttack-enemyDefense;
+    	enemyHP-=damage;
+    	typewriter("You dealt "+damage+" damage!");
+    	}
+    	enemyAttack();
+    }
+    }else {
+    	skillKnight();
+    }
+  }
+}
+public static void skillArcher() {
+	System.out.println("Your skills include:");
+	System.out.println("Smoke Bomb (4 Mana): Dodge one attack and deal damage");
+	System.out.println("Sharpshooter (3 Mana): Deal medium damage");
+	System.out.println("Which shall you choose? (Type 'Smoke Bomb' or 'Sharpshooter')");
+	String answer = scan.nextLine();
+    if(answer.equalsIgnoreCase("smoke bomb")) {
+    	if(currentMana<4) {
+    		noMana();
+    	}else {
+    	currentMana-=4;
+    	typewriter("You pull out a smoke bomb and throw it on the ground, concealing you!");
+    	typewriter("You draw your bow and shoot!");
+    	if(attack<=enemyDefense) {
+    		enemyHP-=1;
+    		typewriter("You dealt 1 damage!");
+    	}else {
+    	damage=attack-enemyDefense;
+    	enemyHP-=damage;
+    	typewriter("You dealt "+damage+" damage!");
+    	typewriter("Because of the smoke bomb, the enemy missed!");
+    	if(kingGuard==1) {
+    		kingGuard();
+    	}else {
+    	if(heavySoldier>=1) {
+    		heavySoldier();
+    	}else {
+    	if(arkhein==1) {
+    		arkhein();
+    	}
+       }
+      }
+     }
+    }
+    }else {
+    if(answer.equalsIgnoreCase("sharpshooter")) {
+    	if(currentMana<3) {
+    		noMana();
+    	}else {
+    	currentMana-=3;
+    	typewriter("You focus and draw your bow carefully, aiming for the head, then fire!");
+    	tempAttack=attack;
+    	tempAttack*=1.5;
+    	if(tempAttack<=enemyDefense) {
+    		enemyHP-=1;
+    		typewriter("You dealt 1 damage!");
+    	}else {
+    	damage=tempAttack-enemyDefense;
+    	enemyHP-=damage;
+    	typewriter("You dealt "+damage+" damage!");
+    	}
+    	enemyAttack();
+      }
+    }else {
+    	skillArcher();
+    }
+  }
+}
+public static void skillHeavyKnight() {
+	System.out.println("Your skills include:");
+	System.out.println("Rage (3 Mana): Raise your attack by 2");
+	System.out.println("Spin Slash (3 Mana): Deals medium damage");
+	System.out.println("Which shall you choose? (Type 'Rage' or 'Spin Slash')");
+	String answer = scan.nextLine();
+    if(answer.equalsIgnoreCase("rage")) {
+    	if(currentMana<3) {
+    		noMana();
+    	}else {
+    		currentMana-=3;
+    		attack+=2;
+    		typewriter("You shout and are filled with anger. Your attack increases by 2!");
+    		enemyAttack();	
+    }
+    }else {
+    if(answer.equalsIgnoreCase("spin slash")) {
+    	if(currentMana<3) {
+    		noMana();
+    	}else {
+    		currentMana-=3;
+    		tempAttack=attack;
+        	tempAttack*=1.5;
+        	typewriter("You put the greatsword on your shoulder and start spinning!");
+        	if(tempAttack<=enemyDefense) {
+        		enemyHP-=1;
+        		typewriter("You dealt 1 damage!");
+        	}else {
+        	damage=tempAttack-enemyDefense;
+        	enemyHP-=damage;
+        	typewriter("You dealt "+damage+" damage!");
+        	}
+        	enemyAttack();
+        	}
+    	}else {
+    		skillHeavyKnight();
+    	}
+    }
+}
+public static void skillMage() {
+	System.out.println("Your skills include:");
+	System.out.println("Mana Ball (5 Mana): Deal high damage");
+	System.out.println("Mana Shield (5 Mana): Reflect all incoming attacks");
+	System.out.println("Which shall you choose? (Type 'Mana Ball' or 'Mana Shield')");
+	String answer = scan.nextLine();
+    if(answer.equalsIgnoreCase("mana ball")) {
+    	if(currentMana<5) {
+    		noMana();
+    	}else {
+    		currentMana-=5;
+    		tempMagicAttack=magicAttack;
+        	tempMagicAttack*=2;
+        	typewriter("You charge up a mana ball using your wand and it explodes on impact!");
+        	if(tempMagicAttack<=enemyDefense) {
+        		enemyHP-=1;
+        		typewriter("You dealt 1 damage!");
+        	}else {
+        	damage=tempMagicAttack-enemyDefense;
+        	enemyHP-=damage;
+        	typewriter("You dealt "+damage+" damage!");
+        	}
+        	enemyAttack();
+    	}
+    }else {
+    if(answer.equalsIgnoreCase("mana shield")) {
+    	if(currentMana<5) {
+    		noMana();
+    	}else {
+    		currentMana-=5;
+    		typewriter("You put up a magic shield!");
+    		if(kingGuard==1) {
+        	typewriter("The King's Guard Knight slashes at you!");
+        	}else {
+        	if(heavySoldier>=1) {
+        	typewriter("The Heavy Knight cleaves his greatsword at you!");
+       		}else {
+       		if(arkhein==1) {
+       		typewriter("Arkhein slices his double-edged blade at you!");
+       		}
+       		}
+   			}
+    		if(enemyAttack<=enemyDefense) {
+    			enemyHP-=1;
+    			typewriter("Due to the magic shield, the attack reflects back and deals 1 damage!");
+    		}
+    		enemyDamage=enemyAttack-enemyDefense;
+    		enemyHP-=enemyDamage;
+    		typewriter("Due to the magic shield, the attack reflects back and deals "+enemyDamage+" damage!");
+    		if(kingGuard==1) {
+    		kingGuard();
+    		}else {
+    		if(heavySoldier>=1) {
+    		heavySoldier();
+    		}else {
+    		if(arkhein==1) {
+    		arkhein();
+    		}
+    	  }
+   	    }
+      }
+    }else {
+    	skillMage();
+    }
+  }
+}
+public static void kingGuard() {
+	if(enemyHP<=0) {
+		attack=storeAttack;
+		defense=storeDefense;
+		typewriter("");
+		typewriter("You have defeated the King's Guard Knight!");
+		typewriter("You gained 10 EXP!");
+		level=2;
+		typewriter("You leveled up! (Level 2)");
+		typewriter("Your stats have increased!");
+		attack+=3;
+		magicAttack+=2;
+		defense+=1;
+		maxHP+=10;
+		maxMana+=2;
+		typewriter("Attack: +3 ("+attack+")");
+		typewriter("Magic Attack: +2 ("+magicAttack+")");
+		typewriter("Defense: +1 ("+defense+")");
+		typewriter("Max HP: +10 ("+maxHP+")");
+		typewriter("Mana: +2 ("+maxMana+")");
+		kingGuard=0;
+		kingGuardDefeated();
+	}else {
+	if(currentHP<=0) {
+		playerDefeated();
+	}else {
+	System.out.println("");
+	System.out.println("The King's Guard Knight Approaches You!");
+	enemyFormat();
+	}
+  }
+}
+public static void kingGuardDefeated() {
+	typewriter("");
+	typewriter("The King's Guard Knight backs off and starts clapping.");
+	typewriter("'Well done! You are definitely a skilled warrior! You could maybe even join the King's Guard!'");
+	typewriter("You grin as the instructor walks over to you.");
+	typewriter("'It seems as if you're the most capable here!' the instructor said with a smile.");
+	typewriter("You look around. Everyone is still fighting their own knight.");
+	typewriter("'Valiant soldier, what is your name?'");
+	typewriter("You tell the instructor your name.");
+	typewriter("'Well "+Pname+", I figure that your training is done for the day. I'll keep my eye on you though,' the instructor said as he motioned for the knight to leave.");
+	typewriter("You nod and make your way back to the castle.");
+	typewriter("				Several Days Later...");
+	typewriter("You wake up to soldiers at your sleeping quarters.");
+	typewriter("'Wake up! Today is the day we arm ourselves for the upcoming war!'");
+	typewriter("You get up grogily from your bed as the soldiers continue to shout.");
+	typewriter("Instantly, you pick up your weapon from the armory and are escorted out into the front of the castle.");
+	typewriter("There stood hundreds of soldiers prepared for battle. The enemy was only miles away over the horizon.");
+	typewriter("As more soldiers lined up, the enemy approached.");
+	typewriter("The instructor got on his horse and galloped to the front of the group.");
+	typewriter("'Soldiers! Today is the day that your training pays off! Fight with bravery, grit, and most importantly, glory!'");
+	typewriter("Everyone cheered. A few seconds later, the preparations were complete.");
+	typewriter("'Alright then, soldiers. It's time. I shall lead and direct you in battle, just as I taught.'");
+	typewriter("Everyone nodded their heads in approval.");
+	typewriter("The instructor nodded his head as well.");
+	typewriter("'CHAAAAAAAAAAARGE!!!!!'");
+	typewriter("Instantly, everyone started sprinting as fast as they could toward the enemy. The new, invigorated troops were determined to prove themselves.");
+	typewriter("As you approached the enemy, they halted and put up a magical barrier.");
+	typewriter("The instructor ordered everyone to halt as well.");
+	typewriter("'MAGES! TAKE DOWN THE BARRIER!' the instructor shouted.");
+	typewriter("Suddenly, more than a dozen mages ran to the front of the group.");
+	typewriter("They all charged up a giant mana ball and blasted it at the barrier.");
+	typewriter("The barrier instantly shattered.");
+	typewriter("'NOW! ATTAAAAAAACK!' the instructor ordered.");
+	typewriter("Everyone began moving again and the two sides clashed.");
+	typewriter("You defeated one enemy solider, then another.");
+	typewriter("Suddenly, a giant enemy soldier came up to you.");
+	typewriter("'HA! You seem to be fine in battle. Let me teach you a lesson!'");
+	typewriter("You angerly prepare your weapon.");
+	enemyAttack=20;
+	enemyDefense=7;
+	enemyMaxHP=150;
+	enemyHP=150;
+	heavySoldier=1;
+	prepare();
+	heavySoldier();
+}
+public static void heavySoldier() {
+	if(enemyHP<=0) {
+		attack=storeAttack;
+		defense=storeDefense;
+		typewriter("");
+		typewriter("You have defeated the Heavy Knight!");
+		typewriter("You gained 15 EXP!");
+		typewriter("");
+		if(heavySoldier==1) {
+			heavySoldier=0;
+			heavySoldierDefeated();
+		}else {
+			heavySoldier=0;
+			heavySoldier2Defeated();
+		}
+	}else {
+	if(currentHP<=0) {
+		playerDefeated();
+		}else {
+			System.out.println("");
+			if(heavySoldier==1) {
+			System.out.println("The Heavy Knight Waltzes Toward You!");
+			}else {
+				System.out.println("The Heavy Knight Angerly Sprints Toward You!");
+			}
+			enemyFormat();
+		}
+	}
+}
+public static void heavySoldierSkip() {
+	typewriter("Everyone began moving again and the two sides clashed.");
+	typewriter("You defeated one enemy solider, then another.");
+	typewriter("Suddenly, a giant enemy soldier came up to you.");
+	typewriter("'HA! You seem to be fine in battle. Let me teach you a lesson!'");
+	typewriter("You angerly prepare your weapon.");
+	enemyAttack=20;
+	enemyDefense=7;
+	enemyMaxHP=150;
+	enemyHP=150;
+	heavySoldier=1;
+	prepare();
+	heavySoldier();
+}
+public static void heavySoldierDefeated() {
+	typewriter("The heavy knight staggers backward.");
+	typewriter("'W-What? Impossible!-'");
+	typewriter("The heavy knight collapses on the floor.");
+	typewriter("You grin in triumph.");
+	typewriter("You look around. It's a stalemate; no one is making progress.");
+	typewriter("Suddenly, you hear a slam behind you.");
+	typewriter("Startled, you turn around to see another heavy knight.");
+	typewriter("'For King Arkhein!' the heavy knight shouted as he lifted his sword from the ground.");
+	enemyMaxHP=175;
+	enemyHP=175;
+	enemyAttack=22;
+	enemyDefense=7;
+	heavySoldier=2;
+	prepare();
+	heavySoldier();
+}
+public static void heavySoldier2Skip() {
+	typewriter("Suddenly, you hear a slam behind you.");
+	typewriter("Startled, you turn around to see another heavy knight.");
+	typewriter("'For King Arkhein!' the heavy knight shouted as he lifted his sword from the ground.");
+	enemyMaxHP=175;
+	enemyHP=175;
+	enemyAttack=22;
+	enemyDefense=7;
+	heavySoldier=2;
+	prepare();
+	heavySoldier();
+}
+public static void heavySoldier2Defeated() {
+	typewriter("'I-I'm sorry... Arkhein...' the heavy knight said before collapsing on the floor.");
+	typewriter("You catch your breath as you sheathe your weapon.");
+	typewriter("The King's army was pushing back against the enemy; we were finally making progress!");
+	typewriter("You look back at the instructor.");
+	typewriter("'Ah, "+Pname+", I was looking for you! I have a plan, just for you,' the instructor said as he gallopped on his horse toward you.");
+	typewriter("You tilt your head in confusion.");
+	typewriter("'I know you're a very capable warrior. That is why I am enlisting you with the task of being the force that breaks into the enemy castle once and for all.'");
+	typewriter("Suddenly, you go wide eyed. You, being the leader of the army?");
+	typewriter("'I know its a lot to ask, but you're clearly up to the task. So, will you take my offer?'");
+	typewriter("You think for a moment. Is this really a good idea...?");
+	typewriter("'I'll raise your pay permanently...' the instructor said in a cunning tone.");
+	typewriter("You roll your eyes in defeat and accept the instructor's offer.");
+	typewriter("'Great. FALL BACKKKK!!!' the instructor screamed as the army walked backward.");
+	typewriter("'GOD'S HAND FORMATION!!!'");
+	typewriter("Suddenly, everyone starting moving in a collective motion, forming a hand-like figure.");
+	typewriter("At the center of the hand is you and the instructor.");
+	typewriter("'ALRIGHT EVERYONE! MARCH FORWARD!' the instructor shouted as he motioned to follow him.");
+	typewriter("The enemy was not prepared for this. In a scramble, they set up a wall of soldiers in front of the castle.");
+	typewriter("'MAGES! MANA SHIELD!'");
+	typewriter("Suddenly, multiple beams of mana shot into the sky, forming a barrier around you.");
+	typewriter("The enemy archers and mages started to fire at the shield, though to no avail.");
+	typewriter("Finally, you reach the castle gate.");
+	typewriter("'NOW, TAKE DOWN THE CASTLE GATE!'");
+	typewriter("Suddenly, the mages took down the shield around you and started firing mana balls at the castle gate, exploding and damaging it.");
+	typewriter("The archers started firing at the enemy soldiers and archers as the King's Guardsmen protect the front of the army.");
+	typewriter("The plan was working. The gate was being destroyed.");
+	typewriter("'"+Pname+"!' the instructor said as the mages ran out of mana, 'Now is your time! You have the strength to knock it down, I'm sure! The King's Guard shall protect you.'");
+	typewriter("You gulp in nervousness. Gripping your weapon harder, you charge at the gate, backed up by the King's Guard.");
+	if(knight==1) {
+		typewriter("With your shield, you ram into the gate as hard as you can. Weakened by the mages, the gate collapses into rubble.");
+	}else {
+	if(archer==1) {
+		typewriter("With your bow, you infuse a mana explosion onto the tip of your arrow and shoot. Weakened by the mages, the gate collapses into rubble.");
+	}else {
+	if(heavyKnight==1) {
+		typewriter("With your greatsword, you slam into the gate as hard as you can. Weakened by the mages, the gate collapses into rubble.");
+	}else {
+	if(mage==1) {
+		typewriter("With your wand, you charge up a gigantic mana ball and explode it on the gate. Weakened by the mages, the gate collapses into rubble.");
+     	}
+      }
+    }
+  }
+	typewriter("A cheer rings out among the soldiers. The enemy, now left open, retreats further back.");
+	typewriter("'NOW! THE ENEMY IS OPEN! MARCH THROUGH THE GATE!' the instructor yelled as the soldiers began to march.");
+	typewriter("'"+Pname+"!' the instructor shouted, 'Come over here!'");
+	typewriter("You walk over to the insturctor.");
+	typewriter("'Incredible job! You're doing great! I just have one last thing to ask.'");
+	typewriter("You look at the instructor in anticipation.");
+	typewriter("'I need you to help me defeat King Arkhein.'");
+	typewriter("Your jaw drops. Defeating the king? Arkhein is one of the most powerful leaders in the nation!");
+	typewriter("'You and I combined will be far more capable than him. Trust me.'");
+	typewriter("You sigh. It's not like you have a choice.");
+	typewriter("'Good. I've already planned on what we will do. Just follow me for now.'");
+	typewriter("You start walking and following the instructor as the soldiers make a path for you.");
+	typewriter("'ALRIGHT! NOW IS THE TIME! STORM THROUGH THE CASTLE!!'");
+	typewriter("Suddenly, in a not-so-orderly fashion, the soldiers broke off from the God's Hand formation and started fighting whoever they could see.");
+	typewriter("'That should be a good distraction for us. Hurry along!' the instructor explained as he galloped on his horse toward a set of stairs.");
+	typewriter("You rush to follow him, weaving between enemy soldiers and fights.");
+	typewriter("You make your way up the set of stairs. Making a left, you see the throne room guarded by two enemy soldiers.");
+	typewriter("'I'll take care of these soldiers. You can continue forward and confront the king.'");
+	typewriter("You nod. Even though the soldiers try to stop you, the instructor defends you. You are able to make your way into the throne room.");
+	typewriter("");
+	typewriter("As you walk in, Arkhein speaks from his throne.");
+	typewriter("'Welcome, soldier! I did not expect guests so soon!'");
+	typewriter("The walls were an extravagent wood and gilded with gold. A red carpet spanned the entrance of the room to the king's throne. Next to the throne was a massive double-edged sword.");
+	typewriter("You prepare your weapon.");
+	typewriter("'Now, now, there's no need to get violent. Why, I think it'd be better to have a tea party, don't you think?'");
+	typewriter("You slowly approach Arkhein.");
+	typewriter("'Hmph. I guess my peace offer was not enough for you. Maybe a bribe?'");
+	typewriter("You pick up your pace.");
+	typewriter("'So be it,' the king declared as he stood up and picked up his double-edged blade.");
+	typewriter("'You shall feel the wrath of Arkhein!'");
+	enemyMaxHP=200;
+	enemyHP=200;
+	enemyAttack=20;
+	enemyDefense=8;
+	arkhein=1;
+	prepare();
+	arkhein();
+}
+public static void arkhein(){
+	if(enemyHP<=0) {
+		attack=storeAttack;
+		defense=storeDefense;
+		typewriter("");
+		typewriter("You have defeated Arkhein!");
+		typewriter("You gained 30 EXP!");
+		level=3;
+		typewriter("You leveled up! (Level 3)");
+		typewriter("Your stats have increased!");
+		attack+=2;
+		magicAttack+=1;
+		maxHP+=10;
+		typewriter("Attack: +2 ("+attack+")");
+		typewriter("Magic Attack: +1 ("+magicAttack+")");
+		typewriter("Max HP: +10 ("+maxHP+")");
+		typewriter("");
+		arkheinDefeated();
+		arkhein=0;
+	}else {
+	if(currentHP<=0) {
+		playerDefeated();
+	}else {
+	if(arkheinPhase2==1) {
+		typewriter("The instructor gallops on his horse and swings his blade at Arkhein!");
+		enemyHP-=10;
+		typewriter("The instructor dealt 10 damage!");
+		if(enemyHP<=0) {
+		arkhein();
+		}else {
+		System.out.println("");
+		System.out.println("Arkhein, King of Feudum, sprints toward you!");
+		enemyFormat();
+		}
+	}else {
+	if(enemyHP<=100) {
+		typewriter("");
+		typewriter("Suddenly, the instructor burst into the room.");
+		typewriter("'"+Pname+"! I am here to help!' the instructor shouted as he barged in the room.");
+		typewriter("Arkhein staggers back.");
+		typewriter("'Ugh, another one? This is preposterous! Don't make me show you my true power!'");
+		typewriter("You smirk. This was going swimmingly.");
+		typewriter("'Your time in the throne is over. Surrender now or face the consequences!' the instructor declared confidently.");
+		typewriter("Arkhein angerly sighed.");
+		typewriter("'You leave me no choice,' Arkhein said as he jumped backward toward the far end of the room.");
+		typewriter("Suddenly, Arkhein coated his blade with blazing fire using a torch on the wall.");
+		typewriter("'Now you shall feel the pain of a thousand blades!'");
+		typewriter("The instructor looks back at you.");
+		typewriter("'Here, let me heal you; you seem injured.'");
+		typewriter("The instructor hands you a health potion. You down it in one gulp and feel revitalized!");
+		currentHP=maxHP;
+		currentMana=maxMana;
+		arkheinPhase2=1;
+		enemyHP=110;
+		enemyAttack=25;
+		arkhein();
+		}else {
+			System.out.println("");
+			System.out.println("Arkhein, King of Feudum, paces toward you!");
+			enemyFormat();
+		}
+	  }
+    }
+  }
+}
+public static void arkheinSkip() {
+	typewriter("You pick up your pace.");
+	typewriter("'So be it,' the king declared as he stood up and picked up his double-edged blade.");
+	typewriter("'You shall feel the wrath of Arkhein!'");
+	enemyMaxHP=200;
+	enemyHP=200;
+	enemyAttack=20;
+	enemyDefense=8;
+	arkhein=1;
+	prepare();
+	arkhein();
+}
+public static void arkheinDefeated() {
+	typewriter("'Wh-What...?' Arkhein said as he walked backward.");
+	typewriter("'M-Me, defeated by a peasant and an instructor? This cannot be!'");
+	typewriter("The instructor started laughing. 'I never knew Arkhein, King of Feudum, was that weak!'");
+	typewriter("Blood dripped from Arkhein's mouth.");
+	typewriter("'No. I cannot let this happen to my rightful kingdom! You and your army will fall!'");
+	typewriter("Arkhein became swallowed by rage. A red aura swelled around him.");
+	typewriter("'Hehehehe... HAHAHAHA!! DARKNESS CONSUMES ME!'");
+	typewriter("The instructor starts pacing back. '"+Pname+", I-I've never seen this evil power before. We-'");
+	typewriter("Suddenly, Arkhein leapt forward and slashed the instructor off his horse.");
+	typewriter("'AAAGH!!' the instructor screamed as Arkhein stood above him.");
+	typewriter("The instructor looked back at you. '"+Pname+"... S-Save our kingdom... D-Don't let Arkhein become victorious... please... I-'");
+	typewriter("Then the instructor collapsed dead on the floor, a puddle of blood forming around his lifeless corpse.");
+	typewriter("You look at the instructor, then Arkhein, with fear.");
+	typewriter("'HAHAHAHA! YOU COULDN'T SAVE HIM IN THE END, COULD YOU?! YOUR PRECIOUS INSTRUCTOR, NOW DEAD, WAS THE ONLY LIFEBLOOD YOU HAD! Pathetic.'");
+	typewriter("Your entire body was shaken with hatred.");
+	typewriter("Arkhein points his blade at you. 'You're next. HAHAHAHAHA!'");
+	typewriter("Arkhein leaps toward you, but you dodge just in time.");
+	typewriter("'What, are you scared?! FIGHT ME!!' Arkhein screamed as he rushed toward you.");
+	typewriter("You spot a window. You could exit through there!");
+	typewriter("You knock down a giant statue, blocking Arkhein's path.");
+	typewriter("It buys you just enough time to break the window and hop through it as Arkhein effortlessly sliced through the statue.");
+	typewriter("");
+	typewriter("Sprinting full force, you get back onto the battlefield only to find that it is in ruin.");
+	typewriter("Only a few of your soldiers were left, but they were wounded. You figured that inside the castle was worse.");
+	typewriter("Without any direction left to go, you return back to Feodalitas while helping as many wounded soldiers as you can.");
+	typewriter("Looking behind you as you make your way toward Feodalitas, you find Arkhein standing at the castle gate engulfed by a dark power, a menacing aura surrounding him.");
+	typewriter("");
+	typewriter("Once you got there, you were greeted by King Corruptus.");
+	typewriter("'What are you doing here?' Corrutpus said with an attitude, 'Aren't you supposed to be fighting in the war?'");
+	typewriter("You explain the situation to Corruptus.");
+	typewriter("'That's impossible! My men are stronger than any army!'");
+	typewriter("You look down at the ground.");
+	typewriter("Corruptus turns around in dissapointment and begins to talk to one of the King's Guard. You overhear bits of their conversation.");
+	typewriter("'Can't punish if they're already dead-...'");
+	typewriter("'-eed to retreat. We don't have any options-...'");
+	typewriter("'-rm a plan after. Just get them back-...'");
+	typewriter("Suddenly, Corruptus turns around.");
+	typewriter("'Soldier, get back inside the castle and to your sleeping quarters. My men will take you there.'");
+}
+public static void typewriter(String text) {
+	  int i;
+	  for(i = 0; i < text.length(); i++){
+	      System.out.printf("%c", text.charAt(i));
+	      try{
+	          Thread.sleep(20);//0.20s pause between characters
+	      }catch(InterruptedException ex){
+	          Thread.currentThread().interrupt();
+	      }
+	  }
+	    System.out.println("");
+	}
+}
