@@ -3,7 +3,25 @@ package unit1;
 import java.util.Random;
 import java.util.Scanner;
 
-public class RPG_Test {
+//General Changes/Additions:
+///Change Exposition
+///Finish puzzle escape room thingy
+
+//Bug Fixes/Code Improvement:
+///'You can't use _ here' message only appears after the item has been used
+///Fix if statements (if needed - otherwise, its fine lol)
+///Make a consistent enemy code (cause some of them are repeats)
+
+//Additional Features (for the future):
+///Side Quests
+///Accessories
+///Specialized/Upgraded Equipment (better with some skills, differing stats, etc.)
+///Unlockable Classes
+///Karma (?)
+///Gems/Enhancements (?)
+///Unlockable/Classless Skills (?)
+
+public class RPG_New {
 	public static String Pname;
 	public static String enemyAttackText;
 	public static String enemyApproach;
@@ -135,158 +153,6 @@ public class RPG_Test {
 	public static Scanner scan = new Scanner(System.in);
 	
 public static void main(String[] args) {
-		String answer= scan.nextLine();
-		if(answer.equalsIgnoreCase("1")) {
-			textSpeed=1;
-			healthPotion=1;
-			manaPotion=1;
-			sandwich=1;
-			greaterHealthPotion=2;
-			gold=50;
-			currentHP=175;
-			maxHP=175;
-			currentMana=15;
-			maxMana=15;
-			defense=9;
-			attack=31;
-			magicAttack=13;
-			reinforcedSwordAndShield=2;
-			weaponAttack=2;
-			ironArmor=2;
-			armorDefense=2;
-			level=5;
-			expToLevel=350;
-			rank=1;
-			levelToRankUp=10;
-			knight=true;
-			newSkill=true;
-			manaUp=true;
-			ultimateUnlocked=true;
-			phoenixDiscovered=true;
-			zackeryDefeated=true;
-			phoenixPrison=true;
-			overworld();
-		}
-		if(answer.equalsIgnoreCase("2")) {
-			textSpeed=1;
-			healthPotion=1;
-			manaPotion=1;
-			sandwich=1;
-			greaterHealthPotion=2;
-			gold=50;
-			currentHP=155;
-			maxHP=155;
-			currentMana=17;
-			maxMana=17;
-			defense=7;
-			attack=38;
-			magicAttack=13;
-			reinforcedBow=2;
-			weaponAttack=3;
-			ironArmor=2;
-			armorDefense=2;
-			level=5;
-			expToLevel=350;
-			rank=1;
-			levelToRankUp=10;
-			archer=true;
-			newSkill=true;
-			manaUp=true;
-			ultimateUnlocked=true;
-			phoenixDiscovered=true;
-			zackeryDefeated=true;
-			phoenixPrison=true;
-			overworld();
-		}
-		if(answer.equalsIgnoreCase("3")) {
-			textSpeed=1;
-			healthPotion=1;
-			manaPotion=1;
-			sandwich=1;
-			greaterHealthPotion=2;
-			gold=50;
-			currentHP=165;
-			maxHP=165;
-			currentMana=15;
-			maxMana=15;
-			defense=5;
-			attack=43;
-			magicAttack=13;
-			reinforcedGreatsword=2;
-			weaponAttack=4;
-			ironArmor=2;
-			armorDefense=2;
-			level=5;
-			expToLevel=350;
-			rank=1;
-			levelToRankUp=10;
-			heavyKnight=true;
-			newSkill=true;
-			manaUp=true;
-			ultimateUnlocked=true;
-			phoenixDiscovered=true;
-			zackeryDefeated=true;
-			phoenixPrison=true;
-			overworld();
-		}
-		if(answer.equalsIgnoreCase("4")) {
-			textSpeed=1;
-			healthPotion=1;
-			manaPotion=1;
-			sandwich=1;
-			greaterHealthPotion=2;
-			gold=50;
-			currentHP=115;
-			maxHP=115;
-			currentMana=20;
-			maxMana=20;
-			defense=7;
-			attack=25;
-			magicAttack=41;
-			reinforcedWand=2;
-			weaponAttack=2;
-			weaponMagicAttack=4;
-			ironArmor=2;
-			armorDefense=2;
-			level=5;
-			expToLevel=350;
-			rank=1;
-			levelToRankUp=10;
-			mage=true;
-			newSkill=true;
-			manaUp=true;
-			ultimateUnlocked=true;
-			phoenixDiscovered=true;
-			zackeryDefeated=true;
-			phoenixPrison=true;
-			overworld();
-		}
-		if(answer.equalsIgnoreCase("e")) {
-			Pname = "Erika";
-			textSpeed=9;
-			greaterHealthPotion=1;
-			gold=13;
-			currentHP=42;
-			maxHP=155;
-			currentMana=10;
-			maxMana=14;
-			defense=8;
-			attack=23;
-			magicAttack=8;
-			swordAndShield=2;
-			reinforcedSwordAndShield=1;
-			weaponAttack=1;
-			lightArmor=2;
-			armorDefense=1;
-			level=3;
-			exp=95;
-			expToLevel=100;
-			rank=0;
-			levelToRankUp=5;
-			knight=true;
-			phoenixDiscovered=true;
-			overworld();
-		}
 		typewriter("Welcome! In this game, you control the protagonist of the story and type words to choose certain choices you want to make.");
 		typewriter("Let's start simple; what is your name? (This will be the name of the protagonist)");
 		Pname = scan.nextLine();
@@ -963,7 +829,7 @@ public static void beforeEnemyAttack() {
 				currentHP+=30;
 				if(currentHP>maxHP) {
 					currentHP=maxHP;
-					typewriter("You HP was maxed out!");
+					typewriter("Your HP was maxed out!");
 				}else {
 					typewriter("You recover 30 HP!");
 				}
@@ -3972,7 +3838,7 @@ public static void cell35() {
 			typewriter("'Unscramble the words to find the key; the sigil spell will be unlocked for you to see.'");
 			typewriter("'rcsaea cprieh erteh'");
 			typewriter("");
-			typewriter("'Write the spell in the scoll and you too can master the art of mana.'");
+			typewriter("'Write the spell in the scroll and you too can master the art of mana.'");
 			typewriter("");
 		}
 	}
@@ -4411,7 +4277,7 @@ public static void inventory() {
 				typewriter("");
 				typewriter("- Complete Scale Obtained! -");
 				typewriter("");
-				typewriter("All you have to do now is to figure out how to use it...");
+				typewriter("All you have to do now is figure out how to use it...");
 				typewriter("");
 				scalePiece=0;
 				scale=1;
@@ -4502,10 +4368,10 @@ public static void aequalisSoul() {
 	if(currentHP<=0) {
 		playerDefeated();
 	}else {
-	if(enemyHP>450) {
+	if(enemyHP>350) {
 		enemyFormat();
 	}else {
-		if(enemyHP<=450) {
+		if(enemyHP<=350) {
 			if(aequalisSoulPhase2==false) {
 				enemyApproach="??? Reads Your Every Move!";
 				typewriter("");
