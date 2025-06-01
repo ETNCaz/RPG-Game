@@ -3,24 +3,6 @@ package unit1;
 import java.util.Random;
 import java.util.Scanner;
 
-//General Changes/Additions:
-///Change Exposition
-///Finish puzzle escape room thingy
-
-//Bug Fixes/Code Improvement:
-///'You can't use _ here' message only appears after the item has been used
-///Fix if statements (if needed - otherwise, its fine lol)
-///Make a consistent enemy code (cause some of them are repeats)
-
-//Additional Features (for the future):
-///Side Quests
-///Accessories
-///Specialized/Upgraded Equipment (better with some skills, differing stats, etc.)
-///Unlockable Classes
-///Karma (?)
-///Gems/Enhancements (?)
-///Unlockable/Classless Skills (?)
-
 public class RPG_New {
 	public static String Pname;
 	public static String enemyAttackText;
