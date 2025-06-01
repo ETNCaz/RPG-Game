@@ -2026,7 +2026,7 @@ public static void kingGuardDefeated() {
 	typewriter("You look around. Everyone is still fighting their own knight.");
 	typewriter("'Valiant soldier, what is your name?'");
 	typewriter("You tell the instructor your name.");
-	typewriter("'Well "+Pname+", I figure that your training is done for the day. I'll keep my eye on you though,' the instructor said as he motioned for the knight to leave.");
+	typewriter("'Well, "+Pname+", I figure that your training is done for the day. I'll keep my eye on you though,' the instructor said as he motioned for the knight to leave.");
 	typewriter("You nod and make your way back to the castle.");
 	typewriter("				One Day Later...");
 	typewriter("You decide that it might be a good idea to get some supplies before the war happens. You head your way to the nearby shop in your town.");
@@ -3640,6 +3640,7 @@ public static void cell12() {
 			typewriter("You inspect the wall closer.");
 			typewriter("It seems like the wall is very weak, as just the brush of your hand errodes some of the wall even further.");
 			typewriter("However, it would take way too much time to do it like that - if you had some sort of tool you could use to break the wall in more efficiently, then you could see what's on the other side...");
+			typewriter("");
 			cell12();
 		}else {
 			cell12();
@@ -3651,7 +3652,11 @@ public static void cell12() {
 public static void secretWall() {
 	if(secretWallDiscovered==true) {
 		typewriter("There's some sort of riddle on the wall.");
-		typewriter("It looks like it holds some sort of treasure. Maybe it can be useful in the future.");
+		if(courtyardKey==0) {
+			typewriter("It looks like it holds some sort of treasure. Maybe it can be useful in the future.");
+		}else {
+			typewriter("The opened treasure chest sits in the new area under the riddle.");
+		}
 		typewriter("There's nothing else of note in this room.");
 	}else {
 		secretWallDiscovered=true;
@@ -3752,7 +3757,11 @@ public static void secretWallRiddle() {
 public static void cell35() {
 	if(cell35Discovered==true) {
 		typewriter("A mysterious dark blue aura fills the cell.");
-		typewriter("You see various sigils painted on the walls. A pen and scroll with a vibrant red bow is placed on the bed.");
+		if(scroll==0) {
+			typewriter("You see various sigils painted on the walls. A pen and scroll with a vibrant red bow is placed on the bed.");
+		}else {
+			typewriter("You see various sigils painted on the walls. A pen is placed on the bed.");
+		}
 	}else {
 		cell35Discovered=true;
 		typewriter("As you make your way to cell 35, you are overcome with a wave of sickness, making you feel unwell.");
@@ -4038,6 +4047,7 @@ public static void cafeteria() {
 	        	typewriter("It rapidly fizzes, overflowing and rendering the mixture unusable.");
 	        	typewriter("You shake your head, knowing you need to try again.");
 	        }
+	        typewriter("");
 		}
 	}
 	if(answer.equalsIgnoreCase("uf")) {
@@ -4302,7 +4312,7 @@ public static void inventory() {
 			typewriter("You close your eyes and try to block the attack... but don't feel anything.");
 			typewriter("You reopen your eyes to see that Zackery has taken the hit for you!");
 			typewriter("'Gah! Y-You're welcome new guy...' Zackery groaned with a slash wound across his chest.");
-			typewriter("'I don't think I can help you defeat this guy but-' Zackery coughs as he rolls a potion toward you, 'I can help from the sidelines..'");
+			typewriter("'I don't think I can help you defeat this guy but-' Zackery coughs as he rolls a potion toward you, 'I can help from the sidelines...'");
 			typewriter("You pick up the potion and drink it. You feel fully revitalized!");
 			typewriter("You look at the damaged Zackery, then back at the ghostly valkyrie.");
 			typewriter("You will not lose.");
